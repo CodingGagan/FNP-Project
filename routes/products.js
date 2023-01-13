@@ -594,8 +594,9 @@ router.post('/categories/edit/:id', upload.single("image"), function (req, res, 
   var categorytype = req.body.categorytype;
   var status = req.body.status;
   var image = '/images/' + req.body.image;
+  var slug = req.body.slug;
   let qry = "UPDATE subcategory SET categorytype = '"+name+"' WHERE id = '"+id+"'"
-  var sql = "UPDATE category SET name= '" + name + "', categorytype= '" + categorytype + "',status= '" + status + "',image= '" + image + "' WHERE id= '" + id + "'  ";
+  var sql = "UPDATE category SET name= '" + name + "',slug= '"+slug+"', categorytype= '" + categorytype + "',status= '" + status + "',image= '" + image + "' WHERE id= '" + id + "'  ";
  console.log(qry)
   mysql.query(sql, function (err, data) {
     if (err) throw err;
@@ -637,12 +638,12 @@ router.post("/categories", upload.single("image"), function (req, res) {
   var tags = req.body.tags;
   var description = req.body.description;
   var image = '/images/' + req.body.image;
-
+  var slug = req.body.slug;
   var keywords = req.body.keywords;
   var status = req.body.status;
   // console.log(image  );
   //let q = "INSERT INTO category VALUES (NULL,'','',NULL,'','','') " 
-  let qry = "INSERT INTO category SET name= '" + name + "', categorytype = '" + categorytype + "',tags= '" + tags + "', description= '" + description + "',image='" + image + "',keywords='" + keywords + "', status= '" + status + "' ";
+  let qry = "INSERT INTO category SET name= '" + name + "',slug= '"+slug+"', categorytype = '" + categorytype + "',tags= '" + tags + "', description= '" + description + "',image='" + image + "',keywords='" + keywords + "', status= '" + status + "' ";
   mysql.query(qry, async (err, result) => {
     if (err)
       throw err
@@ -871,11 +872,12 @@ router.get('/subcategories/edit/:id', function (req, res, next) {
 router.post('/subcategories/edit/:id', upload.single("image"), function (req, res, next) {
   var id = req.params.id;
   var name = req.body.name;
+  var slug =  req.body.slug
   
   var categorytype = req.body.categorytype;
   var status = req.body.status;
   var image = '/images/' + req.body.image;
-  var sql = "UPDATE subcategory SET name= '" + name + "', categorytype= '" + categorytype + "',status= '" + status + "',image= '" + image + "' WHERE id= '" + id + "'  ";
+  var sql = "UPDATE subcategory SET name= '" + name + "', slug = '"+slug+"',categorytype= '" + categorytype + "',status= '" + status + "',image= '" + image + "' WHERE id= '" + id + "'  ";
   mysql.query(sql, function (err, data) {
     if (err) throw err;
     //     console.log(data.affectedRows + " record(s) updated");
@@ -893,8 +895,9 @@ router.post("/subcategories", upload.single("image"), (req, res) => {
   var sort = req.body.sort;
   var image = '/images/' + req.body.image;
   var status = req.body.status;
+  var slug = req.body.slug;
   
-  let qry = "INSERT INTO subcategory SET name = '" + name + "', categorytype = '" + categorytype + "',sort= '" + sort + "', image='" + image + "', status= '" + status + "' ";
+  let qry = "INSERT INTO subcategory SET name = '" + name + "',slug= '"+slug+"', categorytype = '" + categorytype + "',sort= '" + sort + "', image='" + image + "', status= '" + status + "' ";
   mysql.query(qry, (err, result) => {
     if (err) throw err
     else {
