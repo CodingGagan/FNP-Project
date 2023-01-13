@@ -2,8 +2,8 @@
 <%- include('../partials/header'); %>
 <form action="" method="POST" >  
     <%
-    if(sampleData.length >0){
-        sampleData.forEach(function(data){                                  
+    if(subcategory.length >0){
+        subcategory.forEach(function(data){                                  
             %>
             <%
         })
@@ -16,26 +16,27 @@
     %> 
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Name</label>
-        <input type="text" required value="<%= sampleData[0].name %>" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">                 
+        <input type="text" required value="<%= subcategory[0].name %>" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">                 
     </div>
     <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Slug</label>
-        <input type="text" required value="<%= sampleData[0].slug %>" class="form-control" name="slug" id="exampleFormControlInput1"  style="width: 450px;">                 
+        <input type="text" required value="<%= subcategory[0].slug %>" class="form-control" name="slug" id="exampleFormControlInput1"  style="width: 450px;">                 
     </div>
     <div class="name">
         <label for="exampleFormControlTextarea1" class="form-label" style="width: 100%;">Category Type</label>
-    <select class="form-select" name="category" value="<%= category[0].category %> aria-label="Default select example" style="width: 32%;" >
-        <% category.forEach((cat) => {
+    <select class="form-select" name="categorytype" value="<%= subcategory[0].categorytype %> aria-label="Default select example" style="width: 32%;" >
+        <% categories.forEach((cat)=> {
             %>
-                <option value="<%= cat.name %>"><%=cat.name  %></option> 
-            <%
-        }) %>
+            <option value="<%= cat.name %>">
+                <%= cat.name %>
+            </option>
+            <% }) %>
 </select>
 
     </div>
     <label for="exampleFormControlTextarea1" class="form-label" style="margin-top: 20px;">Image</label>
     <!-- <button type="file" class="btn btn-info">Upload Image</button> -->
-    <input type="file" name="image" value="<%= sampleData[0].image %>"> <br>
+    <input type="file" name="image" value="<%= subcategory[0].image %>"> <br>
     <h7 style="margin-top: 10px;">Recommended image size is  200x200</h7>
     <div>
     <label for="exampleFormControlTextarea1" class="form-label">Status</label>

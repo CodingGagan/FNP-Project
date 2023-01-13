@@ -842,25 +842,25 @@ router.get('/subcategories/delete/:id', function (req, res, next) {
 
 router.get('/subcategories/edit/:id', function (req, res, next) {
   var UserId = req.params.id;
-  let category, sampleData
-  var ql = `SELECT * FROM subcategory WHERE id=${UserId}`;
+  let subcategory, categories;
+  let qry = `SELECT * FROM subcategory WHERE id =  '${UserId}'`;
   let sql = "SELECT * FROM category"
-  // console.log(sql)
-  mysql.query(sql, function (err, data) {
+  mysql.query(qry, function (err, result) {
     if (err) {
-      // throw err;
-      console.log(err);
-    }
-    else {
-      category= data
-      mysql.query(ql,(err,data) =>{
-        if(err)
-        throw err
-        else{
-          sampleData = data
-          res.render('products/usub', { title: 'Product  Categories Page',category, sampleData });
+      throw err
+    } else {
+      subcategory = result
+      mysql.query(sql, function (err, result) {
+        if (err)
+          throw err
+        else {
+          categories = result
+          res.render('products/usub', { title: 'Product Subcategory Page', subcategory, categories });
         }
       })
+
+  
+
       //console.log(data)
       // res.send(data);
       // console.log(products/updateform)
