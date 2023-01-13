@@ -1,0 +1,163 @@
+<%- include('../partials/header'); %>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Delete Product</h2>
+                <p>Home / Delete Product</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+               
+            </div>    
+           
+        </div>
+        <div class="all">
+            <h2>Delete Product</h2>
+        <div class="select-box-wrap">
+            <select class="form-select" aria-label="Default select example">
+                    <option selected>Bulk option</option>
+                    <option value="1">Delete</option>
+            </select>
+            <button type="button" class="btn btn-primary">Apply</button>
+    </div>
+    <!-- <div class="datatable">
+            <label class="class-label">
+                <div class="select-user">
+                    <span>show</span>      
+                    <select name="all_user_table_length" class="custom-select custom-select-sm form-control form-control-sm" aria-label="all_user_table">
+                            <option value="10">10</option>
+                            <option value="25">25</option>  
+                            <option value="50">50</option>
+                    </select>
+                  <span> enteries </span>
+                </div>
+                <div class="search-box">
+                    <span style="padding: 10px;">Search</span>
+                    <input type="text" >
+                </div>
+                
+            </label> 
+
+    </div> -->
+    <div class="row">
+        <div class="col-12">
+            <table id="example" class="display" style="width:100%">
+                <thead style="background-color: #0A2558; color:white;">
+                        <tr >
+                                <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                <td style="padding:15px;">id</td>
+                                <td>Name</td>
+                                <td>categories</td>
+                                <td>Price</td>
+                                <td>Status</td>
+                                <td>image</td>
+                                <td>Action</td>
+                        </tr>
+                </thead >
+                    <tbody>
+                        <tbody>
+                            <% if(sampleData.length>0){
+                                sampleData.forEach(function(data){
+                                %>
+        
+                                <tr>
+                                    <td><input type="checkbox" style="margin-left: 15px; "></td>
+                                    <td style="padding:15px;">
+                                        <%=data.id %>
+                                    </td>
+                                    <td>
+                                        <h6 style="margin-top: 10px;">
+                                            <%=data.name %>
+                                        </h6>
+                                        <small>
+                                            <strong>stock: <%=data.stock %> </strong>
+        
+                                        </small>
+        
+                                    </td>
+                                    <td>
+                                        <%=data.category %>
+                                    </td>
+                                    
+                                    <td>
+                                        <%=data.price%>
+                                    </td>
+                                    <td>
+                                        <span class="alert alert-warning">
+                                            <%=data.status %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="pic">
+                                            <img src="<%=data.image %> " style="height: 100px ;width: 100px; " alt="image">
+                                        </div>
+                                    </td>
+                                    <td>
+                                         <a href="/products/add-new-product/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a> 
+                                        <a href="/products/add-new-product/edit/<%= data.id %>" class="btn btn-primary"><i
+                                                class='bx bxs-edit-alt'></i></a>
+                                       
+                                      
+                                    </td>
+                                </tr>
+                                <% }) } else{ %>
+                                    <tr>
+        
+                                        <td colspan="5">No Data Found</td>
+                                    </tr>
+                                    %>
+                                    <% } %>       
+                    </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
+
+
+
+<!-- <script
+                type="text/javascript"
+                charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+                ></script>
+                <script
+                type="text/javascript"
+                charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+                <script>
+                $(function() {
+                $("#example").dataTable();
+                });
+                </script>
+<%- include('../partials/footer'); %>
+
+<script>
+    $(document).ready(function(){
+    $(".btnDelete").on('click',function(){
+        $(this).closest("tr").remove();
+    })
+}) -->
+</script>

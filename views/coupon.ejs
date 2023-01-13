@@ -1,0 +1,165 @@
+<%- include('./partials/header'); %>
+<script>
+    console.log(coupon)
+</script>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Product Coupon</h2>
+                    <p>Home / Coupon</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+               
+            </div>   
+        <div class="cat">
+            <div class="left-cat">
+                <div class="all">
+                    <h2>Add New Coupon</h2>
+                <div class="select-box-wrap">
+                    <select class="form-select" aria-label="Default select example">
+                            <option selected>Bulk option</option>
+                            <option value="1">Delete</option>
+                    </select>
+                    <button type="button" class="btn btn-primary">Apply</button>
+            </div>
+            <div class="datatable">
+                      
+            </div>
+            <div class="row">
+                <dov class="col-12">
+                  
+                    <table id="example" class="display" style="width:100%">
+                        <thead style="background-color: #0A2558; color:white;">
+                                <tr>
+                                        <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                        <td style="padding: 10px;">id</td>
+                                        <td>Code</td>
+                                        <td>Discount</td>
+                                        <td>Expiry Date</td>
+                                        <td>Status</td>
+                                        <td>Action</td>
+                                </tr>
+                        </thead >
+                        <tbody>
+                            <%
+                            if(sampleData.length >0){
+                                sampleData.forEach(function(data){                                  
+                                    %>
+                                    <tr>
+                                        <td style="padding: 10px;"><input type="checkbox" ></td>
+                                        <td style="padding: 10px;"><%=data.id %></td>
+                                        <td style="padding: 10px;"><%=data.code %></td>
+                                        <td style="padding: 10px;"><%=data.discount %></td>
+                                        <td style="padding: 10px;"><%=data.expiry %></td>
+                                        <td style="padding: 10px;"><%=data.status %></td>
+                                        <td style="padding: 10px;" >
+                                            <!-- <button type="button" class="btn btnDelete btn-danger"><i class='bx bx-message-square-x'></i></button> -->
+                                            <a href="/coupon/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a> 
+                                            <a href="/coupon/edit/<%= data.id %>"  class="btn btn-primary" ><i class='bx bxs-edit-alt'></i></a>
+                                            <!-- <button type="submit" class="btn btn-primary" ><i class='bx bxs-edit-alt'></i></button> -->
+                                        </td>
+                                    </tr>
+                                    <%
+                                })
+                            } 
+                            else{
+                            %>
+                                <tr>
+                                    
+                                    <td colspan="5">No Data Found</td>
+                                </tr>
+                            %> 
+                            <%   
+                            }
+                            %>                           
+                        </tbody>                       
+                    </table>
+                                       
+                    <div class="pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                              <a class="page-link">Previous</a>
+                            </li>
+                            <li class="page-item"></li>
+                            <li class="page-item">
+                              <a class="page-link" href="#">Next</a>
+                            </li>
+                          </ul>
+                    </div>
+            </div>
+        </div>
+                
+            <div class="right-cat">
+                <div class="new-cat">
+                    <h3>Add New Coupon</h3>
+                </div>
+                
+                <form action="/coupon" method="POST"   >
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Coupon Title</label>
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title" style="width: 450px;">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Coupon Code</label>
+                    <input type="text" name="code" class="form-control couponCode" id="exampleFormControlInput1" placeholder="Code" style="width: 450px;">
+                </div>
+              <div class="mb-3">
+                <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Discount On</label>
+                <select style="width: 100%; padding: 10px 10px;" name="discounton" class="form-select" aria-label="Default select example">
+                    <option selected>Select An Option</option>
+                    <option >All Product</option>
+                    <option >Category</option>
+                    <option >Sub Category</option>
+                    <option >Product</option>
+            </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Discount</label>
+                <input type="text" class="form-control" name="discount" id="exampleFormControlInput1" placeholder="Discount" style="width: 450px;">
+            </div>
+            <div class="mb-3">
+                <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Discount Type</label>
+                <select style="width: 100%; padding: 10px 10px;" name="discounttype" class="form-select" aria-label="Default select example">
+                    <option value="1" selected>Percentage</option>
+                    <option value="2" >Fixed Amount</option>
+            </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Expiry Date</label>
+                <input type="date" class="form-control" name="expiry" id="exampleFormControlInput1" placeholder="" style="width: 450px;">
+            </div>
+            <div class="mb-3">
+                <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Status</label>
+                <select style="width: 100%; padding: 10px 10px;" name="status" class="form-select" aria-label="Default select example">
+                    <option selected>Publish</option>
+                    <option >Draft</option>
+            </select>
+            <button type="submit" class="btn-new" style="padding: 14px;width: 182px">Add New Coupon</button>
+            <!-- <a href="" class="btn-new" style="padding: 14px;display: flex;margin: 10px 3px;width: 182px;">Add New Coupon</a> -->
+            
+        </div>
+    </form>
+
+
+
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
+
+<%- include('./partials/footer'); %>

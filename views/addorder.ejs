@@ -1,0 +1,1611 @@
+<%- include('./partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+
+        </div>
+
+        <!-- <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-Coustomer-details-tab" data-bs-toggle="tab" data-bs-target="#nav-Coustomer-details" type="button" role="tab" aria-controls="nav-Coustomer-details" aria-selected="true">Coustomer Details</button>
+              <button class="nav-link" id="nav-Recipient-details-tab" data-bs-toggle="tab" data-bs-target="#nav-Recipient-details" type="button" role="tab" aria-controls="#nav-Recipient-details" aria-selected="false">Recipient Details</button>
+              <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-Coustomer-details" role="tabpanel" aria-labelledby="nav-Cousromer-Details-tab">...</div>
+            <div class="tab-pane fade" id="nav-Recipient-Details" role="tabpanel" aria-labelledby="nav-Recipient-Details-tab">hyyy</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+          </div> -->
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link" id="nav-coustomer-tab" data-bs-toggle="tab" data-bs-target="#nav-coustomer"
+                    type="button" role="tab" aria-controls="nav-coustomer" aria-selected="false">Coustomer
+                    Details</button>
+                <button class="nav-link" id="nav-recipient-tab" data-bs-toggle="tab" data-bs-target="#nav-recipient"
+                    type="button" role="tab" aria-controls="nav-recipient" aria-selected="false">Recipient
+                    Details</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-delivery"
+                    type="button" role="tab" aria-controls="nav-delivery" aria-selected="false">Delivery
+                    Details</button>
+                <button class="nav-link" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-product"
+                    type="button" role="tab" aria-controls="nav-product" aria-selected="false">Product</button>
+                <button class="nav-link" id="nav-details-tab" data-bs-toggle="tab" data-bs-target="#nav-payment"
+                    type="button" role="tab" aria-controls="nav-payment" aria-selected="false">Payment Options</button>
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-coustomer" role="tabpanel"
+                aria-labelledby="nav-coustomer-tab">
+                <form action="/addorder" method="POST">
+                    <div class="name">
+                        <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Name</label>
+                        <input type="text" name="name" style="width: 30%;" placeholder="....">
+                    </div>
+                    <div class="name">
+                        <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Email</label>
+                        <input type="email" name="email" style="width: 30%;" placeholder="....">
+                    </div>
+                    <div class="name">
+                        <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Phone
+                            no.</label>
+                        <select style="width: 5%;padding: 3px 0;" class="form-select"
+                            aria-label="Default select example">
+                            <option>+91</option>
+                            <option>+92</option>
+                            <option>+80</option>
+                            <option>+11</option>
+                            <option>+51</option>
+                            <option>+21</option>
+
+                        </select>
+                        <input type="text" name="phoneno" style="width: 25%; padding: 1px 0;">
+                    </div>
+                    <div class="name">
+                        <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Alternet Phone
+                            no.</label>
+                        <select style="width: 5%;padding: 3px 0;" class="form-select"
+                            aria-label="Default select example">
+                            <option>+91</option>
+                            <option>+92</option>
+                            <option>+80</option>
+                            <option>+11</option>
+                            <option>+51</option>
+                            <option>+21</option>
+
+                        </select>
+                        <input type="text" name="alternetno" style="width: 25%; padding: 1px 0;">
+                    </div>
+                    <div class="name">
+                        <label style="width: 100%;" for="exampleFormControlTextarea1"
+                            class="form-label">Password</label>
+                        <input type="password" name="password" style="width: 30%;" placeholder="....">
+                    </div>
+                    <div class="name">
+                        <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Confirm
+                            Password</label>
+                        <input type="password" name="cpassword" style="width: 30%;" placeholder="....">
+                    </div>
+                    <div class="e_btn">
+                        <!-- <button  class="btn btn-primary" style="width: 120px; margin-left: 10px;" > Save</button> -->
+                        <!-- <a href=""class="btn btn-primary" style="width: 120px; margin-left: 10px;">Save</a> -->
+                        <!-- <a href="#nav-recipient-tab"class="btn btn-primary" style="width: 120px; margin-left: 10px;">Next</a> -->
+
+                    </div>
+
+            </div>
+            <div class="tab-pane fade" id="nav-recipient" role="tabpanel" aria-labelledby="nav-recipient-tab">
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Name</label>
+                    <select style="width: 5%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                        <option>Mr</option>
+                        <option>Mrs</option>
+
+                    </select>
+                    <input type="text" name="aname" style="width: 25%; padding: 1px 0;">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Phone no.</label>
+                    <select style="width: 5%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                        <option>+91</option>
+                        <option>+92</option>
+                        <option>+80</option>
+                        <option>+11</option>
+                        <option>+51</option>
+                        <option>+21</option>
+
+                    </select>
+                    <input type="text" name="aphone" style="width: 25%; padding: 1px 0;">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Alternet Phone
+                        no.</label>
+                    <select style="width: 5%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                        <option>+91</option>
+                        <option>+92</option>
+                        <option>+80</option>
+                        <option>+11</option>
+                        <option>+51</option>
+                        <option>+21</option>
+
+                    </select>
+                    <input type="text" name="aphoneno" style="width: 25%; padding: 1px 0;">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Address</label>
+                    <input type="text" style="width: 30%;" placeholder="Line 1" name="address1">
+                    <input type="text" style="width: 30%;" placeholder="Line 2" name="address2">
+                    <input type="text" style="width: 30%;" placeholder="Line 3" name="address3">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Address
+                        Type</label>
+
+
+                    <input type="checkbox" style="width: 30px;" name="addresstype">
+                    <label for="" style="padding: 6px 7px;">Home Address</label>
+
+                    <input type="checkbox" style="width: 30px;" name="haddress">
+                    <label for="" style="padding: 6px 7px;">Office Address</label>
+
+                    <input type="checkbox" style="width: 30px;" name="other">
+                    <label for="" style="padding: 6px 7px;"> Other</label>
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Landmark</label>
+                    <input type="text" style="width: 30%;" name="landmark" placeholder="....">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> City
+                    </label>
+                    <select style="width: 30%;padding: 3px 0;" name="city" class="form-select"
+                        aria-label="Default select example">
+
+                        <option>Abhaneri</option>
+                        <option>Abu</option>
+                        <option>Abu Road</option>
+                        <option>Ajmer</option>
+                        <option>Aklera</option>
+                        <option>Alwar</option>
+                        <option>Amet</option>
+                        <option>Anta</option>
+                        <option>Anupgarh</option>
+                        <option>Asind</option>
+                        <option>Bagar</option>
+                        <option>Bakani</option>
+                        <option>Bali</option>
+                        <option>Balotra</option>
+                        <option>Bandikui</option>
+                        <option>Banswara</option>
+                        <option>Baran</option>
+                        <option>Bari</option>
+                        <option>Bari Sadri</option>
+                        <option>Barmer</option>
+                        <option>Basi</option>
+                        <option>Basni</option>
+                        <option>Baswa</option>
+                        <option>Bayana</option>
+                        <option>Beawar</option>
+                        <option>Begun</option>
+                        <option>Behror</option>
+                        <option>Bhadasar</option>
+                        <option>Bhadra</option>
+                        <option>Bharatpur</option>
+                        <option>Bhasawar</option>
+                        <option>Bhilwara</option>
+                        <option>Bhindar</option>
+                        <option>Bhinmal</option>
+                        <option>Bhiwadi</option>
+                        <option>Bhuma</option>
+                        <option>Bikaner</option>
+                        <option>Bilara</option>
+                        <option>Bissau</option>
+                        <option>Borkhera</option>
+                        <option>Bundi</option>
+                        <option>Chaksu</option>
+                        <option>Chechat</option>
+                        <option>Chhabra</option>
+                        <option>Chhapar</option>
+                        <option>Chhoti Sadri</option>
+                        <option>Chidawa</option>
+                        <option>Chittaurgarh</option>
+                        <option>Churu</option>
+                        <option>Dariba</option>
+                        <option>Dausa</option>
+                        <option>Deoli</option>
+                        <option>Deshnoke</option>
+                        <option>Devgarh</option>
+                        <option>Dhaulpur</option>
+                        <option>Didwana</option>
+                        <option>Dig</option>
+                        <option>Dungarpur</option>
+                        <option>Fatehpur</option>
+                        <option>Galiakot</option>
+                        <option>Ganganagar</option>
+                        <option>Gangapur</option>
+                        <option>Govindgarh</option>
+                        <option>Gulabpura</option>
+                        <option>Hanumangarh</option>
+                        <option>Hindaun</option>
+                        <option>Jahazpur</option>
+                        <option> Jaipur</option>
+                        <option>Jaisalmer</option>
+                        <option>Jaitaran</option>
+                        <option>Jalor</option>
+                        <option>Jalore</option>
+                        <option>Jhalawar</option>
+                        <option>Jhalrapatan</option>
+                        <option>Jhunjhunun</option>
+                        <option>Jobner</option>
+                        <option>Jodhpur</option>
+                        <option>Kaman</option>
+                        <option>Kanor</option>
+                        <option>Kapren</option>
+                        <option>Karanpur</option>
+                        <option>Karauli</option>
+                        <option>Kekri</option>
+                        <option>Keshorai Patan</option>
+                        <option>Khandela</option>
+                        <option>Khanpur</option>
+                        <option>Khetri</option>
+                        <option>Kishangarh</option>
+                        <option>Kota</option>
+                        <option>Kotputli</option>
+                        <option>Kuchaman</option>
+                        <option>Kuchera</option>
+                        <option>Kumher</option>
+                        <option>Kushalgarh</option>
+                        <optionan>Lachhmangarh Sikar</option>
+                            <option>Ladnun</option>
+                            <option>Lakheri</option>
+                            <option>Lalsot</option>
+                            <option>Losal</option>
+                            <option>Mahwah</option>
+                            <option>Makrana</option>
+                            <option>Malpura</option>
+                            <option>Mandal</option>
+                            <option>Mandalgarh</option>
+                            <option>Mandawar</option>
+                            <option>Mangrol</option>
+                            <option>Manohar Thana</option>
+                            <option>Manoharpur</option>
+                            <option>Meethari Marwar</option>
+                            <option>Merta</option>
+                            <option>Mundwa</option>
+                            <option>Nadbai</option>
+                            <option>Nagar</option>
+                            <option>Nagaur</option>
+                            <option>Nainwa</option>
+                            <option>Napasar</option>
+                            <option>Naraina</option>
+                            <option>Nasirabad</option>
+                            <option>Nathdwara</option>
+                            <option>Nawa</option>
+                            <option>Nawalgarh</option>
+                            <option>Neem ka Thana</option>
+                            <option>Nimaj</option>
+                            <option>Nimbahera</option>
+                            <option>Niwai</option>
+                            <option>Nohar</option>
+                            <option>Nokha</option>
+                            <optionr>Padampur</option>
+
+                                <option>Partapur</option>
+                                <option>Parvatsar</option>
+                                <option>Phalodi</option>
+                                <option>Phulera</option>
+
+                                <option>Pilibangan</option>
+                                <option>Pindwara</option>
+                                <option>Pipar</option>
+                                <option>Pirawa</option>
+                                <option>Pokaran</option>
+                                <option>Pratapgarh</option>
+                                <option>Pushkar</option>
+                                <option>Raipur</option>
+                                <option>Raisinghnagar</option>
+                                <option>Rajakhera</option>
+                                <option>Rajaldesar</option>
+                                <option>Rajgarh</option>
+                                <option>Rajsamand</option>
+                                <option>Ramganj Mandi</option>
+                                <option>Ramgarh</option>
+                                <option>Rani</option>
+                                <option>Ratangarh</option>
+                                <option>Rawatbhata</option>
+                                <option>Rawatsar</option>
+                                <option>Ringas</option>
+                                <option>Sadri</option>
+                                <option>Salumbar</option>
+                                <option>Sambhar</option>
+                                <option>Samdari</option>
+                                <option>Sanchor</option>
+                                <option>Sangaria</option>
+                                <option>Sangod</option>
+                                <option>Sardarshahr</option>
+                                <option>Sarwar</option>
+                                <option>Sawai Madhopur</option>
+                                <option>Shahpura</option>
+                                <option>Sheoganj</option>
+                                <option>Sikar</option>
+                                <option>Sirohi</option>
+                                <option>Siwana</option>
+                                <option>Sojat</option>
+                                <option>Sri Dungargarh</option>
+                                <option>Sri Madhopur</option>
+                                <option>Sujangarh</option>
+                                <option>Suket</option>
+                                <option>Sunel</option>
+                                <option>Surajgarh</option>
+                                <option>Suratgarh</option>
+                                <option>Takhatgarh</option>
+                                <option>Taranagar</option>
+                                <option>Tijara</option>
+                                <option>Todabhim</option>
+                                <option>Todaraisingh</option>
+                                <option>Tonk</option>
+                                <option>Udaipur</option>
+                                <option>Udpura</option>
+                                <option>Uniara</option>
+                                <option>Wer</option>
+                    </select>
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Pincode</label>
+                    <input type="text" style="width: 30%;" name="pincode" placeholder="....">
+                </div>
+                <div class="e_btn">
+                    <!-- <button class="btn btn-primary" style="width: 120px; margin-left: 10px;">Save</button> -->
+                    <!-- <a href=""class="btn btn-primary" style="width: 120px; margin-left: 10px;">Save</a> -->
+                    <!-- <a href="#nav-recipient-tab"class="btn btn-primary" style="width: 120px; margin-left: 10px;">Next</a> -->
+
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="nav-delivery" role="tabpanel" aria-labelledby="nav-delivery-tab">
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Delivery
+                        Date</label>
+                    <input type="date" style="width: 30%;" name="date" placeholder="dd/mm/yyyy">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Delivery Type
+                    </label>
+                    <select style="width: 30%;padding: 3px 0;" name="dtype" class="form-select"
+                        aria-label="Default select example">S
+                        <option>Select Delivery Type</option>
+                        <option>Standard Delivery</option>
+                        <option>Early Morning Delivery</option>
+                        <option>Midnight Delivery</option>
+                        <option>Fixed Time Delivery</option>
+
+
+                    </select>
+                </div>
+
+
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Select Time
+                        Slot</label>
+                    <select style="width: 30%;padding: 3px 0;" name="stime" class="form-select"
+                        aria-label="Default select example">
+                        <option>Select Time Here </option>
+                        <option>9 am – 10 am</option>
+                        <option>10 am – 11 am</option>
+                        <option>11 am – 12 pm </option>
+                        <option>12 pm – 1 pm</option>
+                        <option>1 pm – 2 pm</option>
+                        <option>2 pm – 3 pm</option>
+                        <option>3 pm – 4 pm</option>
+                        <option>4 pm – 5 pm</option>
+                        <option>5 pm – 6 pm</option>
+                        <option>6 pm – 7 pm</option>
+                        <option>7 pm – 8 pm</option>
+                        <option>8 pm – 9 pm</option>
+                        <option>9 pm – 10 pm</option>
+
+
+                    </select>
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Occasion
+                    </label>
+                    <select style="width: 30%;padding: 3px 0;" name="occasion" class="form-select"
+                        aria-label="Default select example">S
+                        <option>Birthday</option>
+                        <option>Marriage Anniversary</option>
+                        <option>Marriage</option>
+                        <option>Holi</option>
+                        <option>Rakshabandhan</option>
+                        <option>Diwali</option>
+
+
+                    </select>
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Message On Card
+                    </label>
+                    <input type="text" style="width: 20%; padding: 2px;">
+                    <select style="width: 30%;padding: 3px 0;" class="form-select" name="moc"
+                        aria-label="Default select example">S
+                        <option>View Templetes</option>
+                        <option>Wish you Happy Marriage Anniversary</option>
+                        <option>Welcome To The Family</option>
+                        <option> Happy Holi </option>
+                        <option> Happy Rakshabandhan</option>
+                        <option>Happy Diwali</option>
+
+
+                    </select>
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Message On Cake
+                    </label>
+                    <input type="text" name="mocake" style="width:30%; padding: 1px;">
+                </div>
+                <div class="name">
+                    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label"> Instruction
+                    </label>
+                    <input type="text" name="ins" style="width:30%; padding: 1px;">
+                </div>
+                <div class="e_btn">
+                    <!-- <button class="btn btn-primary" style="width: 120px; margin-left: 10px;">Save</button> -->
+                    <!-- <a href=""class="btn btn-primary" style="width: 120px; margin-left: 10px;">Save</a> -->
+                    <!-- <a href="#nav-recipient-tab"class="btn btn-primary" style="width: 120px; margin-left: 10px;">Next</a> -->
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-product" role="tabpanel" aria-labelledby="nav-product-tab">
+                <div class="box13">
+                    <div class="p_data">
+                        <div class="name_1">
+                            <label style="width: 20%;" for="exampleFormControlTextarea1"
+                                class="form-label">Category</label>
+                            <select style="width: 102%; padding: 10px 10px;" name="category"
+                                class="form-select categoriesSelect" aria-label="Default select example">
+                                <option selected>Select Category</option>
+                                <% category.forEach((cat)=> {
+                                    %>
+                                    <option value="<%= cat.name %>">
+                                        <%= cat.name %>
+                                    </option>
+                                    <% }) %>
+
+                            </select>
+                        </div>
+                        <div class="name_1">
+                            <label style="width: 94%; " for="exampleFormControlTextarea1" class="form-label">Sub
+                                Category</label>
+                            <select style="width: 102%; padding: 10px 10px;" name="subcategory" id="subCategory"
+                                class="form-select subCategoriesSelect" aria-label="Default select example">
+                                <option selected>Select Sub Category</option>
+
+                            </select>
+                        </div>
+
+                        <div class="name_1">
+                            <label for="exampleFormControlInput" class="form-label" style="margin-left:20px; width:94%">
+                                Product Name</label>
+                            <select style="width: 100%;padding: 3px 0;" id="productName"
+                                class="form-select productNameSelect" name="pname" aria-label="Default select example">
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="sku">
+
+                        <div class="p_price">
+                            <label for="exampleFormControlInput" class="form-label" style="margin-left:20px; width:94%">
+                                Product Image</label>
+                            <div class="image_select" id="imageSelect">
+
+                            </div>
+
+                        </div>
+                        <div class="p_price">
+                            <label for="exampleFormControlInput" class="form-label" style="margin-left:10px">
+                                Description</label>
+                            <textarea name="form-control" name="des" id="exampleFormControlTextarea1" cols="32"
+                                rows="2"></textarea>
+                        </div>
+
+                        <div class="p_price">
+                            <label for="exampleFormControlInput" class="form-label" style="margin-left:10px">
+                                SKU</label>
+                            <p style="margin-top: 10px;">CA001</p>
+                        </div>
+                        <div class="p_price">
+                            <label for="exampleFormControlTextarea1" class="form-label">Qty</label>
+                            <div class="p_pricee">
+                                <select style="width: 100%;padding: 3px 0;" name="qty" class="form-select"
+                                    aria-label="Default select example">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>5</option>
+                                    <option>10</option>
+
+                                </select>
+
+                                <button style="width: 35px;"><i class='bx bx-x'></i></button>
+
+
+                            </div>
+                        </div>
+                        <div class="p_price">
+                            <label for="exampleFormControlInput" class="form-label" style="margin-left:10px">
+                                Price</label>
+                            <p>RS. <select name="pprice" class="priceSelect" id="productPrice" style="width: 150px;"></select>
+                            </p>
+                        </div>
+                </div>
+
+
+                </div>
+                <div class="boxe13 " id="attributes">
+                </div>
+
+                <div class="name">
+                    <button class="btn btn-primary " id="more">Add More....</button>
+                </div>
+                <div class="coupon">
+
+                
+                <div class="name">
+                    <button type="submit" id="getTotal" class="btn btn-primary getTotal">Total Amount</button>
+                    <input type="text" id="totalAmount" class="total" style="width: 35%; padding: 4px 0;" name="total">
+                    <!-- <a href="" class="btn btn-primary">Apply Coupon</a> -->
+                   
+                </div>               
+                <div class="name">
+                    <button type="submit" class="btn btn-primary couponSelect">Apply Coupon</button>
+                    <input type="text" id="userCouponCode" class="code" style="width: 30%; padding: 4px 0;" name="code">
+                    <!-- <a href="" class="btn btn-primary">Apply Coupon</a> -->
+                   
+                </div>
+                <div class="p_discount_price">
+                    <label for="exampleFormControlInput" class="form-label" style="margin-left:10px">
+                        Discount Price</label>
+                    <p>RS. <input name="discount_p_price" class="discount_p_price" id="discountproductPrice"
+                            style="width: 150px;" />
+                    </p>
+                </div>
+            </div>
+                <div class="name">
+
+                </div>
+                <div class="name">
+                    <input type="text" style="width: 20%; padding: 4px 0;" name="card">
+                    <a href="" class="btn btn-primary">Apply Gift Card</a>
+
+                </div>
+                <!-- <button class="btn btn-primary" style="width: 100px; margin-left: 10px">Save</button> -->
+                <!-- <a href="" class="btn btn-primary" style="width: 100px; margin-left: 10px">save</a> -->
+            </div>
+            <div class="tab-pane fade" id="nav-payment" role="tabpanel" aria-labelledby="nav-payment-tab">
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Debit Card</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Credit Card</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Net Banking</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">UPI</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">PayTm</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">PayPal</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Amazon</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Wallet</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Cash On Delivery</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Cash Payment</label>
+                </div>
+                <div class="name">
+                    <input type="checkbox" style="width: 30px;    
+                    height: 20px;
+                    margin-top: 8px">
+                    <label for="" style="padding: 6px 7px;">Other</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 175px; margin-left: 10px">Create
+                    Order</button>
+                <!-- <a href="" class="btn btn-primary" style="width: 175px; margin-left: 10px">Create Order</a> -->
+                </form>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $('#more').on('click', function (e) {
+
+                        e.preventDefault()
+                        let value = $(this).val();
+                        let box = (
+                            "    <div class=' box13' id='box' >" +
+                            "<div class='atrValue p_data'>" +
+                            "<div class='name_1'>" +
+                            "<label style='width: 20%;' for='exampleFormControlTextarea1' class='form-label'>Category</label>" +
+                            "<select style='width: 102%; padding: 10px 10px;'  class='form-select categoriesSelect'aria-label='Default select example'>" +
+                            '<option selected>Select  Category</option>' +
+                            '<% category.forEach((cat)=> {%>' +
+
+                            ' <option value="<%= cat.name %>">' +
+                            '<%= cat.name %>' +
+                            '</option>' +
+                            ' <% }) %>' +
+
+                            "</select>" +
+                            "</div>" +
+                            "<div class='name_1'>" +
+                            "<label style='width: 94%; ' for='exampleFormControlTextarea1' class='form-label'>Sub Category</label>" +
+                            "<select style='width: 102%; padding: 10px 10px;'   name='subcategory' class='form-select subCategoriesSelect'aria-label='Default select example'>" +
+                            " <option selected>Select Sub Category</option>" +
+
+                            "</select>" +
+                            " </div>" +
+
+                            "<div class='name_1'>" +
+                            "<label for='exampleFormControlInput' class='form-label' style='margin-left:20px; width:94%''>Product Name</label>" +
+                            "<select style='width: 100%;padding: 3px 0;'  class='form-select productNameSelect' name='pname' aria-label='Default select example'>" +
+
+                            "</select>" +
+                            "</div>" +
+
+                            "</div>" +
+                            "<div class='sku'>" +
+
+                            " <div class='p_price'>" +
+                            " <label for='exampleFormControlInput' class='form-label' style='margin-left:20px; width:94%''>Product Image</label>" +
+                            "<div class='image_select_pic' id = 'image' >" +
+
+                            "</div>" +
+                            "</div>" +
+
+                            "<div class='p_price'>" +
+                            "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Description</label>" +
+                            "<textarea name='form-control' name='des' id='exampleFormControlTextarea1' cols='32' rows='2'></textarea>" +
+                            "</div>" +
+
+                            "<div class='p_price'>" +
+                            "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>SKU</label>" +
+                            "<p style='margin-top: 10px;'>CA001</p>" +
+                            "</div>" +
+                            "<div class='p_price'>" +
+                            "<label  for='exampleFormControlTextarea1' class='form-label'>Qty</label>" +
+                            "<div class='p_pricee'>" +
+                            "<select style='width: 100%;padding: 3px 0;' name='qty' class='form-select' aria-label='Default select example'>" +
+                            "<option >1</option>" +
+                            "<option >2</option>" +
+                            "<option >3</option>" +
+                            "<option >5</option>" +
+                            "<option >10</option>" +
+
+                            "</select>" +
+
+                            "  <button style='width: 35px;'><i class='bx bx-x'></i></button>" +
+
+
+                            "</div>" +
+                            "</div>" +
+                            "<div class='p_price'>" +
+                            "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>  Price</label>" +
+
+                            " <p>RS. <select name='pprice' class='priceSelect'  id='productDetailPrice'  style='width: 150px;'></select>" +
+
+                            "</div>" +
+                                 
+                           
+                            "<div class='p_price'>" +
+                                    " <button type='submit' id='substract' class='btn btn-danger substract ' style='width: 48px; height: 52px ;margin: 26px; '> R</button>" +
+                                "</div>" +
+                                "</div>" +
+                            "</div>"
+                        )
+                        console.log(box)
+                        $("#attributes").append(box);
+                        let lastInput = $(".atrValue").find("box");
+                        $(lastInput).val(value)
+                        $(".substract").on('click',function(e) {
+                          console.log($(box).remove()) ;
+                        //   $("#box").remove()
+                        
+                           
+                    })
+                    })
+                    
+
+                })
+            </script>
+
+            <script>
+                $(document).ready(function(){
+
+                    let totalAmount = 0;
+                    let amount      = 0;
+                        $("#getTotal").on('click',function(e){
+                            e.preventDefault();
+                            $(".priceSelect").each(function(){
+                                amount = $(this).val();
+                                totalAmount = Number(totalAmount) + Number(amount);
+                            })
+                            $("#totalAmount").val(totalAmount); 
+                        })
+                       
+                })
+                
+            </script>
+            <script>
+                // $(document).ready(function () {
+                //     var counter = 1
+                //     $("box").on('click', ".substract", function(){
+                //         if (counter <= 2){
+                //             alert("hello")
+                //             return false
+                //         }
+                //         $(this).closest(box).remove()
+                //     } )
+                    
+                //     })
+                
+            </script>
+
+            <script>
+
+                
+
+                $('.couponSelect').on('click', function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        method: 'GET',
+                        url: '/fetch-coupon',
+                        dataType: 'json',
+                        data: {
+                            titleId: $('#userCouponCode').val()
+                        },
+                        success: (res) => {
+                            // console.log({ "success Response": res })
+                            if (res.status == true) {
+                                let couponList = [];
+                                res.result.map((element) => {
+                                    couponList = `<input> ${element.code} </input>`
+
+                                })
+
+                                let discountprice = $("#totalAmount")
+                                let newPrice = Number(discountprice.val())
+                                console.log(newPrice)
+                                if (res.result[0].fixed) {
+                                    console.log(newPrice, typeof newPrice)
+                                    newPrice = newPrice - res.result[0].fixed
+                                } else {
+                                    console.log(newPrice, typeof newPrice, typeof res.result[0].percentage, res.result[0].percentage)
+                                    newPrice = newPrice - newPrice * res.result[0].percentage / 100
+                                }
+                                console.log(newPrice, typeof newPrice)
+                                $("#discountproductPrice").val(newPrice)
+
+                            }
+
+                        }
+
+
+                    })
+                })
+
+
+                // $('.productNameSelect').on('click', function (e) {                  
+                //     e.preventDefault();
+                //     $.ajax({
+                //         mrthod: 'GET',
+                //         url: '/fetch-imagedetails',
+                //         dataType: 'json',
+                //         data: {
+                //             nameId: $(this).val()
+                //         },
+                //         success: (res) => {
+                //            if(res.status ==  true) {
+                //             let imageList = [];
+                //             res.result.map((element) => {
+                //                 imageList = `<img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                //             })
+                //             $('.image_select').html(imageList)
+                //             console.log(imageList)
+                //            } else {
+                //             $('.image_select').html(`<div> ${res.result} </div>`)
+                //            }
+
+                //         },
+                //         error: (err) => {
+                //              console.log({ "Error Response": err })
+                //        }
+
+                //         })
+
+                //     })
+
+                $('.productNameSelect').on('click', function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        method: 'GET',
+                        url: '/fetch-imagedetails',
+                        dataType: 'json',
+                        data: {
+                            nameId: $(this).val()
+                        },
+                        success: (res) => {
+                            if (res.status == true) {
+                                // console.log("hello")
+                                // console.log(res.result.image)
+                                let imageList = [];
+                                res.result.map((element) => {
+                                    imageList = ` <img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                                })
+                                $('.image_select').html(imageList)
+                            } else {
+                                $('.image_select').html(`<div> ${res.result} </div>`)
+                            }
+
+                        },
+                        error: (err) => {
+                            console.log({ "Error Response": err })
+                        }
+
+                    })
+                })
+
+
+
+                // $('.productNameSelect').on('click', function (e) {
+                //     e.preventDefault();
+                //     $.ajax({
+                //         method: 'GET',
+                //         url: '/fetch-productsdetails',
+                //         dataType: 'json',
+                //         data: {
+                //             nameId: $(this).val()
+                //         },
+                //         success: (res) => {
+                //             // console.log({"Success Response": res})
+                //             if (res.status == true) {
+                //                 let imageList = [];
+                //                 let priceList = [];
+                //                 res.result.map((element) => {
+                //                     imageList = ` <img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                //                     priceList = `<option> ${element.regularprice} </option>`
+
+                //                 })
+                //                 $('.image_select').html(imageList)
+                //                 $('.priceSelect').html(priceList)
+                //                 console.log(imageList)
+                //             } else {
+                //                 $('.image_select').html(`<div> ${res.result} </div>`)
+                //                 $('priceSelect').html(`<div> ${res.result} </div>`)
+                //             }
+
+
+                //         },
+                //         error: (err) => {
+                //             console.log({ "Error Response": err })
+                //         }
+                //     })
+                // })
+
+                // $('.productNameSelect').on('click', function (e) {                  
+                //     e.preventDefault();
+                //     $.ajax({
+                //         mrthod: 'GET',
+                //         url: '/fetch-imagedetails/`',
+                //         dataType: 'json',
+                //         data: {
+                //             nameId: $(this).val()
+                //         },
+                //         success: (res) => {
+                //            if(res.status ==  true) {
+                //             console.log("hello")
+                //             let imageList = [];
+                //             res.result.map((element) => {
+                //                 imageList = `<img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                //             })
+                //             $('.image_select').html(imageList)
+                //             console.log(imageList)
+                //            } else {
+                //             $('.image_select').html(`<div> ${res.result} </div>`)
+                //            }
+
+                //         },
+
+                //         })
+
+                //     })
+
+                
+                $('.productNameSelect').on('click', function (e) {
+                    $('#productPrice option').remove()
+                    $('#discountproductPrice').val("")
+                    e.preventDefault();
+                    $.ajax({
+                        mrthod: 'GET',
+                        url: '/fetch-productsdetails',
+                        dataType: 'json',
+                        data: {
+                            nameId: $(this).val()
+                        },
+                        success: (res) => {
+                            // console.log({ "Success Response": res })
+                            $.each(res, function (key, value) {
+
+                                $('#productPrice')
+                                    .append($("<option></option>")
+                                        .attr("value", value.regularprice)
+                                        .text(value.regularprice));
+                                $('#discountproductPrice').val(value.regularprice)
+
+                            })
+
+                        },
+
+
+                    })
+                })
+
+
+                $('.subCategoriesSelect').on('click', function (e) {
+                    $('#productName option').remove()
+                    e.preventDefault();
+                    $.ajax({
+                        mrthod: 'GET',
+                        url: '/fetch-products',
+                        dataType: 'json',
+                        data: {
+                            nameId: $(this).val()
+                        },
+                        success: (res) => {
+                            // console.log({ "Success Response": res })
+                            $.each(res, function (key, value) {
+                                // console.log(value.categorytype)
+                                $('#productName')
+                                    .append($("<option></option>")
+                                        .attr("value", value.name)
+                                        .text(value.name));
+
+                            })
+
+                        },
+
+                        error: (err) => {
+                            console.log({ "Error Response": err })
+                        }
+                    })
+                })
+
+                // $('.subCategoriesSelect').on('click', function (e) {
+                //     e.preventDefault();
+                //     console.log($(this).val())
+                //     $.ajax({
+                //         method: 'GET',
+                //         url: '/fetch-producttypes',
+                //         dataType: 'json',
+                //         data: {
+                //             filtersubcategoryId: $(this).val()
+                //         },
+                //         success: (res) => {
+                //             console.log({ "Success Response": res })
+                //             if (res.status == true) {
+                //                 let filterList = [];
+                //                 res.result.map((element) => {
+                //                     filterList = `<option> ${element.category} </option>`
+                //                 })
+                //                 $('.filterSelect').html(filterList)
+                //             } else {
+                //                 $('.filterSelect').html(`<option> ${res.result} </option>`)
+                //             }
+                //         },
+                //         error: (err) => {
+                //             console.log({ "Error Response": err })
+                //         }
+                //     })
+                // })
+
+
+
+
+
+                $('.categoriesSelect').on('change', function (e) {
+                    $('#subCategory option').remove()
+                    e.preventDefault();
+
+                    $.ajax({
+                        method: 'GET',
+                        url: '/products/fetch-subcategories',
+                        dataType: 'json',
+                        data: {
+                            categoryId: $(this).val()
+                        },
+                        success: (res) => {
+
+                            $.each(res, function (key, value) {
+
+                                $('#subCategory')
+                                    .append($("<option></option>")
+                                        .attr("value", value.name)
+                                        .text(value.name));
+                            });
+
+                        },
+                        error: (err) => {
+                            console.log({ "Error Response": err })
+                        }
+                    })
+                })
+            </script>
+
+
+
+
+            <!-- <script>
+                $(document).ready(function () {
+                    $('.productNameSelect').on('change',function(){
+                        let productSelect = $('.productNameSelect')
+
+                       console.log($(this).parent().siblings(), "rrrrrrr");
+                        // let ss = div[0]
+                          $.ajax({
+                            method: 'GET',
+                                    url: '/fetch-imagedetails',
+                                    dataType: 'json',
+                                    data: {
+                                        nameId: $(this).val()
+                                    },
+                                    success: (res) =>{
+                                        
+                                      
+                                      
+                                        $.each(res, function (key, value) {
+                                             console.log(value.image,"rrrr")
+                                            $(fors)
+                                                // .append($(`<img src = "" >`)
+                                                    .attr("src",`<img src = "value.image" >`)
+                                                   
+                                        });
+
+
+                                    },
+
+                          })
+                          
+                                  
+
+
+
+                                      
+
+                                     
+                        })
+                    
+                        // alert($(this).val())
+
+                        $(productSelect).on('change',function(){
+                            //console.log($(this).siblings() .siblings('.name_1'))
+                            console.log($(this).parent().siblings(), "rrrrrrr");
+                            let ss = div[0]
+                            
+                        //    $(fors).find('div').remove()
+                           
+                            $.ajax({
+                                    method: 'GET',
+                                    url: '/fetch-imagedetails',
+                                    dataType: 'json',
+                                    data: {
+                                        nameId: $(this).val()
+                                    },
+                                    success: (res) => {
+                                        // console.log("hello")
+                                        // console.log(res);
+                                        //data = JSON.parse(res);
+                                        $.each(res, function (key, value) {
+                                            
+                                            $(fors)
+                                                // .append($(`<img src = "" >`)
+                                                    .attr("src", `<img src = "value.image" >`)
+                                                    
+                                        });
+
+                                    },
+                        })
+
+                            alert($(this).val())
+                        })
+                        
+                    }) 
+
+                    $('#more').on('click',function(){
+                        let productSelect = $('.productNameSelect')
+                        $(productSelect).on('change',function(){
+                          
+                           
+                            console.log($(this).parent().siblings(), "rrrrrrr");
+                        //  let ss = div[0]
+                           let fors = $(ss).find("div");
+                        //    $(fors).find('option').remove()
+                           console.log(fors, "rajatsoni")
+                        //   $(fors).find('option').remove()
+                            // alert($(this).closest('.productNameSelect').html());
+                            $.ajax({
+                                    method: 'GET',
+                                    url: '/fetch-imagedetails',
+                                    dataType: 'json',
+                                    data: {
+                                        nameId: $(this).val()
+                                    },
+                                    success: (res) => {                                       
+                                        $.each(res, function (key, value) {
+                                        
+                                            $(fors)
+                                                // .append($(`<img src = "" >`)
+                                                    .attr("src", `<img src = "value.image" >`)
+                                                    // .text(value.image);
+                                        });
+
+                                    },
+                       })
+                   })
+                        
+                   }) 
+                       
+                    
+            </script> -->
+
+
+            <script>
+                $(document).ready(function () {
+                    $('.productNameSelect').on('click', function () {
+
+                        let allImageSelect = $('.productNameSelect')
+                        $.ajax({
+                            method: 'GET',
+                            url: '/fetch-imagedetails',
+                            dataType: 'json',
+                            data: {
+                                nameId: $(this).val()
+                            },
+                            success: (res) => {
+                                // console.log("hello")
+                                // console.log(res);
+                                if (res.status == true) {
+                                // console.log("hello")
+                                // console.log(res.result.image)
+                                let addImageList = [];
+                                res.result.map((element) => {
+                                    addImageList = ` <img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                                })
+                                $('.image_select_pic').html(addImageList)
+                            } else {
+                                $('.image_select_pic').html(`<div> ${res.result} </div>`)
+                            }
+
+
+                            },
+                        })
+                        // alert($(this).val())
+
+                        $(allImageSelect).on('click', function () {
+
+                            $('#productDetailPrice option').remove()
+
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-imagedetails',
+                                dataType: 'json',
+                                data: {
+                                    nameId: $(this).val()
+                                },
+                                success: (res) => {
+
+                                    //data = JSON.parse(res);
+                                    if (res.status == true) {
+                                // console.log("hello")
+                                // console.log(res.result.image)
+                                let addImageList = [];
+                                res.result.map((element) => {
+                                    addImageList = ` <img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                                })
+                                $('.image_select_pic').html(imageList)
+                            } else {
+                                $('.image_select_pic').html(`<div> ${res.result} </div>`)
+                            }
+
+                                },
+                            })
+
+                            alert($(this).val())
+                        })
+
+                    })
+
+                    $('#more').on('click', function () {
+                        let allImageSelect = $('.productNameSelect')
+                        $(allImageSelect).on('change', function () {
+                           // $('#productDetailPrice option').remove()
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-imagedetails',
+                                dataType: 'json',
+                                data: {
+                                    nameId: $(this).val()
+                                },
+                                success: (res) => {
+
+                                    console.log(res,"hhhhrr")
+                                    if (res.status == true) {
+                                // console.log("hello")
+                                // console.log(res.result.image)
+                                let addImageList = [];
+                                res.result.map((element) => {
+                                    addImageList = ` <img src='${element.image}' style='height: 100px; width: 150px;'  >`
+                                })
+                                $('.image_select_pic').html(addImageList)
+                            } else {
+                                $('.image_select_pic').html(`<div> ${res.result} </div>`)
+                            }
+
+                                    // //data = JSON.parse(res);
+                                    // $.each(res, function (key, value) {
+                                    //     // console.log(value.categorytype)
+                                    //     $('#productDetailPrice')
+                                    //         .append($("<option></option>")
+                                    //             .attr("value", value.regularprice)
+                                    //             .text(value.regularprice));
+                                    // });
+
+                                },
+                            })
+                        })
+
+                    })
+
+                })
+            </script>
+
+
+            <script>
+                $(document).ready(function () {
+                    $('.productNameSelect').on('click', function () {
+                        let allPriceSelect = $('.productNameSelect')
+                        $('#productDetailPrice option').remove()
+
+
+                        $.ajax({
+                            method: 'GET',
+                            url: '/fetch-productsdetails',
+                            dataType: 'json',
+                            data: {
+                                nameId: $(this).val()
+                            },
+                            success: (res) => {
+                                // console.log("hello")
+                                // console.log(res);
+
+                                $.each(res, function (key, value) {
+
+                                    $('#productDetailPrice')
+                                        .append($("<option></option>")
+                                            .attr("value", value.regularprice)
+                                            .text(value.regularprice));
+                                });
+
+                            },
+                        })
+                        // alert($(this).val())
+
+                        $(allPriceSelect).on('click', function () {
+
+                            $('#productDetailPrice option').remove()
+
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-productsdetails',
+                                dataType: 'json',
+                                data: {
+                                    nameId: $(this).val()
+                                },
+                                success: (res) => {
+
+                                    //data = JSON.parse(res);
+                                    $.each(res, function (key, value) {
+                                        // console.log(productDetailPrice)
+                                        $('#productDetailPrice')
+                                            .append($("<option></option>")
+                                                .attr("value", value.regularprice)
+                                                .text(value.regularprice));
+                                    });
+
+                                },
+                            })
+
+                            alert($(this).val())
+                        })
+
+                    })
+
+                    $('#more').on('click', function () {
+                        let allPriceSelect = $('.productNameSelect')
+                        $(allPriceSelect).on('change', function () {
+                            $('#productDetailPrice option').remove()
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-productsdetails',
+                                dataType: 'json',
+                                data: {
+                                    nameId: $(this).val()
+                                },
+                                success: (res) => {
+
+                                    //data = JSON.parse(res);
+                                    $.each(res, function (key, value) {
+                                        // console.log(value.categorytype)
+                                        $('#productDetailPrice')
+                                            .append($("<option></option>")
+                                                .attr("value", value.regularprice)
+                                                .text(value.regularprice));
+                                    });
+
+                                },
+                            })
+                        })
+
+                    })
+
+                })
+            </script>
+
+
+
+            <script>
+                $(document).ready(function () {
+                    $('.subCategoriesSelect').on('click', function () {
+                        let allSubcSelect = $('.subCategoriesSelect')
+
+                        let select = $(this).parent().siblings();
+                        let ssss = select[1]
+
+                        $(fors).find('option').remove()
+
+                        //  alert($(this).closest('.productNameSelect'));
+                        $.ajax({
+                            method: 'GET',
+                            url: '/fetch-products',
+                            dataType: 'json',
+                            data: {
+                                nameId: $(this).val()
+                            },
+                            success: (res) => {
+                                // console.log("hello")
+                                // console.log(res);
+
+                                $.each(res, function (key, value) {
+
+                                    $(fors)
+                                        .append($("<option></option>")
+                                            .attr("value", value.name)
+                                            .text(value.name));
+                                });
+
+                            },
+                        })
+                        // alert($(this).val())
+
+                        $(allSubcSelect).on('click', function () {
+                            //console.log($(this).siblings() .siblings('.name_1'))
+                            let select = $(this).parent().siblings();
+                            let ssss = select[1]
+
+                            $(fors).find('option').remove()
+
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-products',
+                                dataType: 'json',
+                                data: {
+                                    nameId: $(this).val()
+                                },
+                                success: (res) => {
+
+                                    //data = JSON.parse(res);
+                                    $.each(res, function (key, value) {
+                                        // console.log(value.categorytype)
+                                        $(fors)
+                                            .append($("<option></option>")
+                                                .attr("value", value.name)
+                                                .text(value.name));
+                                    });
+
+                                },
+                            })
+
+                            alert($(this).val())
+                        })
+
+                    })
+
+                    $('#more').on('click', function () {
+                        let allSubcSelect = $('.subCategoriesSelect')
+                        $(allSubcSelect).on('change', function () {
+
+                            //  console.log($(this).parent().siblings(),"rajat")
+                            let select = $(this).parent().siblings();
+                            let ssss = select[1]
+                            let fors = $(ssss).find("select");
+                            $(fors).find('option').remove()
+                            //   console.log(fors, "rajatsoni")
+                            //   $(fors).find('option').remove()
+                            // alert($(this).closest('.productNameSelect').html());
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-products',
+                                dataType: 'json',
+                                data: {
+                                    nameId: $(this).val()
+                                },
+                                success: (res) => {
+
+                                    //data = JSON.parse(res);
+                                    $.each(res, function (key, value) {
+                                        // console.log(value.categorytype)
+                                        $(fors)
+                                            .append($("<option></option>")
+                                                .attr("value", value.name)
+                                                .text(value.name));
+                                    });
+
+                                },
+                            })
+                        })
+
+                    })
+
+                })
+            </script>
+
+
+
+
+            <script>
+                $(document).ready(function () {
+                    $('.categoriesSelect').on('change', function () {
+                        let allSelect = $('.categoriesSelect')
+
+                        let select = $(this).parent().siblings();
+                        let sss = select[0]
+                        $(fors).find('option').remove()
+                        // alert($(this).closest('.subCategoriesSelect'));
+                        $.ajax({
+                            method: 'GET',
+                            url: '/products/fetch-subcategories',
+                            dataType: 'json',
+                            data: {
+                                categoryId: $(this).val()
+                            },
+                            success: (res) => {
+                                // console.log("hello")
+                                // console.log(res);
+                                //data = JSON.parse(res);
+                                $.each(res, function (key, value) {
+                                    // console.log(value.categorytype)
+                                    $(fors)
+                                        .append($("<option></option>")
+                                            .attr("value", value.name)
+                                            .text(value.name));
+                                });
+                            },
+                        })
+                        // alert($(this).val())
+
+                        $(allSelect).on('change', function () {
+                            //console.log($(this).siblings('.name_1'))
+                            let select = $(this).parent().siblings();
+                            let sss = select[0]
+                            $(fors).find('option').remove()
+                            // alert($(this).closest('.subCategoriesSelect').html());
+                            $.ajax({
+                                method: 'GET',
+                                url: '/products/fetch-subcategories',
+                                dataType: 'json',
+                                data: {
+                                    categoryId: $(this).val()
+                                },
+                                success: (res) => {
+                                    $.each(res, function (key, value) {
+                                        // console.log(value.categorytype)
+                                        $(fors)
+                                            .append($("<option></option>")
+                                                .attr("value", value.name)
+                                                .text(value.name));
+                                    });
+                                },
+                            })
+                            alert($(this).val())
+                        })
+                    })
+
+                    $('#more').on('click', function () {
+                        let allSelect = $('.categoriesSelect')
+                        $(allSelect).on('change', function () {
+                            $()
+                            // console.log($(this).parent().siblings())
+                            let select = $(this).parent().siblings();
+                            let sss = select[0]
+                            let fors = $(sss).find("select");
+                            $(fors).find('option').remove()
+                            $.ajax({
+                                method: 'GET',
+                                url: '/products/fetch-subcategories',
+                                dataType: 'json',
+                                data: {
+                                    categoryId: $(this).val()
+                                },
+                                success: (res) => {
+                                    $.each(res, function (key, value) {
+                                        $(fors)
+                                            .append($("<option></option>")
+                                                .attr("value", value.name)
+                                                .text(value.name));
+                                    });
+                                },
+                            })
+                        })
+                    })
+                })
+            </script>
+
+            <%- include('./partials/footer'); %>

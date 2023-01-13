@@ -1,0 +1,294 @@
+<%- include('../partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Product</h2>
+                    <p>Home / Filter Type</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href="/addnewproduct"><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+
+            </div>
+            <div class="cat">
+                <div class="left-cat">
+                    <div class="all">
+                        <h2>All Filter Type</h2>
+                        <div class="select-box-wrap">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Bulk option</option>
+                                <option value="1">Delete</option>
+                            </select>
+                            <button type="button" class="btn btn-primary">Apply</button>
+                        </div>
+                      
+                        <div class="row">
+                            <dov class="col-12">
+                                <table id="example" class="display" style="width:100%">
+                                    <thead style="background-color: #0A2558; color:white;">
+                                        <tr>
+                                            <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                            <td style="padding: 10px;">id</td>
+                                            <td>Name</td>
+                                            <td>Category</td>
+                                            <td>Subcategory</td>
+                                            <td>image</td>
+                                            <td>Status</td>
+                                            <td>Action</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% if(filterType.length>0){
+                                            filterType.forEach(function(data){
+                                            %>
+                                            <tr>
+                                                <td style="padding: 10px;"><input type="checkbox"></td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.id %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.name %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.filtercategory %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.filtersubcategory %>
+                                                </td>
+                                                <td style="padding: 10px;"><img src="<%=data.image %> "
+                                                        style="height: 100px ;width: 100px; " alt="image"></td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.status %>
+                                                </td>
+
+                                                <td style="padding: 30px; display: flex; ">
+                                                    <a href="/products/producttypes/delete/<%= data.id %>"
+                                                        style="margin: 5px;" class="btn btn-danger"><i
+                                                            class='bx bx-message-square-x'></i></a>
+                                                    <a href="/products/producttypes/edit/<%= data.id %>"
+                                                        style="margin: 5px;" class="btn btn-primary"><i
+                                                            class='bx bxs-edit-alt'></i></a>
+                                                    <!-- <button type="button" class="btn btnDelete btn-danger"><i class='bx bx-message-square-x'></i></button>
+                                            <button type="button" class="btn btn-primary"><i class='bx bxs-edit-alt'></i></button> -->
+                                                </td>
+                                            </tr>
+                                            <% }) } else{ %>
+                                                <tr>
+
+                                                    <td colspan="5">No Data Found</td>
+                                                </tr>
+                                                %>
+                                                %>
+                                                <% } %>
+                                    </tbody>
+                                </table>
+
+                                <div class="pagination">
+                                    <ul class="pagination justify-content-center">
+                                     
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="right-cat">
+                        <div class="new-cat">
+                            <h3>Add Filter Type</h3>
+                        </div>
+                        <form action="/products/producttypes" method="post">
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                                    placeholder="Name" style="width: 450px;">
+
+                            </div>
+                            <div class="mb-3">
+                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                    class="form-label">Category</label>
+                                <select style="width: 100%; padding: 10px 10px;" name="filtercategory"
+                                    class="form-select categoriesSelect" aria-label="Default select example">
+
+                                    <% categories.forEach((cat)=> {
+                                        %>
+                                        <option value="<%= cat.name %>">
+                                            <%= cat.name %>
+                                        </option>
+                                        <% }) %>
+
+                                </select>
+
+                                <div class="mb-2">
+                                    <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
+                                        class="form-label">Sub Category</label>
+                                    <select style="width: 100%; padding: 10px 10px;" id="subCategory"
+                                        name="filtersubcategory" class="form-select subCategoriesSelect"
+                                        aria-label="Default select example">
+
+
+                                    </select>
+                                </div>
+                                <div>
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label"
+                                            style="margin-top: 20px; width: 100%;">Image</label>
+                                        <input type="file" name="image">
+                                    </div>
+                                    <div class="name" <h7 style="margin-top: 10px;">Recommended image size is 200x200
+                                        </h7>
+                                    </div>
+                                    <div class="name" <label for="exampleFormControlTextarea1" class="form-label"
+                                        style="width: 100%;">Status</label>
+                                        <select class="form-select" name="status" aria-label="Default select example">
+                                            <option selected>Publish</option>
+                                            <option>Draft</option>
+                                        </select>
+                                        <div class="name">
+                                            <button class="btn-new">Add New</button>
+                                        </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+               
+
+
+                    <script>
+                        $(document).ready(function () {
+                            $(".btnDelete").on('click', function () {
+                                $(this).closest("tr").remove();
+                            })
+
+
+
+                            $('.subCategoriesSelect').on('click', function (e) {
+                                
+                                e.preventDefault();
+                                console.log($(this).val())
+                                $.ajax({
+                                    method: 'GET',
+                                    url: '/fetch-producttypes',
+                                    dataType: 'json',
+                                    data: {
+                                        filtersubcategoryId: $(this).val()
+                                    },
+                                    success: (res) => {
+                                        console.log({ "Success Response": res })
+                                        if (res.status == true) {
+                                            let filterList = [];
+                                            res.result.map((element) => {
+                                                filterList = `<option> ${element.name} </option>`
+                                            })
+                                            $('.filterSelect').html(filterList)
+                                        } else {
+                                            $('.filterSelect').html(`<option> ${res.result} </option>`)
+                                        }
+                                    },
+                                    error: (err) => {
+                                        console.log({ "Error Response": err })
+                                    }
+                                })
+                            })
+
+
+
+                            // $('.categoriesSelect').on('change', function (e) {
+                            //     e.preventDefault();
+                            //     console.log($(this).val())
+                            //     $.ajax({
+                            //         method: 'GET',
+                            //         url: '/products/fetch-subcategories',
+                            //         dataType: 'json',
+                            //         data: {
+                            //             categoryId: $(this).val()
+                            //         },
+                            //         success: (res) => {
+                            //             console.log({ "Success Response": res })
+
+                            //             if (res.status == true) {
+                            //                 let subCategoriesList = [];
+                            //                 res.result.map((element) => {
+                            //                     subCategoriesList = `<option> ${element.name} </option>`
+                            //                 })
+                            //                 $('.subCategoriesSelect').html(subCategoriesList)
+                            //             } else {
+                            //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
+                            //             }
+                            //         },
+                            //         error: (err) => {
+                            //             console.log({ "Error Response": err })
+                            //         }
+                            //     })
+                            // });
+
+                            $('.categoriesSelect').on('change', function (e) {
+                                $('#subCategory option').remove()
+                                e.preventDefault();
+                                console.log($(this).val())
+                                $.ajax({
+                                    method: 'GET',
+                                    url: '/products/fetch-subcategories',
+                                    dataType: 'json',
+                                    data: {
+                                        categoryId: $(this).val()
+                                    },
+                                    success: (res) => {
+                                        console.log("hello")
+                                        console.log(res);
+                                        //data = JSON.parse(res);
+                                        $.each(res, function (key, value) {
+                                            console.log(value.categorytype)
+                                            $('#subCategory')
+                                                .append($("<option></option>")
+                                                    .attr("value", value.name)
+                                                    .text(value.name));
+                                        });
+
+                                    },
+                                    error: (err) => {
+                                        console.log({ "Error Response": err })
+                                    }
+                                })
+                            })
+                        })
+                    </script>
+
+
+
+<!-- <script
+type="text/javascript"
+charset="utf8"
+src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+></script>
+<script
+type="text/javascript"
+charset="utf8"
+src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+$(function() {
+$("#example").dataTable();
+});
+</script> -->
+
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
+
+<%- include('../partials/footer'); %>

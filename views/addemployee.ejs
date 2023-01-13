@@ -1,0 +1,143 @@
+<%- include('./partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Dashboard</h2>
+                    <p>Home / Add Employee Type</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="all_e">
+            <h3 style="margin-left: 17px;"> Add employee</h3>
+        </div>
+        <form action="/employee" method="POST">
+        <div class="e_visit">
+            <div class="e_name">
+                <div class="e_datails">
+                    <label for="employeedetails">First Name</label>
+                    <input type="text" name="firstname" class="form-control">
+                </div>
+                <div class="e_datails">
+                    <label for="employeedetails" class="form-label">Last Name</label>
+                    <input type="text" name="lastname" class="form-control">
+                </div>
+                
+            </div>
+            <div class="e_visit">
+                <div class="e_name">
+                    <div class="e_datails">
+                        <label for="employeedetails">User Name</label>
+                        <input type="text" name="username" class="form-control">
+                    </div>
+                    <div class="e_datails">
+                        <label for="employeedetails" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    
+                </div>
+                <div class="e_visit">
+                    <div class="e_name">
+                        <div class="e_datails">
+                            <label for="employeedetails">Password</label>
+                            <input type="text" name="password" class="form-control">
+                        </div>
+                        <div class="e_datails">
+                            <label for="employeedetails" class="form-label">Confirm Password</label>
+                            <input type="text" name="cpassword" class="form-control">
+                        </div>
+                        
+                    </div>
+                    <div class="e_visit">
+                        <div class="e_name">
+                            <div class="e_datails">
+                                <label for="employeedetails">Employee Id</label>
+                                <input type="text" name="eid" class="form-control">
+                            </div>
+                            <div class="e_datails">
+                                <label for="employeedetails" class="form-label">Joining Date</label>
+                                <input type="date" name="jdate" class="form-control">
+                            </div>
+                            
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_name">
+                                <div class="e_datails">
+                                    <label for="employeedetails">Phone</label>
+                                    <input type="text" name="phoneno" class="form-control">
+                                </div>
+                                <div class="e_datails">
+                                    <label for="employeedetails" class="form-label">Company Name</label>
+                                    <input type="text" name="company" class="form-control">
+                                  
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_name">
+                                <div class="e_datails">
+                                    <label for="employeedetails">Department</label>
+                                    <input type="text" name="deoartment" class="form-control">
+                                </div>
+                                <div class="e_datails">
+                                    <label for="employeedetails" class="form-label">Desigination</label>
+                                    <input type="text" name="desigination" class="form-control">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Add Role</label>
+                              <select name="rolegroup" id=""style="width: 100%; padding: 10px 10px;" >
+                                <% sampleData.forEach((cat) => {
+                                    %>
+                                        <option value="<%= cat.rolegroup %>"><%= cat.rolegroup %></option> 
+                                    <%
+                                }) %>
+                              </select>
+                            </div> 
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Upload Image</label>
+                                <input type="file" name="image" class="form-control" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Salary</label>
+                                <input type="text" class="form-control" name="salary" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Salary Slip</label>
+                                <input type="file" class="form-control" name="salaryslip" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <!-- <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Date Of Joining</label>
+                                <input type="date" class="form-control" name="jdate" style="margin-left: 3px;">
+                            </div> 
+                        </div> -->
+                        <div >
+                            <button type="submit"  class="btn btn-primary" style="margin-left: 25px; width:150px "> Submit</button>
+                            <!-- <a href="" type="submit"  class="btn btn-primary" style="margin-left: 25px; width:150px ">Submit</a> -->
+                        </form>
+     </div>
+
+            <%- include('./partials/footer'); %>

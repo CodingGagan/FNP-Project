@@ -1,0 +1,77 @@
+<%- include('./partials/header'); %>
+
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+    <div class="dash">
+        <div class="home">
+            <div class="hp">
+                <h2> View Partner Inquary</h2>
+                <p>Home /View Partner </p>
+            </div>
+            <div class="hp-1">
+                <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+            </div>
+        </div>
+    </div>
+    <div class="all">
+        <h2>View Partner</h2>
+        <div class="select-box-wrap">
+            <a href="/addpartner" class="btn btn-primary" style="margin-left: 1200px; padding: 10px 25px;">Add Partner</a>
+
+        </div>
+    </div>
+    <div class="banner_table" style="margin-top: 25px;">
+        <div class="banner_table_data">
+            <table class="display" style="width:99% ; height: 35px; ">
+                <thead  style="background-color: #0A2558; color:white; margin: 5px 10px; ">
+                    <tr>
+                        <td style="padding: 10px;"><input type="checkbox" style="margin-left: 15px; "></td>
+                        <td >Name </td>
+                        <td>Email</td>                   
+                        <td>Details</td>
+                    </tr>
+                </thead>
+                <tbody style="padding: 10px;">
+                    <%
+                    if(sampleData.length >0){
+                        sampleData.forEach(function(data){                                  
+                            %>
+                            <tr>
+                                <td style="padding: 10px;"><input type="checkbox" style="margin-left: 15px; "></td>
+                                <td style="padding: 10px;"><%=data.name %></td>
+                                <td style="padding: 10px;"><%=data.email %></td>
+                                <td style="padding: 10px;"><%=data.details %></td>
+                               
+                                
+                            </tr>
+                            <%
+                        })
+                    } 
+                    else{
+                    %>
+                        <tr>
+                            
+                            <td colspan="5">No Data Found</td>
+                        </tr>
+                    %> 
+                    <%   
+                    }
+                    %>  
+                </tbody>
+
+            </table>
+        </div>
+     </div>
+
+</div>
+
+
+
+<%- include('./partials/footer'); %>

@@ -1,0 +1,144 @@
+<%- include('./partials/header'); %>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>All Faq</h2>
+                <p>Home / Faq</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+               
+            </div>   
+        <div class="cat">
+            <div class="left-cat">
+                <div class="all">
+                    <h2>All Faq</h2>
+                <div class="select-box-wrap">
+                    <select class="form-select" aria-label="Default select example">
+                            <option selected>Bulk option</option>
+                            <option value="1">Delete</option>
+                    </select>
+                    <button type="button" class="btn btn-primary">Apply</button>
+            </div>
+            <div class="datatable">
+                    
+            </div>
+            <div class="row">
+                <dov class="col-12">
+                    <table id="example" class="display" style="width:100%">
+                        <thead style="background-color: #0A2558; color:white;">
+                                <tr>
+                                        <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                        <td style="padding: 10px;">id</td>
+                                        <td>Name</td>
+                                        <td>Status</td>
+                                        <td>Action</td>
+                                </tr>
+                        </thead >
+                        <tbody style="padding: 10px;">
+                            <%
+                            if(sampleData.length >0){
+                                sampleData.forEach(function(data){                                  
+                                    %>                               
+                                    <tr>
+                                        <td style="padding: 10px;"><input type="checkbox" ></td>
+                                        <td style="padding: 10px;"><%=data.id %></td>
+                                        <td style="padding: 10px;"><%=data.title %></td>
+                                        <td style="padding: 10px;"> 
+                                            <span class="alert alert-warning">
+                                                <%=data.status %>
+                                            </span>
+                                        </td>  
+                                        <td style="padding: 10px;">
+                                            <a href="/faq/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a> 
+                                            <a href="/faq/edit/<%= data.id %>"  class="btn btn-primary" ><i class='bx bxs-edit-alt'></i></a> 
+                                        </td >
+                                                                          
+                                    </tr>
+                                    <%
+                                })
+                            } 
+                            else{
+                            %>
+                                <tr>
+                                    
+                                    <td colspan="5">No Data Found</td>
+                                </tr>
+                            %> 
+                            <%   
+                            }
+                            %>                                                                      
+                        </tbody>
+
+                    </table>
+                        
+                    <div class="pagination">
+                        
+                    </div>
+            </div>
+        </div>
+                
+            <div class="right-cat">
+                <div class="new-cat">
+                    <h3>Add Faq</h3>
+                </div>
+                <form action="/faq" method="POST" >
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Title</label>
+                    <input type="text"  class="form-control" name="title" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">                  
+                </div>          
+                <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Tags Description</label>
+                    <textarea class="form-control" name="description" id="editor" rows="10"></textarea>
+                </div>
+                <div class="name">
+                    <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+                <select class="form-select" aria-label="Default select example"  name="status">
+                    <option selected>Publish</option>
+                    <option >Draft</option>
+            </select>
+                </div>
+                
+            <button class="btn-new" onclick="getData()" type="submit">Add New Faq</button>
+        </div>
+    </form>
+  
+            
+        </div>
+
+
+        
+        <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
+
+
+
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+referrerpolicy="origin"></script>
+
+<script>
+tinymce.init({
+    selector: 'textarea#editor',
+    skin: 'bootstrap', //The TinyMCE Bootstrap skin
+    plugins: 'lists, link, image, media',
+ 
+});
+</script>
+
+<%- include('./partials/footer'); %>

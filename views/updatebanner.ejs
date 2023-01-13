@@ -1,0 +1,28 @@
+<%- include('./partials/header'); %>
+
+<div class="banner">
+     <div class="banner_name">
+        <h5> Banner </h5>
+     </div>
+     <form action="" method="POST">
+     <div class="banner_details">
+            <div class="banner_data">
+                <h6>Add New </h6>
+                <div class="name_6">
+                    <label for="exampleFormControlInput" class="form-label" style="margin: 5px 5px;">Heading</label>
+                    <input type="text" name="heading" value="<%= sampleData[0].heading %>" placeholder="heading" class="form-control" >
+                   
+                </div>
+              
+                <div class="name_6">
+                    <input type="file" name="image"  >       
+                </div>
+                <div class="name_6">
+                    <button type="submit" class="btn btn-primary" style="width: 14%; margin: 10px 3px;" >Save</button>    
+                </div>
+            </div>
+        </form>
+     </div>
+     </div>
+
+     <%- include('./partials/footer'); %>

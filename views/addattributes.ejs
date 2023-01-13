@@ -1,0 +1,76 @@
+<%- include('./partials/header'); %>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Attribute</h2>
+                <p>Home / Attribute</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div> 
+            </div>      
+        </div>
+        <div class="all">
+            <h2>All Attribute</h2>
+        <div class="select-box-wrap">
+            <select class="form-select" aria-label="Default select example">
+                    <option selected>Bulk option</option>
+                    <option value="1">Delete</option>
+            </select>
+            <button type="button" class="btn btn-primary">Apply</button>
+            <a href="/attributes" class="btn btn-primary" style="margin-left: 1250px;"> Attributes</a>
+    </div>
+
+    <div class="boxe1">
+        <form action="/attribute" method="POST">
+        <div class="box1">
+            <div class="b_color">
+                <label for="exampleFormControlInput" class="form-label"
+                    style="margin-left:10px">
+                   Title</label>
+                <input type="text" class="form-control" name="title" id="exampleFormControlInput1"
+                   
+                    style="width:200px; margin-left: 10px; color: solid black ">
+            </div>
+            <div class="b_color">
+                <label for="exampleFormControlInput" class="form-label"
+                    style="margin-left:10px">
+                   Terms</label>
+                <input type="text" class="form-control" name="terms" id="exampleFormControlInput1"
+                    
+                    style="width:200px; margin-left: 10px; color: solid black ">
+            </div>
+            <div class="b_price">
+                <label for="exampleFormControlInput" class="form-label"
+                    style="margin-left:10px">
+                    Additional Price Amount</label>
+                <input type="text" class="form-control" name="price" id="exampleFormControlInput1"
+                     style="width:200px; margin-left: 10px; color: solid black ">
+            </div>
+            <div class="b_button">
+                <label for="exampleFormControlInput" class="form-label"
+                    style="margin-left:10px">
+                    Attribute image</label>
+                    <input type="file" class="btn btn-info" style="display: grid; margin-left: 10px;
+                    width: 262px;">
+                <!-- <button type="file" class="btn btn-info" -->
+                    <!-- style=" display: flex; margin-left: 10px;">Upload Image</button> -->
+                <h9 style="margin-top:5px; ">Recommended image size is 200x200</h>
+            </div>
+            <div class="name">
+                    <button type="submit" style="margin-top: 15px;" class="btn btn-info" >Submit</button>
+            </div>
+        </div>
+    </form>
+    </div>
+
+<%- include('./partials/footer'); %>

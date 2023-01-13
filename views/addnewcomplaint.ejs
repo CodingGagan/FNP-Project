@@ -1,0 +1,86 @@
+<%- include('./partials/header'); %>
+<div class="dashboard">
+  <div class="icon">
+    <i class='bx bxl-xing'></i>
+    <div class="icon1">
+        <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+        <a href=" ">Log out </a>
+    </div>
+
+</div>
+      <div class="dash">
+          <div class="home">
+              <div class="hp">
+                  <h2>Dashboard</h2>
+              <p>Home / New Complaint</p>
+              </div>
+              <div class="hp-1">
+                  <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+              </div>
+          </div>       
+      </div>
+        <div class="all">
+            <h2 >New Complaint</h2>
+            <a href="/addctype"  class="btn btn-primary" style="margin-left: 1160px;">Add Complaint Type</a>
+        </div>
+    <div class="input" style="overflow-y: scroll ;">
+      <form action="/complaint" method="POST">
+    <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Order No.</label>
+        <input type="text" name="orderno" class="form-control" id="exampleFormControlInput1" placeholder="4*****">
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Complaint No.</label>
+        <input type="text" name="complaintno" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+      
+      <div class="mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Complaint Type</label>
+        <select style="height: 50px;" name="complainttype" class="form-control" >
+        <option>Product Quality</option>
+        <option>Wrong Product</option>
+        <option>Not Deliver</option>
+        <option>Delivery Timing</option>
+        <option>Cake Image</option>
+        <option>Custom</option>
+        <option>Other</option>
+        </select>
+    </div>
+    <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Created On</label>
+        <input type="datetime" name="createdon" class="form-control" id="exampleFormControlInput1" placeholder="dd/mm/yyyy">
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Resolve On</label>
+        <input type="datetime" name="resolveon" class="form-control" id="exampleFormControlInput1" placeholder="dd/mm/yyyy">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Vendor Name</label>
+        <input type="text" name="vendername" class="form-control" id="exampleFormControlInput1" placeholder="xxxxx">
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Forward To Assigned Vendor</label>
+        <select style="height: 50px;" name="assigned" class="form-control">
+        <option >Yes</option>
+        <option >No</option>
+        </select>
+    </div>
+    <div class="mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Image</label>
+        <input type="file" class="form-control" name="image" id="exampleFormControlInput1" >
+      </div>
+      <div class="mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+        <select style="height: 50px;" name="status" class="form-control">
+        <option >Open</option>
+        <option >Close</option>
+        </select>
+    </div>
+      <div class="mb-2">
+        <button type="submit" class="btn btn-primary" style="margin-top: 15px; padding: 10px 35px;">Submit</button>
+      </div>
+    </form>
+ 
+</div>
+      
+<%- include('./partials/footer'); %>

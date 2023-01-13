@@ -1,0 +1,103 @@
+<%- include('./partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Vendor Manage</h2>
+                    <p>Home / Vender Manage</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="all">
+            <h2>All Vendor Manage</h2>
+            <div class="select-box-wrap">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Bulk option</option>
+                    <option value="1">Delete</option>
+                </select>
+                <button type="button" class="btn btn-primary">Apply</button>
+            </div>
+            <div class="datatable">
+                <label class="class-label">
+                    <div class="select-user">
+                        <span>show</span>
+                        <select name="all_user_table_length"
+                            class="custom-select custom-select-sm form-control form-control-sm"
+                            aria-label="all_user_table">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span> enteries </span>
+                    </div>
+                    <div class="search-box">
+                        <span style="padding: 10px;">Search</span>
+                        <input type="text">
+                    </div>
+
+                </label>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table id="example" class="display" style="width:100%">
+                        <thead style="background-color: #0A2558; color:white;">
+                            <tr>
+                                <th style="width:15%;padding: 10px;"><input type="checkbox" style="margin-left: 10px; ">
+                                </th>
+                                <th style="width:15%;padding: 10px;">Vender id</th>
+                                <th style="width:15%;padding: 10px;">Vender name</th>
+                                <th style="width:15%;padding: 10px;"> Vender email</th>
+                                <th style="width: 40%;padding: 10px;">Action</th>
+                                </t>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> <input type="checkbox" style="margin-left: 10px; "></td>
+                                <td style="padding:20px ;">33</td>
+                                <td>Prateek</td>
+                                <td>prateek@gmail.com</td>
+                                <td style="padding: 20px;"> <button type="button" class="btn btn-danger"><i
+                                            class='bx bx-message-square-x'></i></button>
+                                    <button type="button" class="btn btn-primary"><i
+                                            class='bx bxs-edit-alt'></i></button>
+                                    <button type="button" class="btn btn-info">Change Password </button>
+                                    <a href="/home" class="btn btn-warning" target="_blank" >Vender Login</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td> <input type="checkbox" style="margin-left: 10px; "></td>
+                                <td style="padding:20px ;">33</td>
+                                <td>Rajat</td>
+                                <td>soni@gmail.com</td>
+                                <td style="padding: 20px;"> <button type="button" class="btn btn-danger"><i
+                                            class='bx bx-message-square-x'></i></button>
+                                    <button type="button" class="btn btn-primary"><i
+                                            class='bx bxs-edit-alt'></i></button>
+                                    <button type="button" class="btn btn-info">Change Password </button>
+                                    <a href="/home" class="btn btn-warning">Vender Login</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                </div>
+            </div>
+            <div>
+            </div>
+
+
+
+            <%- include('./partials/footer'); %>

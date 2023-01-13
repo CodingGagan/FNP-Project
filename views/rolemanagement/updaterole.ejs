@@ -1,0 +1,97 @@
+<%- include('../partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Role Group </h2>
+                    <p>Home / add Role </p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="all">
+            <h2>Role  Group</h2>
+            <div class="select-box-wrap">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Bulk option</option>
+                    <option value="1">Delete</option>
+                </select>
+            </div>
+        </div>
+        <div class="role">
+            <div class="role_name">
+                <%
+        if(sampleData.length >0){
+            sampleData.forEach(function(data){                                  
+                %>
+                <%
+            })
+        } 
+        else{
+        %>
+        %> 
+        <%   
+        }
+        %>  
+                <form action="" method="post">
+                <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Role Group Name</label>
+                    <input type="text" name="rolegroup"  value="<%= sampleData[0].rolegroup %>" class="form-control" id="exampleFormControlInput1" >
+                </div>
+                <div class="access">
+                    <div class="name">
+                        <label for="exampleFormControlInput" class="form-label">Access Permission</label>
+                        <div class="access_name"  >
+                            <input type="checkbox">
+                            <a href="" class="btn btn-primary" >User</a>
+                        </div>                    
+                    </div>
+                    <div class="name">
+                        <div class="access_name">
+                            <input type="checkbox">
+                            <a href="" class="btn btn-primary" >Analytic</a>
+                        </div>
+                    </div>
+                    <div class="name">
+                        <div class="access_name">
+                            <input type="checkbox">
+                            <a href="" class="btn btn-primary" >Coupon</a>
+                        </div>
+                    </div>
+                    <div class="heading">
+                        <h8>Select All/ Unselect All</h8>
+                    </div>
+                    <div class="name">
+                        <label for="exampleFormControlTextarea1" class="form-label"> Select Status</label>
+                        <select class="form-select" name="status" value="<%= sampleData[0].status %>" aria-label="Default select example" style="width: 250px; margin-left: 20px;" name="status">
+                            <option selected>Enable</option>
+                            <option >Desable</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 14%; margin: 15px 10px;" >Submit Group</button>
+            </div>
+        </form>
+            
+        </div>
+            
+        
+
+    </div>
+
+
+
+    <%- include('../partials/footer'); %>

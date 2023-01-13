@@ -1,0 +1,117 @@
+
+<%- include('../partials/header'); %>
+<form action="" method="POST" >  
+    <%
+    if(sampleData.length >0){
+        sampleData.forEach(function(data){                                  
+            %>
+            <%
+        })
+    } 
+    else{
+    %>
+    %> 
+    <%   
+    }
+    %> 
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Name</label>
+        <input type="text" required value="<%= sampleData[0].name %>" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">                 
+    </div>
+    <div class="name">
+        <label for="exampleFormControlTextarea1" class="form-label" style="width: 100%;">Category Type</label>
+    <select class="form-select" name="category" value="<%= category[0].category %> aria-label="Default select example" style="width: 32%;" >
+        <% category.forEach((cat) => {
+            %>
+                <option value="<%= cat.name %>"><%=cat.name  %></option> 
+            <%
+        }) %>
+</select>
+
+    </div>
+    <label for="exampleFormControlTextarea1" class="form-label" style="margin-top: 20px;">Image</label>
+    <!-- <button type="file" class="btn btn-info">Upload Image</button> -->
+    <input type="file" name="image" value="<%= sampleData[0].image %>"> <br>
+    <h7 style="margin-top: 10px;">Recommended image size is  200x200</h7>
+    <div>
+    <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+    <select class="form-select" aria-label="Default select example"  name="status">
+        <option selected>Publish</option>
+        <option >Draft</option>
+</select>
+
+
+<button class="btn-new" type="submit">Add New</button>
+</div>
+<div>
+  
+</div>
+</form>
+
+<script>
+        $('.subCategoriesSelect').on('click', function (e) {
+            $('#filter option').remove()
+            e.preventDefault();
+            console.log($(this).val())
+            $.ajax({
+                method: 'GET',
+                url: '/fetch-producttypes',
+                dataType: 'json',
+                data: {
+                    filtersubcategoryId: $(this).val()
+                },
+                success: (res) => {
+                    console.log({ "Success Response": res })
+                    $.each(res, function (key, value) {
+                        console.log(value.categorytype)
+                        $('#filter')
+                            .append($("<option></option>")
+                                .attr("value", value.name)
+                                .text(value.name));
+                    })
+
+                },
+                error: (err) => {
+                    console.log({ "Error Response": err })
+                }
+            })
+        })
+        
+        
+        
+        
+        $('.categoriesSelect').on('change', function (e) {
+            $('#subCategory option').remove()
+            e.preventDefault();
+            console.log($(this).val())
+            $.ajax({
+                method: 'GET',
+                url: '/products/fetch-subcategories',
+                dataType: 'json',
+                data: {
+                    categoryId: $(this).val()
+                },
+                success: (res) => {
+                    console.log("hello")
+                    console.log(res);
+                    //data = JSON.parse(res);
+                    $.each(res, function (key, value) {
+                        console.log(value.categorytype)
+                        $('#subCategory')
+                            .append($("<option></option>")
+                                .attr("value", value.name)
+                                .text(value.name));
+                    });
+
+                },
+                error: (err) => {
+                    console.log({ "Error Response": err })
+                }
+            })
+        })
+
+
+</script>
+
+
+<%- include('../partials/footer'); %>

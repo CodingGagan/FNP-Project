@@ -1,0 +1,77 @@
+<%- include('../partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Role Group Name</h2>
+                    <p>Home / Role Group Name</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="e_search">
+            <h2>Employee</h2>
+            <a href="/addemployee" class="btn btn-primary" style="margin-left: 1230px;">Add Employee</a>
+        </div>
+
+        <div class="emplyoyee">
+            <div class="e_data">
+                <div class="e_ipt">
+                    <input type="text" placeholder="Employee Id">
+                </div>
+                <div class="e_ipt">
+                    <input type="text" placeholder="Employee Id">
+                </div>
+                <div class="e_ipt">
+                    <input type="text" placeholder="Employee Id">
+                </div>
+                <div class="e_ipt">
+                    <a href="#">SEARCH</a>
+                </div>
+            </div>
+
+            <div class="e_photo">
+                <div class="boxes">
+                    <% if(sampleData.length>0){
+                        sampleData.forEach(function(data){
+                        %>
+                        <div class="box_2" >
+
+                            <div class="e_pic">
+                                <img src="<%=data.image %> " alt="image">
+                                <h6>
+                                    <%=data.firstname %>
+                                        <%=data.lastname %>
+                                </h6>
+                                <p>
+                                    <%=data.desigination %>
+                                </p>
+                                <p>
+                                    <%=data.role %>
+                                </p>
+                            </div>
+                            <div class="pic_btn">
+
+                                <a href="/rolemanagement/view-employee/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a>
+                                <a href="/rolemanagement/view-employee/edit/<%= data.id %>"  class="btn btn-primary"  style="margin-left: 15px;"><i class='bx bxs-edit-alt'></i></a>
+                            </div>
+                        </div>
+                        <% }) } else{ %>
+                            %>
+                            <% } %>
+                </div>
+            </div>
+
+
+
+            <%- include('../partials/footer'); %>

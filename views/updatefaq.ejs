@@ -1,0 +1,121 @@
+<%- include('./partials/header'); %>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Update Faq</h2>
+                <p>Home / Update Faq</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+               
+            </div>   
+        <div class="cat">
+            <div class="left-cat">
+                <div class="all">
+                    <h2>Update Faq</h2>
+                <div class="select-box-wrap">
+                    <select class="form-select" aria-label="Default select example">
+                            <option selected>Bulk option</option>
+                            <option value="1">Delete</option>
+                    </select>
+                    <button type="button" class="btn btn-primary">Apply</button>
+            </div>
+            <div class="datatable">
+                    <label>
+                            show
+                            <select name="all_user_table_length" class="custom-select custom-select-sm form-control form-control-sm" aria-label="all_user_table">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                            </select>
+                            enteries  
+                    </label>    
+            </div>
+                
+            <div class="right-cat">
+                <div class="new-cat">
+                    <h3>Add Faq</h3>
+                </div>
+                <form action="" method="POST" >
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Title</label>
+                    <input type="text"  class="form-control"  value="<%= sampleData[0].title %>" name="title" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">                  
+                </div>
+                <div class="name">
+                 
+
+                </div>
+
+              
+                <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Tags Description</label>
+                    <textarea class="form-control   name="description" id="result" rows="10"><%= sampleData[0].description %></textarea>
+                </div>
+                <div class="name">
+                    <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+                <select class="form-select"  value="<%= sampleData[0].status %>" aria-label="Default select example"  name="status">
+                    <option selected>Publish</option>
+                    <option >Draft</option>
+            </select>
+                </div>
+                
+            <button class="btn-new" type="submit">Update Faq</button>
+        </div>
+    </form>
+  
+            
+        </div>
+
+
+<%- include('./partials/footer'); %>
+
+
+
+<script>
+
+   
+
+
+
+// $('.editSelect').on('click',function(e){
+//     e.preventDefault();
+//     console.log($(this).val())
+//     $.ajax({
+//         method: 'GET',
+//             url: '/fetch-faq',
+//             dataType: 'json',
+//             data:{
+//                 titleId: $(this).val()
+//             },
+//             success: (res)=>{
+//                 if(res.status == true){
+//                     let desList = [];
+//                     res.result.map((element) =>{
+//                         desList= `<textarea> ${element.description}</textarea>`
+//                     });
+//                     $('.descSelect').html(desList)
+                   
+//                 } else {
+//                     $('.descSelect').html(`<option> ${res.result} </option>`)
+//                 }
+//             },
+//             error: (err) => {
+//                 console.log({"Error Response": err})
+//             }
+                    
+                
+            
+//     })
+// })
+
+</script>

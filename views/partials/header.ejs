@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Assignment Project</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/script.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
+
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+   
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> -->
+  
+    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script> -->
+    
+    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script> -->
+
+    <!-- <script>
+        tinymce.init({
+            selector: 'textarea#editor',
+        });
+    </script> -->
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+
+</head>
+
+<body>
+    <div class="full-container">
+        <div class="mobile-menu">
+            <a href="/" class="mobile-menu-icon">
+                <i class='bx bx-menu'></i>
+            </a>
+        </div>
+        <div class="sidebar">
+            <div class="mobile-menu-close">
+                <a href="/" class="mobile-menu-close-icon">
+                    <i class='bx bx-plus'></i>
+                </a>
+            </div>
+            <div class="logo-details">
+                <box-icon name='arch'></box-icon>
+                <img src="/images/logos.png" alt="">
+
+            </div>
+            <ul class="nav-link">
+                <li>
+                    <a class="item" href="/dashboard/">
+                        <i class='bx bxs-leaf'></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="item" href="/banner/">
+                        <i class='bx bxs-edit'></i>
+                        <span class="link_name">Banner</span>
+                    </a>
+                </li>
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/products/">
+                        <i class='bx bx-package'></i>
+                        <span class="link_name">Product Manual</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="item" href="/products/">
+                                <i class='bx bx-package'></i>
+                                <span class="link_name">All Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/products/add-new-product/">
+                                <i class='bx bxs-message-x'></i>
+                                <span class="link_name">Delete Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/products/categories/">
+                                <i class='bx bx-envelope'></i>
+                                <span class="link_name">Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/products/producttypes/">
+                                <i class='bx bxs-credit-card-front'></i>
+                                <span class="link_name">Filter Type</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/products/sub-categories/">
+                                <i class='bx bx-list-ul'></i>
+                                <span class="link_name">Sub Categories</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/users/">
+                        <i class='bx bxs-user-detail'></i>
+                        <span class="link_name">Coustomer Manage</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+
+
+                        <li>
+                            <a class="item" href="/rolemanagement/view-user/">
+                                <i class='bx bx-user-plus'></i>
+                                <span class="link_name">View Coustomer</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/rolemanagement/">
+                        <i class='bx bxs-user-detail'></i>
+                        <span class="link_name">Role Management</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="item" href="/rolemanagement/role-group/">
+                                <i class='bx bx-user'></i>
+                                <span class="link_name">Role Group</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/rolemanagement/view-employee/">
+                                <i class='bx bx-user-plus'></i>
+                                <span class="link_name">View Employee</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="item" href="/vender/">
+                        <i class='bx bxl-venmo'></i>
+                        <span class="link_name">Vender Manage</span>
+                    </a>
+                </li>
+
+
+
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/support/">
+                        <i class='bx bxs-hand'></i>
+                        <span class="link_name">Support Ticket</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="item" href="/support/">
+                                <i class='bx bx-grid-vertical'></i>
+                                <span class="link_name">All Ticket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/support/add-new-ticket/">
+                                <i class='bx bxs-joystick-button'></i>
+                                <span class="link_name">Add New Ticket</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li>
+                    <a class="item" href="/attributes/">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="link_name">Attribute</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="item" href="/coupon/">
+                        <i class='bx bxs-barcode'></i>
+                        <span class="link_name">coupon</span>
+                    </a>
+                </li>
+
+
+
+
+                <li>
+                    <a class="item" href="/orderlog/">
+                        <i class='bx bx-rupee'></i>
+                        <span class="link_name">Order Log</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="/faq/">
+                        <i class='bx bx-podcast'></i>
+                        <span class="link_name">Faq</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="/partner/">
+                        <i class='bx bxs-edit'></i>
+                        <span class="link_name">Partner Inquary</span>
+                    </a>
+                </li>
+
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/setting/">
+                        <i class='bx bx-headphone'></i>
+                        <span class="link_name">Setting </span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="item" href="/about/">
+                                <i class='bx bx-calculator'></i>
+                                <span class="link_name">Contact Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/setting/about1/">
+                                <i class='bx bx-calculator'></i>
+                                <span class="link_name">About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/setting/tags/">
+                                <i class='bx bxl-netlify'></i>
+                                <span class="link_name">Terms & Conditions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/setting/privacy/">
+                                <i class='bx bxl-ok-ru'></i>
+                                <span class="link_name">privacy Policy</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="item" href="/setting/shipping/">
+                                <i class='bx bxs-ship'></i>
+                                <span class="link_name">Shipping Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/setting/">
+                                <i class='bx bx-money-withdraw'></i>
+                                <span class="link_name">Refund Policy</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="item" href="/setting/footer/">
+                                <i class='bx bx-calculator'></i>
+                                <span class="link_name">Footer Description</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                <li>
+                    <a class="item" href="/feedback/">
+                        <i class='bx bxs-edit'></i>
+                        <span class="link_name">Feedback</span>
+                    </a>
+                </li>
+
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/blog/">
+                        <i class='bx bxl-vimeo'></i>
+                        <span class="link_name">Blog</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="item" href="/blog/">
+                                <i class='bx bxl-airbnb'></i>
+                                <span class="link_name">All Blog</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/blog-page-setting/">
+                                <i class='bx bxs-note'></i>
+                                <span class="link_name">Blog page setting</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a class="item" href="/complaint/">
+                        <i class='bx bxs-edit'></i>
+                        <span class="link_name">Complaint</span>
+                    </a>
+                </li>
+                </li>
+            </ul>
+        </div>
+        <div class="right-section">

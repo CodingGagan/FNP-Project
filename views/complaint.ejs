@@ -1,0 +1,137 @@
+<%- include('./partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>All Product</h2>
+                    <p>Home / Product</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="all">
+            <h2>All Product</h2>
+            <div class="select-box-wrap">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Bulk option</option>
+                    <option value="1">Delete</option>
+                </select>
+                <button type="button" class="btn btn-primary">Apply</button>
+                <a href="/addnewcomplaint" class="btn btn-primary" style="margin-left: 1150px;">Add New Complaint</a>
+
+            </div>
+
+            <div class="datatable">
+                <label class="class-label">
+                    <div class="select-user">
+                        <span>show</span>
+                        <select name="all_user_table_length"
+                            class="custom-select custom-select-sm form-control form-control-sm"
+                            aria-label="all_user_table">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span> enteries </span>
+                    </div>
+                    <div class="search-box">
+                        <span style="padding: 10px;">Search</span>
+                        <input type="text">
+                    </div>
+
+                </label>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table id="example" class="display" style="width:100%">
+                        <thead style="background-color: #0A2558;color:white;background-color: #0A2558;
+                        color: white;
+                        height: 50px;
+                        justify-content: space-between;
+                        align-items: center;
+                        text-align: center;">
+                            <tr>
+                                <td style="padding: 10px 10px ;">S.R.No</t>
+                                <td>Complaint no</td>
+                                <td>Order id</td>
+                                <td>Type</td>
+                                <td>Status</td>
+                                <td>Created On</td>
+                                <td>Resolve On</td>
+                                <td>Forward to Vendor</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody style="display: contents;
+                        justify-content: space-between;
+                        align-items: center;
+                        text-align: center;">
+
+                            <% if(sampleData.length>0){
+                                sampleData.forEach(function(data){
+                                %>
+                                <tr>
+
+                                    <td style="padding: 10px;">
+                                        <%=data.id %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.complaintno %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.orderno %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.complainttype %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.status %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.createdon %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.resolveon %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <%=data.vendorname %>
+                                    </td>
+                                    <td style="padding: 10px;">
+                                        <button type="button" class="btn btn-danger"><i
+                                                class='bx bx-message-square-x'></i></button>
+                                        <button type="button" class="btn btn-primary"><i
+                                                class='bx bxs-edit-alt'></i></button>
+                                        <button type="button" class="btn btn-secondary"><i
+                                                class='bx bx-chat'></i></button>
+                                        <button type="button" class="btn btn-info"><i
+                                                class='bx bx-low-vision'></i></button>
+                                        <!-- <button type="button" class="btn btnDelete btn-danger"><i class='bx bx-message-square-x'></i></button> -->
+                                        <!-- <a href="/products/categories/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a> 
+                                            <a href="/products/categories/edit/<%= data.id %>"  class="btn btn-primary" ><i class='bx bxs-edit-alt'></i></a> -->
+                                        <!-- <button type="submit" class="btn btn-primary" ><i class='bx bxs-edit-alt'></i></button> -->
+                                    </td>
+                                </tr>
+                                <% }) } else{ %>
+                                    <tr>
+
+                                        <td colspan="5">No Data Found</td>
+                                    </tr>
+                                    %>
+                                    <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <%- include('./partials/footer'); %>

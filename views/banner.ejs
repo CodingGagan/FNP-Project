@@ -1,0 +1,80 @@
+<%- include('./partials/header'); %>
+
+<div class="banner">
+     <div class="banner_name">
+        <h5> Banner </h5>
+     </div>
+     <form action="/banner" method="POST">
+     <div class="banner_details">
+            <div class="banner_data">
+                <h6>Add New </h6>
+                <div class="name_6">
+                    <label for="exampleFormControlInput" class="form-label" style="margin: 5px 5px;">Heading</label>
+                    <input type="text" name="heading" placeholder="heading" class="form-control" >
+                   
+                </div>
+               
+                <div class="name_6">
+                    <input type="file" name="image"  >       
+                </div>
+                <div class="name_6">
+                    <button type="submit" class="btn btn-primary" style="width: 14%; margin: 10px 3px;" >Save</button>    
+                </div>
+            </div>
+        </form>
+     </div>
+
+
+     <div class="banner_table">
+        <div class="banner_table_data">
+            <table class="display" style="width:99% ; height: 35px; ">
+                <thead  style="background-color: #0A2558; color:white; margin: 5px 10px; ">
+                    <tr>
+                        <td><input type="checkbox" style="margin-left: 15px; "></td>
+                        <td style="padding-left:5px;" >image</td>
+                        <td>Heading</td>
+                     
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody style="padding: 10px;">
+                    <%
+                    if(sampleData.length >0){
+                        sampleData.forEach(function(data){                                  
+                            %>
+                            <tr>
+                                <td style="padding: 10px;"><input type="checkbox" ></td>
+                                <td style="padding: 10px;"  > <img src="<%=data.image %> " style="height: 120px ;width: 200px; " alt="image"> </td>
+                                <td style="padding: 10px;"><%=data.heading %></td>
+                               
+                                <td style="padding: 10px;">
+                                <a href="/banner/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a> 
+                                <a href="/banner/edit/<%= data.id %>"  class="btn btn-primary" ><i class='bx bxs-edit-alt'></i></a>
+                            </td>
+                            </tr>
+                            <%
+                        })
+                    } 
+                    else{
+                    %>
+                        <tr>
+                            
+                            <td colspan="5">No Data Found</td>
+                        </tr>
+                    %> 
+                    <%   
+                    }
+                    %>  
+                </tbody>
+
+            </table>
+        </div>
+     </div>
+
+
+
+</div>
+
+
+
+<%- include('./partials/footer'); %>

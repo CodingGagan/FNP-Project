@@ -1,0 +1,27 @@
+<%- include('../partials/header'); %>
+
+    <form action="" method="POST">
+       
+
+<div class="mb-3">
+    <label for="exampleFormControlInput" class="form-label">Footer Description</label>
+    <textarea class="form-control" name="description" id="editor" rows="10"><%= sampleData[0].description %></textarea>
+</div>
+
+<button type="submit" class="btn btn-info">Add New</button>              
+</div>  
+</form>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+referrerpolicy="origin"></script>
+
+<script>
+tinymce.init({
+    selector: 'textarea#editor',
+    skin: 'bootstrap', //The TinyMCE Bootstrap skin
+    plugins: 'lists, link, image, media',
+ 
+});
+</script>  
+
+<%- include('../partials/footer'); %>

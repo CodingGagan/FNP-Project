@@ -1,0 +1,36 @@
+<%- include('./partials/header'); %>
+
+
+<div class="boxe1">
+    <form action="" method="POST">
+    <div class="box1">
+        <div class="b_color">
+            <label for="exampleFormControlInput" class="form-label"
+                style="margin-left:10px">
+               Title</label>
+            <input type="text" class="form-control" required value="<%= sampleData[0].title %>" name="title" id="exampleFormControlInput1"
+                placeholder="color"
+                style="width:200px; margin-left: 10px; color: solid black ">
+        </div>
+        <div class="b_color">
+            <label for="exampleFormControlInput" class="form-label"
+                style="margin-left:10px">
+               Terms</label>
+            <input type="text" class="form-control"required value="<%= sampleData[0].terms %>"  name="terms" id="exampleFormControlInput1"
+                placeholder="color Red"
+                style="width:200px; margin-left: 10px; color: solid black ">
+        </div>
+        <div class="b_price">
+            <label for="exampleFormControlInput" class="form-label"
+                style="margin-left:10px">
+                Additional Price Amount</label>
+            <input type="text" class="form-control" required value="<%= sampleData[0].price %>"  name="price" id="exampleFormControlInput1"
+                placeholder="" style="width:200px; margin-left: 10px; color: solid black ">
+        </div>
+       
+        <button type="submit" style="margin-top: 30px; margin-left: 15px; width: 110px;" class="btn btn-info" >Submit</button>
+    </div>
+</form>
+</div>
+
+<%- include('./partials/footer'); %>

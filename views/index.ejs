@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+</head>
+<body>
+    <div class="form">
+       
+        <h2>Login Here</h2>
+        <form action="/dashboard" method="POST">
+        <input type="text" name="email" placeholder="Enter Email Here">
+        <input type="password" name="password" placeholder="Enter Password">
+        
+      <button type="submit">Login</button>
+    </form> 
+    
+    
+        <div class="s-icon">
+            <img src="/images/logos.png" alt="">
+            
+        </div>
+    </div>
+      
+</body>
+</html>
+
+<!-- <div class="form">
+    <h2>Login Here</h2>
+    <form action="" method="POST">
+    <input type="email" name="email" placeholder="Enter Email Here">
+    <input type="password" name="" placeholder="Enter Password">
+    <a href="/dashboard" type="submit">Login</a>
+
+
+    <div class="s-icon">
+        <img src="/images/logos.png" alt="">
+        
+    </div>
+</div>
+</form> -->
+
+<style>
+    .form {
+        width: 280px;
+        height: 380px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+        position: absolute;
+        top: 130px;
+        left: 600px;
+        padding: 25px;
+        border-radius: 10px;
+
+    }
+
+    .form h2 {
+        color: #fff;
+        width: 220px;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 10px;
+        margin: 2px;
+        padding: 8px;
+    }
+
+    .form input {
+        width: 240px;
+        height: 30px;
+        background: transparent;
+        border-bottom: 1px solid orangered;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        color: #fff;
+        margin: 10px 2px;
+        padding: 5px 10px;
+        font-size: 15px;
+        letter-spacing: 1.2px;
+    }
+
+    .form input :focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        color: #fff;
+    }
+
+   button{
+        width: 240px;
+        height: 40px;
+        background: orange;
+        border: none;
+        padding: 2px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.4s ease;
+        color:rgba(0, 0, 0, 0.8);
+        margin: 10px 16px;
+        font-size: 18px;
+
+    }
+
+    button:hover {
+        background: white;
+        color: orange;
+    }
+
+    .form input {
+        text-decoration: none;
+        color: black;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+   
+
+    .s-icon {
+        display: flex;
+        margin-top: 30px;
+        margin-left: 50px;
+        width: 100px;
+        height: 80px;
+
+    }
+
+    .s-icon img {
+        padding: 0 24px;
+        cursor: pointer;
+    }
+</style>

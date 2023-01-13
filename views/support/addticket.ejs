@@ -1,0 +1,75 @@
+<%- include('../partials/header'); %>
+<div class="dashboard">
+  <div class="icon">
+    <i class='bx bxl-xing'></i>
+    <div class="icon1">
+        <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+        <a href=" ">Log out </a>
+    </div>
+
+</div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Add Ticket</h2>
+                <p>Home / Add Ticket</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>       
+        </div>
+          <div class="all">
+              <h2 style="left: 10px;">Add New Ticket</h2>
+          </div>
+          <form action="/support/addticket" method="POST">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Subject</label>
+            <input type="text" name="subject" class="form-control" id="exampleFormControlInput1" placeholder="Subject">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Priority</label>
+                <select class="form-select" name="priority" aria-label="Default select example" style="width: 100%; padding: 8px; " >
+                    <option selected>Low</option>
+                    <option >Medium</option>
+                    <option >High</option>
+                    <option >Urgent</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Department</label>
+                <select class="form-select" name="department" aria-label="Default select example" style="width: 100%; padding: 8px; " >
+                    <option selected>Product Delivery</option>
+                    <option >Product coupon</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">User</label>
+            <input type="text" name="user" class="form-control" id="exampleFormControlInput1" placeholder="rajatsoni.soni77@gmail.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Action</label>
+            <input type="text" name="action" class="form-control" id="exampleFormControlInput1" placeholder="title">
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+                <select class="form-select" name="status" aria-label="Default select example" style="width: 100%; padding: 8px; " >
+                    <option selected>Clear</option>
+                    <option >Unclear</option>
+                    <option >Pending</option>
+                    
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control"  name="textarea" id="exampleFormControlTextarea1" rows="9"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 20%;" >Submit Ticket</button>
+        </form>
+        </div>          
+<%- include('../partials/footer'); %>

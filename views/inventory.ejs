@@ -1,0 +1,95 @@
+<%- include('./partials/vheader'); %>
+    <div class="right-section">
+
+        <div class="date">
+            <table id="example" class="display" style="width:60%;height: fit-content;">
+                <thead style="background-color: #0A2558; color:white;">
+                    <tr>
+                        <td style="padding: 16px;"><a href="">Today</a></td>
+                        <td style="padding: 16px;"> <a href="">Yesterday</a> </td>
+                        <td style="padding: 16px;"> <a href="">This month</a> </td>
+                        <td style="padding: 16px;"><a href="">This Week</a> </td>
+                        <td style="padding: 16px;"> <a href="">This Year</a> </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 16px;">1</td>
+                        <td style="padding: 16px;">5</td>
+                        <td style="padding: 16px;">10</td>
+                        <td style="padding: 16px;">20</td>
+                        <td style="padding: 16px;">25</td>
+                    </tr>
+                </tbody>
+               
+
+        </div>
+        <div class="dateselect">
+            <h2 style="margin: auto;" >Date Range Select</h2>
+            <div class="dateselectInput" style="display: flex;">
+                <div class="sdate" style="margin-right: 2rem;">
+                    <label for="date from">Start Date</label>
+                    <input type="text" placeholder="dd/mm/yyyy">
+                    <button class="btn-new">Reset</button>
+                </div>
+                <div class="edate">
+                    <label for="date from" style="font-size: 15px;">End Date</label>
+                    <input type="text" placeholder="dd/mm/yyyy">
+                    <button class="btn-new">Apply</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <style>
+        .right-section {
+            padding: 20px 0;
+            margin-left: 250px;
+        }
+
+        td a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        .date {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .dateselect {
+            margin-right: 2rem;
+
+
+        }
+
+        .dateselect h2 {
+            /* font-size: 18px; */
+            font-weight: 1400;
+        }
+
+        .dateselect label {
+            display: flex;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .dateselect input {
+            padding: 1px 10px;
+            display: flex;
+        }
+
+        .dateselect .btn-new {
+            margin-top: 10px;
+            padding: 5px 20px;
+            background: #d5e5b3;
+            font-size: 15px;
+        }
+    </style>
+    <%- include('./partials/vfooter'); %>

@@ -1,0 +1,174 @@
+<%- include('../partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Dashboard</h2>
+                    <p>Home / Update Employee Details</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="all_e">
+            <h3 style="margin-left: 17px;"> Add employee</h3>
+        </div>
+        <%
+        if(sampleData.length >0){
+            sampleData.forEach(function(data){                                  
+                %>
+                <%
+            })
+        } 
+        else{
+        %>
+        %> 
+        <%   
+        }
+        %>  
+        
+        <form action="" method="POST">
+        <div class="e_visit">
+            <div class="e_name">
+                <div class="e_datails">
+                    <label for="employeedetails">First Name</label>
+                    <input type="text" name="firstname"  value="<%= sampleData[0].firstname %>"  class="form-control">
+                </div>
+                <div class="e_datails">
+                    <label for="employeedetails" class="form-label">Last Name</label>
+                    <input type="text" name="lastname"  value="<%= sampleData[0].lastname %>" class="form-control">
+                </div>
+                
+            </div>
+            <div class="e_visit">
+                <div class="e_name">
+                    <div class="e_datails">
+                        <label for="employeedetails">User Name</label>
+                        <input type="text" name="username"  value="<%= sampleData[0].username %>"class="form-control">
+                    </div>
+                    <div class="e_datails">
+                        <label for="employeedetails" class="form-label">Email</label>
+                        <input type="email"  value="<%= sampleData[0].email %>" name="email" class="form-control">
+                    </div>
+                    
+                </div>
+                <div class="e_visit">
+                    <div class="e_name">
+                        <div class="e_datails">
+                            <label for="employeedetails">Password</label>
+                            <input type="text"  value="<%= sampleData[0].password %>" name="password" class="form-control">
+                        </div>
+                        <div class="e_datails">
+                            <label for="employeedetails" class="form-label">Confirm Password</label>
+                            <input type="text" name="cpassword"  value="<%= sampleData[0].cpassword %>" class="form-control">
+                        </div>
+                        
+                    </div>
+                    <div class="e_visit">
+                        <div class="e_name">
+                            <div class="e_datails">
+                                <label for="employeedetails">Employee Id</label>
+                                <input type="text" name="eid"  value="<%= sampleData[0].eid %>" class="form-control">
+                            </div>
+                            <div class="e_datails">
+                                <label for="employeedetails" class="form-label">Joining Date</label>
+                                <input type="date" name="jdate"  value="<%= sampleData[0].jdate %>"class="form-control">
+                            </div>
+                            
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_name">
+                                <div class="e_datails">
+                                    <label for="employeedetails">Phone</label>
+                                    <input type="text" name="phoneno"  value="<%= sampleData[0].phoneno %>" class="form-control">
+                                </div>
+                                <div class="e_datails">
+                                    <label for="employeedetails" class="form-label">Company Name</label>
+                                    <select style="height: 50px;" name="company"   value="<%= sampleData[0].company %>"class="form-control">
+                                        <option >Tdi </option>
+                                        <option >Global technology</option>
+                                        <option >IBM</option>
+                                        <option >Accenture</option>
+                                        <option >Astegic</option>
+                                        <option >Vikrant technology</option>
+                                        <option >Other</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_name">
+                                <div class="e_datails">
+                                    <label for="employeedetails">Department</label>
+                                    <select style="height: 50px;" name="department"  value="<%= sampleData[0].department %>" class="form-control">
+                                        <option >Web development </option>
+                                        <option >ecurity</option>
+                                        <option >It Cells</option>
+                                        <option >Stock Department</option>
+                                        <option >Account Department</option>
+                                        <option >Manufacturing Department</option>
+                                        <option >Other</option>
+                                    </select>
+                                </div>
+                                <div class="e_datails">
+                                    <label for="employeedetails" class="form-label">Desigination</label>
+                                    <select style="height: 50px;" name="desigination"  value="<%= sampleData[0].desigination %>"class="form-control">
+                                        <option >Web developer </option>
+                                        <option >Accoutant</option>
+                                        <option >Manager</option>
+                                        <option >Assistant Manager </option>
+                                        <option >Clerk</option>
+                                        <option >Supervisior</option>
+                                        <option >Other</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Add Role</label>
+                                <input type="text" name="role"  value="<%= sampleData[0].role %>"class="form-control" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Upload Image</label>
+                                <input type="file" name="image" class="form-control"  value="<%= sampleData[0].image %>" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Salary</label>
+                                <input type="text" class="form-control"   value="<%= sampleData[0].salary %>"name="salary" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Salary Slip</label>
+                                <input type="file" class="form-control"  value="<%= sampleData[0].salaryslip %>"name="salaryslip" style="margin-left: 3px;">
+                            </div> 
+                        </div>
+                        <!-- <div class="e_visit">
+                            <div class="e_photo">
+                                <label for="employeedetails" class="form-label" style="margin-left: 3px;">Date Of Joining</label>
+                                <input type="date" class="form-control" name="jdate" style="margin-left: 3px;">
+                            </div> 
+                        </div> -->
+                        <div >
+                            <button type="submit"  class="btn btn-primary" style="margin-left: 25px; width:150px "> Submit</button>
+                            <!-- <a href="" type="submit"  class="btn btn-primary" style="margin-left: 25px; width:150px ">Submit</a> -->
+                        </form>
+     </div>
+
+            <%- include('../partials/footer'); %>

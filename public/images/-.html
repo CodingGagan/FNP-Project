@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://localhost:7600/addnewproduct -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Assignment Project</title>
+    <link rel="stylesheet" href="./-_files/style.css">
+    <script src="./-_files/jquery.js.download"></script>
+    <script src="./-_files/script.js.download"></script>
+    <link href="./-_files/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./-_files/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="full-container">
+        <div class="mobile-menu">
+            <a href="http://localhost:7600/" class="mobile-menu-icon">
+                <i class="bx bx-menu"></i>
+            </a>
+        </div>
+        <div class="sidebar">
+            <div class="mobile-menu-close">
+                <a href="http://localhost:7600/" class="mobile-menu-close-icon">
+                    <i class="bx bx-plus"></i>
+                </a>
+            </div>
+            <div class="logo-details">
+                <box-icon name="arch"></box-icon>
+                <img src="./-_files/logos.png" alt="">
+               
+            </div>
+            <ul class="nav-link">
+                <li>
+                    <a class="item" href="http://localhost:7600/dashboard/">
+                        <i class="bx bxs-leaf"></i>
+                        <span class="link_name">Dashboard</span>
+                    </a>
+                </li>
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="http://localhost:7600/products/">
+                        <i class="bx bx-package"></i>
+                        <span class="link_name">Product Manual</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul style="display: none;">
+                        <li>
+                            <a class="item" href="http://localhost:7600/products/">
+                                <i class="bx bx-package"></i>
+                                <span class="link_name">All Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/products/add-new-product/">
+                                <i class="bx bxs-message-x"></i>
+                                <span class="link_name">Delete Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/products/categories/">
+                                <i class="bx bx-envelope"></i>
+                                <span class="link_name">Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/products/producttypes/">
+                                <i class="bx bxs-credit-card-front"></i>
+                                <span class="link_name">Filter Type</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/products/sub-categories/">
+                                <i class="bx bx-list-ul"></i>
+                                <span class="link_name">Sub Categories</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="http://localhost:7600/users/">
+                        <i class="bx bxs-user-detail"></i>
+                        <span class="link_name">Coustomer Manage</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul style="display: none;">
+                        
+                       
+                        <li>
+                            <a class="item" href="http://localhost:7600/rolemanagement/view-user/">
+                                <i class="bx bx-user-plus"></i>
+                                <span class="link_name">View Coustomer</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+                
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="http://localhost:7600/rolemanagement/">
+                        <i class="bx bxs-user-detail"></i>
+                        <span class="link_name">Role Management</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul style="display: none;">
+                        <li>
+                            <a class="item" href="http://localhost:7600/rolemanagement/role-group/">
+                                <i class="bx bx-user"></i>
+                                <span class="link_name">Role Group</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/rolemanagement/view-employee/">
+                                <i class="bx bx-user-plus"></i>
+                                <span class="link_name">View Employee</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="item" href="http://localhost:7600/vender/">
+                        <i class="bx bxl-venmo"></i>
+                        <span class="link_name">Vender Manage</span>
+                    </a>
+                </li>
+
+
+
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="http://localhost:7600/support/">
+                        <i class="bx bxs-hand"></i>
+                        <span class="link_name">Support Ticket</span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul style="display: none;">
+                        <li>
+                            <a class="item" href="http://localhost:7600/support/">
+                                <i class="bx bx-grid-vertical"></i>
+                                <span class="link_name">All Ticket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/support/add-new-ticket/">
+                                <i class="bx bxs-joystick-button"></i>
+                                <span class="link_name">Add New Ticket</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li>
+                    <a class="item" href="http://localhost:7600/attributes/">
+                        <i class="bx bx-list-ul"></i>
+                        <span class="link_name">Attribute</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="item" href="http://localhost:7600/coupon/">
+                        <i class="bx bxs-barcode"></i>
+                        <span class="link_name">coupon</span>
+                    </a>
+                </li>
+                
+               
+
+
+                <li>
+                    <a class="item" href="http://localhost:7600/orderlog/">
+                        <i class="bx bx-rupee"></i>
+                        <span class="link_name">Order Log</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="http://localhost:7600/faq/">
+                        <i class="bx bx-podcast"></i>
+                        <span class="link_name">Faq</span>
+                    </a>
+                </li>
+
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="http://localhost:7600/setting/">
+                        <i class="bx bx-headphone"></i>
+                        <span class="link_name">Setting </span>
+                        <i class="bx bx-chevron-down"></i>
+                    </a>
+                    <ul style="display: none;">
+                        <li>
+                            <a class="item" href="http://localhost:7600/about/">
+                                <i class="bx bx-calculator"></i>
+                                <span class="link_name">About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/setting/tags/">
+                                <i class="bx bxl-netlify"></i>
+                                <span class="link_name">Terms &amp; Conditions</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/setting/privacy/">
+                                <i class="bx bxl-ok-ru"></i>
+                                <span class="link_name">privacy Policy</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="item" href="http://localhost:7600/setting/shipping/">
+                                <i class="bx bxs-ship"></i>
+                                <span class="link_name">Shipping Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="http://localhost:7600/setting/">
+                                <i class="bx bx-money-withdraw"></i>
+                                <span class="link_name">Refund Policy</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                      
+                    </li><li class="has-dropdown">
+                        <a class="item dropdown" href="http://localhost:7600/blog/">
+                            <i class="bx bxl-vimeo"></i>
+                            <span class="link_name">Blog</span>
+                            <i class="bx bx-chevron-down"></i>
+                        </a>
+                        <ul style="display: none;">
+                            <li>
+                                <a class="item" href="http://localhost:7600/blog/">
+                                    <i class="bx bxl-airbnb"></i>
+                                    <span class="link_name">All Blog</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="item" href="http://localhost:7600/blog-page-setting/">
+                                    <i class="bx bxs-note"></i>
+                                    <span class="link_name">Blog page setting</span>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                <li>
+                    <a class="item" href="http://localhost:7600/complaint/">
+                        <i class="bx bxs-edit"></i>
+                        <span class="link_name">Complaint</span>
+                    </a>
+                </li>
+            
+            </ul>
+        </div>
+        <div class="right-section">
+    <div class="dashboard">
+        <div class="icon">
+            <i class="bx bxl-xing"></i>
+            <div class="icon1">
+                <a href="http://localhost:7600/addnewproduct">View Site<i class="bx bx-chevron-down"></i> </a>
+                <a href="http://localhost:7600/addnewproduct">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Product</h2>
+                    <p>Home / Add New product</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href="http://localhost:7600/products" style="margin: 20px;"><i class="fa-solid fa-user"></i> Products</a>
+                    <a id="Admin" href="http://localhost:7600/addnewproduct" style="margin: 20px;"><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+
+                <div class="info">
+                    <div class="product_info">
+                        <div class="all">
+                            <h2 style="left: 10px;">Product information</h2>
+                        </div>
+                        <form action="http://localhost:7600/addnewproduct" method="POST">
+
+
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="name">
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Slug</label>
+                                <input type="text" name="slug" class="form-control" id="exampleFormControlInput1" placeholder="slug">
+                            </div>
+
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Summary</label>
+                                <textarea class="form-control" name="summary" id="exampleFormControlTextarea1" rows="9"></textarea>
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Tags</label>
+                                <input type="text" name="tags" class="form-control" id="exampleFormControlInput1" placeholder="tags">
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Tags Description</label>
+                                <textarea class="form-control" name="tagdescription" id="exampleFormControlTextarea1" rows="9"></textarea>
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label" style="width: 100%;">Tags
+                                    Keywords</label>
+                                <input type="text" style="width: 20%;"> ,
+                                <input type="text" style="width: 20%;"> ,
+                                <input type="text" style="width: 20%;"> ,
+                                <input type="text" style="width: 20%;">
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Delivery Information</label>
+                                <textarea class="form-control" name="deliveryinfo" id="exampleFormControlTextarea1" rows="6"></textarea>
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Care Instruction</label>
+                                <textarea class="form-control" name="carins" id="exampleFormControlTextarea1" rows="6"></textarea>
+                            </div>
+                            <div class="boxe1 " id="attributes" style="display: none;">
+                                <!-- <div class="box1">
+                                    <div class="b_color" >
+                                        <label for="exampleFormControlInput" class="form-label"
+                                            style="margin-left:10px">
+                                            Attributes</label>
+                                        <input type="text" class="form-control attributeSelect" id="exampleFormControlInput1"
+                                            placeholder="color Red"
+                                            style="width:200px; margin-left: 10px; color: solid black ">
+                                    </div>
+                                    <div class="b_price">
+                                        <label for="exampleFormControlInput" class="form-label"
+                                            style="margin-left:10px">
+                                            Additional Price Amount</label>
+                                        <input type="email" class="form-control attributeSelect" id="exampleFormControlInput1"
+                                            placeholder="0" style="width:200px; margin-left: 10px; color: solid black ">
+                                    </div>
+                                    <div class="b_button">
+                                        <label for="exampleFormControlInput" class="form-label"
+                                            style="margin-left:10px">
+                                            Attribute image</label>
+                                        <button type="button" class="btn btn-info"
+                                            style=" display: flex; margin-left: 10px;">Upload Image</button>
+                                        <h9 style="margin-top:5px; ">Recommended image size is 200x200</h>
+                                    </div>
+
+
+
+                                </div> -->
+
+
+
+                                <!-- <div class="box1">
+                                    <div class="b_color">
+                                        <label for="exampleFormControlInput" class="form-label"
+                                            style="margin-left:10px">
+                                            Attributes</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="Size X"
+                                            style="width:200px; margin-left: 10px; color: solid black ">
+                                    </div>
+                                    <div class="b_price">
+                                        <label for="exampleFormControlInput" class="form-label"
+                                            style="margin-left:10px">
+                                            Additional Price Amount</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                                            placeholder="0" style="width:200px; margin-left: 10px; color: solid black ">
+                                    </div>
+                                    <div class="b_button">
+                                        <label for="exampleFormControlInput" class="form-label"
+                                            style="margin-left:10px">
+                                            Attribute image</label>
+                                        <button type="submit" class="btn btn-info"
+                                            style=" display: flex; margin-left: 10px;">Upload Image</button>
+                                        <h9 style="margin-top:5px; ">Recommended image size is 200x200</h>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!-- </form> -->
+                    </form></div>
+                    <div class="stock_info">
+                        <div class="all">
+                            <h2 style="left: 10px;">Stock information</h2>
+                        </div>
+
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+
+                                    <div class="name">
+                                        <label for="exampleFormControlInput" class="form-label">Product SKU</label>
+                                        <input type="text" class="form-control" name="psku" id="exampleFormControlInput1" placeholder="......">
+                                    </div>
+                                    <!-- <div class="name">
+                            <label for="exampleFormControlInput" class="form-label">Price</label>
+                            <input type="text" class="form-control" name="price" id="exampleFormControlInput1"
+                                placeholder="......">
+                        </div> -->
+                                    <div class="name">
+                                        <label for="exampleFormControlInput" class="form-label">Items In Stock</label>
+                                        <input type="text" name="stock" class="form-control" id="exampleFormControlInput1" placeholder="......">
+                                    </div>
+                                    <div class="all">
+                                        <h2 style="left: 10px; margin-top: 30px;">More information</h2>
+                                    </div>
+
+                                    <div class="name">
+                                        <span>Main price</span>
+                                        <input type="text" name="regularprice" class="form-control" id="exampleFormControlInput1" placeholder="......">
+                                    </div>
+                                    <div class="name">
+                                        <span>Discount price</span>
+                                        <input type="text" name="salesprice" class="form-control" id="exampleFormControlInput1" placeholder="......">
+
+                                    </div>
+                                    <div class="name">
+                                        <label for="exampleFormControlInput" class="form-label">Quantity</label>
+                                        <input type="text" name="quantity" class="form-control" id="exampleFormControlInput1" placeholder="......">
+                                    </div>
+                                    <div class="name">
+                                        <label for="exampleFormControlInput" class="form-label">Minimum Quantity</label>
+                                        <input type="text" name="minquantity" class="form-control" id="exampleFormControlInput1" placeholder="......">
+                                    </div>
+                                    <div class="name">
+                                        <span>Stock Status</span>
+                                        <select name="all_user_table_length" class="custom-select custom-select-sm form-control form-control-sm" aria-label="all_user_table">
+                                            <option>Select status</option>
+                                            <option>In Stock</option>
+                                            <option>Out of stock</option>
+                                        </select>
+
+                                        <div class="name">
+                                            <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Category</label>
+                                            <select style="width: 100%; padding: 10px 10px;" name="category" class="form-select categoriesSelect" aria-label="Default select example">
+                                                
+                                                    <option value="Birthday Gift">
+                                                        Birthday Gift
+                                                    </option>
+                                                    
+                                                    <option value="Flowers Gift">
+                                                        Flowers Gift
+                                                    </option>
+                                                    
+                                                    <option value="Plants Gift">
+                                                        Plants Gift
+                                                    </option>
+                                                    
+                                                    <option value="Annivesary Gift">
+                                                        Annivesary Gift
+                                                    </option>
+                                                    
+                                                    <option value="Cake Gift">
+                                                        Cake Gift
+                                                    </option>
+                                                    
+                                                    <option value="Personlized Gift">
+                                                        Personlized Gift
+                                                    </option>
+                                                    
+                                                    <option value="Flowers &amp; Cakes">
+                                                        Flowers &amp; Cakes
+                                                    </option>
+                                                    
+                                                    <option value="Personalized Gifts">
+                                                        Personalized Gifts
+                                                    </option>
+                                                    
+                                                    <option value="Find Perfect Gift">
+                                                        Find Perfect Gift
+                                                    </option>
+                                                    
+                                                    <option value="Birthday Gift">
+                                                        Birthday Gift
+                                                    </option>
+                                                    
+                                                    <option value="Annivesary Gift">
+                                                        Annivesary Gift
+                                                    </option>
+                                                    
+                                                    <option value="Home &amp; Living">
+                                                        Home &amp; Living
+                                                    </option>
+                                                    
+                                                    <option value="Gift to Men">
+                                                        Gift to Men
+                                                    </option>
+                                                    
+                                                    <option value="Gift to Women">
+                                                        Gift to Women
+                                                    </option>
+                                                    
+                                                    <option value="Personalized Gifts">
+                                                        Personalized Gifts
+                                                    </option>
+                                                    
+                                                    <option value="Cakes Gift">
+                                                        Cakes Gift
+                                                    </option>
+                                                    
+                                                    <option value="Flowers gift">
+                                                        Flowers gift
+                                                    </option>
+                                                    
+                                                    <option value="combos">
+                                                        combos
+                                                    </option>
+                                                    
+                                                    <option value="Plants Gift">
+                                                        Plants Gift
+                                                    </option>
+                                                    
+
+                                            </select>
+                                        </div>
+                                        <div class="name">
+                                            <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1" class="form-label">Sub
+                                                Category</label>
+                                            <select style="width: 100%; padding: 10px 10px;" id="subCategory" name="subcategory" class="form-select subCategoriesSelect" aria-label="Default select example">
+
+                                            <option value="Black Dog rasgulla">Black Dog rasgulla</option><option value="surprise box ">surprise box </option></select>
+                                        </div>
+                                        <div class="name">
+                                            <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1" class="form-label">Filter Type</label>
+                                            <select style="width: 100%;padding: 10px 10px;" id="filter" name="filtertype" class="form-select filterSelect " aria-label="Default select example">
+
+                                            <option></option><option></option></select>
+                                        </div>
+                                        <div class="name">
+                                            <label for="exampleFormControlTextarea1" class="form-label" style="margin-top: 10px;">Image</label>
+                                        </div>
+                                        <div class="name1 " style="margin-left: 10px;">
+                                            <input type="file" name="image">
+                                        </div>
+                                        <div class="name1" style="margin-left: 10px;">
+                                            <h7 style="margin-top:5px;">Recommended image size is 200x200</h7>
+                                        </div>
+                                        <div class="name">
+                                            <label for="exampleFormControlInput" class="form-label">Attributes</label>
+                                            <div class="name3">
+                                                <select class="form_control " name="attributes" id="attribute_option">
+                                                    <option value="">Select attribute</option>
+                                                    <option value="color">color</option>
+                                                    <option value="size">Size</option>
+
+                                                </select>
+                                                <div class="attribute" style="margin-top:15px;">
+                                                    <select name="color" id="color" class="hide" style="display: none;">
+                                                        
+                                                            <option value="Blue">
+                                                                Blue
+                                                            </option>
+                                                            
+                                                            <option value="green">
+                                                                green
+                                                            </option>
+                                                            
+                                                    </select>
+
+                                                    <select name="size" id="size" class="hide" style="display: none;">
+                                                        
+                                                            <option value="XL">
+                                                                XL
+                                                            </option>
+                                                            
+                                                            <option value="XXL">
+                                                                XXL
+                                                            </option>
+                                                            
+                                                            <option value="xxxlll">
+                                                                xxxlll
+                                                            </option>
+                                                            
+                                                            <option value="3xl">
+                                                                3xl
+                                                            </option>
+                                                            
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="name">
+
+                                            <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Dimention</label>
+                                            <input type="text" style="width: 15%; padding: 1px 0;">
+                                            <select style="width: 15%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                                                <option value="1">mtr</option>
+                                                <option value="2">cm</option>
+                                            </select>
+                                            <input type="text" style="width: 15%; padding: 1px 0;">
+                                            <select style="width: 15%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                                                <option value="1">mtr</option>
+                                                <option value="2">cm</option>
+                                            </select>
+                                            <input type="text" style="width: 15%; padding: 1px 0;">
+                                            <select style="width: 15%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                                                <option value="1">mtr</option>
+                                                <option value="2">cm</option>
+                                            </select>
+
+                                            <!-- <div class="name">
+                            <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                class="form-label">Status</label>
+                            <select style="width: 100%; padding: 10px 10px;" class="form-select"
+                                aria-label="Default select example">
+                                <option selected>Draft</option>
+                                <option value="1">Publish</option>
+                            </select>
+                            <button class="btn-new" style="width: 100%; border-radius: 5px; ">Create product</button>
+                        </div> -->
+
+
+                                        </div>
+
+                                        <div class="name">
+
+                                            <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Weight</label>
+                                            <input type="text" style="width: 15%; padding: 1px 0;">
+                                            <select style="width: 15%;padding: 3px 0;" class="form-select" aria-label="Default select example">
+                                                <option value="1">kg</option>
+                                                <option value="2">ponds</option>
+                                            </select>
+                                        </div>
+                                        <div class="name">
+                                            <label for="exampleFormControlInput" class="form-label">Sort Order</label>
+                                            <input type="text" name="sortorder" class="form-control" id="exampleFormControlInput1" placeholder="......">
+                                        </div>
+                                        <div class="name">
+                                            <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Status</label>
+                                            <select style="width: 100%; padding: 10px 10px;" name="status" class="form-select" aria-label="Default select example">
+                                                <option selected="">Draft</option>
+                                                <option>Publish</option>
+                                            </select>
+
+                                            <button class="btn-new" type="submit" style="width: 100%; border-radius: 5px; ">Create
+                                                product</button>
+                                            
+                                        </div>
+
+                                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#color').on('change', function () {
+                let value = $(this).val();
+                let box = (
+                    "           <div class='box1'>" +
+                    "<div class=' atrValue b_color' >" +
+                    "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>" +
+                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "</div>" +
+                    "<div class='b_price'>" +
+                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>" +
+                    "<input type='text'  required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "</div>" +
+                    "<div class='b_button'>" +
+                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>" +
+                    "<input type='file' class='btn btn-info' style='display: grid; margin-left: 10px;width: 127px;'>" +
+                    // "<button type='button' class='btn btn-info' style='display: flex; margin-left: 10px;'>Upload Image</button>"+
+                    "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>" +
+                    "</div>" +
+                    "<button class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; '> <i class='bx bx-message-square-x'></i></button>" +
+                    "</div>"
+                )
+                // console.log(box);
+                $("#attributes").append(box);
+                let lastInput = $(".atrValue").find("input:last");
+                $(lastInput).val(value)
+
+                // $(input).val(value);
+            })
+        })
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('#size').on('change', function () {
+                let value = $(this).val();
+                let box = (
+                    "           <div class='box1' id = 'hideDiv'>" +
+                    "<div class='atrValue b_color' >" +
+                    "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>" +
+                    "<input type='text' required class='form-control attributeSelect' name = 'color' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "</div>" +
+                    "<div class='b_price'>" +
+                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>" +
+                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "</div>" +
+                    "<div class='b_button'>" +
+                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>" +
+                    "<input type='file' class='btn btn-info' style='display: grid; margin-left: 10px;width: 127px;'>" +
+                    "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>" +
+                    "</div>" +
+                    // "<a href=''  class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; ' ><i class='bx bx-message-square-x'></i></a>"+ 
+                    " <button type= 'submit' id= 'btnDelete' class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; '> <i class='bx bx-message-square-x'></i></button>" +
+                    "</div>"
+                )
+                // console.log(box);
+                $("#attributes").append(box);
+                let lastInput = $(".atrValue").find("input:last");
+                $(lastInput).val(value)
+                //$(input).val(value);
+                $("btnDelete").on('click',function(e) {
+                          console.log($(box).remove()) ;
+                          $("#hideDiv").remove()
+                        
+                           
+                    })
+            })
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $(".btnDelete").on('click', function (e) {
+                const myNode = document.getElementById("hideDiv");
+                myNode.b_color = ''
+                // $(".hideDiv").remove().append("box1")
+
+                // //     e.preventDefault();
+                // //         // console.log(this)         
+                //      $(hideDiv).closest("box1").remove();
+            })
+        })
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#attributes').hide();
+            $('#attribute_option').on('change', function () {
+                var showId = $(this).val();
+                // alert(showId);
+                // alert($(".hide").attr("id"))
+                // // alert( this.value );
+                $('.hide').each(function () {
+                    // alert( this.id );
+                    if (showId == "color") {
+                        $("#color").show();
+                        $("#size").hide();
+                        $('#attributes').show();
+
+                    }
+                    if (showId == "size") {
+                        $("#size").show();
+                        $("#color").hide();
+                        $('#attributes').show();
+
+                    }
+                });
+            });
+
+
+            $("#color").hide();
+            $("#size").hide();
+            $('#attribute_option').on('change', function () {
+                var showId = $(this).val();
+                // alert(showId);
+                // alert($(".hide").attr("id"))
+                // // alert( this.value );
+                $('.hide').each(function () {
+                    // alert( this.id );
+                    if (showId == "color") {
+                        $("#color").show();
+                        $("#size").hide();
+
+                    }
+                    if (showId == "size") {
+                        $("#size").show();
+                        $("#color").hide();
+
+                    }
+                });
+            });
+        });
+        $('.hide').on('click', function (e) {
+            e.preventDefault()
+            console.log($(this).value)
+            $.ajax({
+                method: 'GET',
+                url: '/fetch-attributes',
+                dataType: 'json',
+                data: {
+                    titleId: $(this).val()
+                },
+                success: (res) => {
+                    console.log({ "Success Response": res })
+                    if (res.status == true) {
+                        let attributeList = [];
+                        res.result.map((element) => {
+                            attributeList = `<input> ${element.title} </input>`
+                        })
+                        $('.attributeSelect').html(filterList)
+                    } else {
+                        $('.attributeSelect').html(`<input> ${res.result} </input>`)
+                    }
+                },
+                error: (err) => {
+                    console.log({ "Error Response": err })
+                }
+
+            })
+        })
+
+        $('.subCategoriesSelect').on('click', function (e) {
+            $('#filter option').remove()
+            e.preventDefault();
+            console.log($(this).val())
+            $.ajax({
+                method: 'GET',
+                url: '/fetch-producttypes',
+                dataType: 'json',
+                data: {
+                    filtersubcategoryId: $(this).val()
+                },
+                success: (res) => {
+                    console.log({ "Success Response": res })
+                    $.each(res, function (key, value) {
+                        console.log(value.categorytype)
+                        $('#filter')
+                            .append($("<option></option>")
+                                .attr("value", value.name)
+                                .text(value.name));
+                    })
+
+                },
+                error: (err) => {
+                    console.log({ "Error Response": err })
+                }
+            })
+        })
+
+
+
+        //     $('.categoriesSelect').on('change', function(e) {
+        //     e.preventDefault();
+        //     console.log($(this).val())
+        //     $.ajax({
+        //         method: 'GET',
+        //         url: '/products/fetch-subcategories',
+        //         dataType: 'json',
+        //         data: {
+        //             categoryId: $(this).val()
+        //         },
+        //         success: (res) => {
+        //             console.log({"Success Response": res})
+
+        //             if(res.status == true) {
+        //                 let subCategoriesList = [];
+        //                 res.result.map((element) => {
+        //                     subCategoriesList = `<option> ${element.name} </option>`
+        //                 })
+        //                 $('.subCategoriesSelect').html(subCategoriesList)
+        //             } else {
+        //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
+        //             }
+        //         },
+        //         error: (err) => {
+        //             console.log({"Error Response": err})
+        //         }
+        //     })
+        // });
+
+
+        $('.categoriesSelect').on('change', function (e) {
+            $('#subCategory option').remove()
+            e.preventDefault();
+            console.log($(this).val())
+            $.ajax({
+                method: 'GET',
+                url: '/products/fetch-subcategories',
+                dataType: 'json',
+                data: {
+                    categoryId: $(this).val()
+                },
+                success: (res) => {
+                    console.log("hello")
+                    console.log(res);
+                    //data = JSON.parse(res);
+                    $.each(res, function (key, value) {
+                        console.log(value.categorytype)
+                        $('#subCategory')
+                            .append($("<option></option>")
+                                .attr("value", value.name)
+                                .text(value.name));
+                    });
+
+                },
+                error: (err) => {
+                    console.log({ "Error Response": err })
+                }
+            })
+        })
+
+
+
+
+    </script>
+
+
+
+    
+            
+        </div>
+    </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="./-_files/bootstrap.bundle.min.js.download" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+</body></html>

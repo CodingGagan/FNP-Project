@@ -1,0 +1,249 @@
+<%- include('../partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Dashboard</h2>
+                    <p>Home / Sub Categories</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+
+            </div>
+            <div class="cat">
+                <div class="left-cat">
+                    <div class="all">
+                        <h2>Sub Category</h2>
+                        <div class="select-box-wrap">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Bulk option</option>
+                                <option value="1">Delete</option>
+                            </select>
+                            <button type="button" class="btn btn-primary">Apply</button>
+                        </div>
+                        <div class="datatable">
+                            <label>
+                                show
+                                <select name="all_user_table_length"
+                                    class="custom-select custom-select-sm form-control form-control-sm"
+                                    aria-label="all_user_table">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                </select>
+                                enteries
+                            </label>
+                        </div>
+                        <div class="row">
+                            <dov class="col-12">
+                                <table id="example" class="display" style="width:100%">
+                                    <thead style="background-color: #0A2558; color:white;">
+                                        <tr>
+                                            <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                            <td style="padding: 10px;">id</td>
+                                            <td>Name</td>
+                                            <td>Category</td>
+                                            <td>Status</td>
+                                            <td>Sort</td>
+                                            <td>image</td>
+                                            <td>Action</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% if(subcategory.length>0){
+                                            subcategory.forEach(function(data){
+                                            %>
+                                            <tr>
+                                                <td style="padding: 10px;"><input type="checkbox"></td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.id %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.name %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.categorytype %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.status %>
+                                                </td>
+                                                <td style="padding: 10px;">
+                                                    <%=data.sort %>
+                                                </td>
+                                                <td style="padding: 10px;"> <img src="<%=data.image %> "
+                                                        style="height: 100px ;width: 100px; " alt="image"> </td>
+                                                <td style="padding: 10px;">
+                                                    <a href="/products/subcategories/delete/<%= data.id %>"
+                                                        class="btn btn-danger"><i
+                                                            class='bx bx-message-square-x'></i></a>
+                                                    <a href="/products/subcategories/edit/<%= data.id %>"
+                                                        class="btn btn-primary"><i class='bx bxs-edit-alt'></i></a>
+                                                    <!-- <button type="button" class="btn btnDelete btn-danger"><i class='bx bx-message-square-x'></i></button>
+                                            <button type="button" class="btn btn-primary"><i class='bx bxs-edit-alt'></i></button> -->
+                                                </td>
+                                            </tr>
+                                            <% }) } else{ %>
+                                                <tr>
+
+                                                    <td colspan="5">No Data Found</td>
+                                                </tr>
+                                                %>
+                                                <% } %>
+                                    </tbody>
+                                </table>
+
+                                <div class="pagination">
+
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="right-cat">
+                        <div class="new-cat">
+                            <h3>Add New Sub-Categories</h3>
+                        </div>
+
+                        <form action="/products/subcategories" method="POST">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="Name" style="width: 450px;">
+
+                            </div>
+                            <div class="mb-3">
+                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                    class="form-label">Category</label>
+                                <select style="width: 100%; padding: 10px 10px;" name="categorytype"
+                                    class="form-select categoriesSelect" aria-label="Default select example">
+
+                                    <% categories.forEach((cat)=> {
+                                        %>
+                                        <option value="<%= cat.name %>">
+                                            <%= cat.name %>
+                                        </option>
+                                        <% }) %>
+
+                                </select>
+                            </div>
+
+                            <!-- <div class="mb-3">
+                <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Sub Category</label>
+                <select  style="width: 100%; padding: 10px 10px;" name="subcategorytype" class="form-select subCategoriesSelect" aria-label="Default select example">
+                    
+                </select>
+                </div> -->
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Sort</label>
+                                <input type="text" class="form-control" name="sort" id="exampleFormControlInput1"
+                                    placeholder="....." style="width: 450px;">
+                            </div>
+                            <div class="name">
+                                <label for="exampleFormControlInput" class="form-label">Sub Category Description</label>
+                                <textarea id="editor" class="form-control" name="description"
+                                    id="exampleFormControlTextarea1" rows="9"></textarea>
+                            </div>
+                            <div>
+                                <div class="name" style="display: flex;
+                    flex-direction: column;">
+                                    <label for="exampleFormControlTextarea1" class="form-label"
+                                        style="margin-top: 20px;">Image</label>
+                                    <!-- <button type="file" class="btn btn-info">Upload Image</button> -->
+                                    <input type="file" name="image">
+                                    <h7 style="margin-top: 10px;">Recommended image size is 200x200</h7>
+                                    <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+                                    <select class="form-select" aria-label="Default select example" name="status">
+                                        <option selected>Publish</option>
+                                        <option>Draft</option>
+                                    </select>
+                                    <button class="btn-new" type="submit">Add New</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+
+
+
+                    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        
+        <script>
+          tinymce.init({
+            selector: 'textarea#editor',
+          });
+        </script> -->
+
+
+                    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+                        referrerpolicy="origin"></script>
+
+                    <script>
+                        tinymce.init({
+                            selector: 'textarea#editor',
+                            skin: 'bootstrap', //The TinyMCE Bootstrap skin
+                            plugins: 'lists, link, image, media',
+
+                        });
+                    </script>
+
+
+                    <script type="text/javascript" charset="utf8"
+                        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+                    <script type="text/javascript" charset="utf8"
+                        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+                    <script>
+                        $(function () {
+                            $("#example").dataTable();
+                        })
+                    </script>
+
+                    <%- include('../partials/footer'); %>
+
+                        <script>
+                            $(document).ready(function () {
+                                $(".btnDelete").on('click', function () {
+                                    $(this).closest("tr").remove();
+                                })
+                                // $('.categoriesSelect').on('change', function(e) {
+                                //     e.preventDefault();
+                                //     console.log($(this).val())
+                                //     $.ajax({
+                                //         method: 'GET',
+                                //         url: '/products/fetch-subcategories',
+                                //         dataType: 'json',
+                                //         data: {
+                                //             categoryId: $(this).val()
+                                //         },
+                                //         success: (res) => {
+                                //             console.log({"Success Response": res})
+
+                                //             if(res.status == true) {
+                                //                 let subCategoriesList = [];
+                                //                 res.result.map((element) => {
+                                //                     subCategoriesList = `<option> ${element.name} </option>`
+                                //                 })
+                                //                 $('.subCategoriesSelect').html(subCategoriesList)
+                                //             } else {
+                                //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
+                                //             }
+                                //         },
+                                //         error: (err) => {
+                                //             console.log({"Error Response": err})
+                                //         }
+                                //     })
+                                // })
+
+
+                            })
+                        </script>

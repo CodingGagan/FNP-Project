@@ -1,0 +1,101 @@
+<%- include('./partials/header'); %>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>Attribute</h2>
+                <p>Home / Attribute</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div> 
+            </div>      
+        </div>
+        <div class="all">
+            <h2>All Attribute</h2>
+        <div class="select-box-wrap">
+            <select class="form-select" aria-label="Default select example">
+                    <option selected>Bulk option</option>
+                    <option value="1">Delete</option>
+            </select>
+            <button type="button" class="btn btn-primary">Apply</button>
+            <a href="/addattributes" class="btn btn-primary" style="margin-left: 1000px;">Add Attributes</a>
+    </div>
+    <div class="datatable">
+          
+
+    </div>
+    <div class="row">
+        <dov class="col-12">
+            <table id="example" class="display" style="width:100%">
+                <thead style="background-color: #0A2558; color:white;">
+                        <tr>
+                                <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                <td style="padding:15px;">id</td>
+                                <td>Title</td>
+                                <td>Terms</td>
+                                <td>price</td>                              
+                                <td>Action</td>
+                        </tr>
+                </thead >
+                    <tbody>
+                        
+                        <%
+                        if(sampleData.length >0){
+                            sampleData.forEach(function(data){                                  
+                                %>
+                                <tr>
+                                    <td style="padding: 10px;"><input type="checkbox" ></td>
+                                    <td style="padding: 10px;"><%=data.id %></td>
+                                    <td style="padding: 10px;"><%=data.title %></td>
+                                    <!-- <td style="padding: 10px;"><%=data.stitle %></td> -->
+                                    <td style="padding: 10px;"><%=data.terms %></td>
+                                    <!-- <td style="padding: 10px;"><%=data.color %></td> -->
+                                    <td style="padding: 10px;"><%=data.price %></td>
+                                    <!-- <td style="padding: 10px;"  ><%=data.sprice %></td> -->
+                                    <td style="padding: 10px;">
+                                       
+                                        <!-- <button type="button" class="btn btn-danger"><i class='bx bx-message-square-x'></i></button> -->
+                                        <a href="/attributes/delete/<%= data.id %>"  class="btn btn-danger" ><i class='bx bx-message-square-x'></i></a> 
+                                        <a href="/attributes/edit/<%= data.id %>" class="btn btn-primary"><i class='bx bxs-edit-alt'></i></a>
+                                        
+                                    </td>
+                                </tr>
+                                <%
+                            })
+                        } 
+                        else{
+                        %>
+                            <tr>
+                                
+                                <td colspan="5">No Data Found</td>
+                            </tr>
+                        %> 
+                        <%   
+                        }
+                        %> 
+                                          
+                    </tbody>
+            </table>
+        </dov>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#example").dataTable();
+  })
+  </script>
+<%- include('./partials/footer'); %>

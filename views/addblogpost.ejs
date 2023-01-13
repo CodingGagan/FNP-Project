@@ -1,0 +1,129 @@
+<%- include('./partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2>New Blog Post</h2>
+                    <p>Home / Blogs Post</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+        <div class="blog_s">
+            <div class="blog_n">
+                <h4>Add blog Post</h4>
+            </div>
+            <div class="name_b">
+                <a href="/blog" class="btn btn-primary">All Blog</a>
+            </div>
+            <form action="/addblogpost" method="POST">
+            <div class="name_b">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+            </div>
+            <div class="name_b">
+                <label for="exampleFormControlInput" class="form-label">Summary</label>
+                <textarea class="form-control" name="summary" id="exampleFormControlTextarea1" rows="9"></textarea>
+            </div>
+            <div class="blog_d">
+                <div class="blog_d_l">
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Author</label>
+                        <input type="text" name="author" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Blog Tags</label>
+                        <input type="text" name="blogtags" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                </div>
+                <div class="blog_d_l">
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Slug</label>
+                        <input type="text" name="slug" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Meta Tags</label>
+                        <input type="text" name="metatags" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="name_b">
+                <label for="exampleFormControlInput" class="form-label">Excerpt</label>
+                <textarea class="form-control" name="excerpt" id="exampleFormControlTextarea1" rows="9"></textarea>
+            </div>
+            <div class="blog_d">
+                <div class="blog_d_l">
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Meta Title</label>
+                        <input type="text" name="metatitle" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Meta Description</label>
+                        <textarea class="form-control" name="metades" id="exampleFormControlTextarea1" rows="6"></textarea>
+                    </div>
+                </div>
+                <div class="blog_d_l">
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Og Meta Title</label>
+                        <input type="text" name="ogmeta" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Og Meta Description</label>
+                        <textarea class="form-control" name="ogdes" id="exampleFormControlTextarea1" rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="blog_d">
+                <div class="blog_d_l">
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label" style="width: 100%;">Blog Image</label>
+                       <input type="file" name="bimage" class="btn btn-primary" style="width: 260;">
+                        <!-- <a href="" class="btn btn-primary" style="width: 180px;">Upload Image</a> -->
+                    </div>
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Category</label>
+                        <select style="width: 100%; padding: 10px 10px;" name="blogpage" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Select Category</option>
+                            <% sampleData.forEach((cat) => {
+                                %>
+                                    <option value="<%= cat.blogpage %>"><%= cat.blogpage %></option> 
+                                <%
+                            }) %>
+                        </select>
+                    </div>
+                </div>
+                <div class="blog_d_l">
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label" style="width: 100%;">OG Meta
+                            Image</label>
+                            <input type="file" name="ogimage" class="btn btn-primary" style="width: 260;">       
+                        <!-- <a href="" class="btn btn-primary" style="width: 180px;">Upload Image</a> -->
+                    </div>
+                    <div class="name_b">
+                        <label for="exampleFormControlInput1" class="form-label">Status</label>
+                        <select style="width: 100%; padding: 10px 10px;" name="status" class="form-select"
+                            aria-label="Default select example">
+                            <option >Draft</option>
+                            <option >Public</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="name_b">
+                <button type="submit" class="btn btn-primary">Add New Post</button>
+                <!-- <a href="#" type="submit" class="btn btn-primary">Add New Post</a> -->
+            </div>
+        </form>
+        </div>
+        <%- include('./partials/footer'); %>

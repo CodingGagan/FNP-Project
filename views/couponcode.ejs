@@ -1,0 +1,39 @@
+<form action="" method="POST"   >
+   
+    
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Coupon Code</label>
+        <input type="text" required value="<%= sampleData[0].code %>" name="code" class="form-control" id="exampleFormControlInput1" placeholder="Code" style="width: 450px;">
+    </div>
+  <div class="mb-3">
+    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Discount On</label>
+    <select style="width: 100%; padding: 10px 10px;"  name="discounton" class="form-select" aria-label="Default select example">
+        <option selected>Select An Option</option>
+        <option required value="<%= sampleData[0].discounton %>">All Product</option>
+        <option required value="<%= sampleData[0].discounton %>" >Category</option>
+        <option required value="<%= sampleData[0].discounton %>" >Sub Category</option>
+        <option required value="<%= sampleData[0].discounton %>" >Product</option>
+</select>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Discount</label>
+    <input type="text" required value="<%= sampleData[0].discount %>" class="form-control" name="discount" id="exampleFormControlInput1" placeholder="Discount" style="width: 450px;">
+</div>
+<div class="mb-3">
+    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Discount Type</label>
+    <select style="width: 100%; padding: 10px 10px;" required value="<%= sampleData[0].discounttype %>" name="discounttype" class="form-select" aria-label="Default select example">
+        <option selected>Percentage</option>
+        <option >Fixed Amount</option>
+</select>
+</div>
+<div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Expiry Date</label>
+    <input type="date" class="form-control" required value="<%= sampleData[0].expiry %>" name="expiry" id="exampleFormControlInput1" placeholder="" style="width: 450px;">
+</div>
+<div class="mb-3">
+    <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Status</label>
+    <select style="width: 100%; padding: 10px 10px;" name="status" required value="<%= sampleData[0].status %>" class="form-select" aria-label="Default select example">
+        <option selected>Publish</option>
+        <option >Draft</option>
+</select>
+<button  type="submit">Add New</button>

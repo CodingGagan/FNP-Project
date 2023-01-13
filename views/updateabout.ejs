@@ -1,0 +1,70 @@
+
+
+<%- include('./partials/header'); %>
+
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+    <div class="dash">
+        <div class="home">
+            <div class="hp">
+                <h2>About us</h2>
+                <p>Home / Add  Details</p>
+            </div>
+            <div class="update">
+                <div class="a_update">
+                    <div class="all">
+                        <h2>All details</h2>
+                    </div>
+                    <form action="" method="POST">
+
+                        <div class="name">
+                            <label for="exampleFormControlInput" class="form-label">email</label>
+                        <input type="text" style="width: 100%;" value="<%= sampleData[0].email %>"  name="email"    >
+                       </div>
+                       <div class="name">
+                        <label for="exampleFormControlInput" class="form-label">address</label>
+                    <input type="text" name="address"  style="width: 100%;" value="<%= sampleData[0].address %>"  >
+                   </div>
+                   <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">phone no</label>
+                           <input type="text" style="width: 100%;" name="phoneno" value="<%= sampleData[0].phoneno %>"    >
+                   </div>
+                   <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Whatsapp no</label>
+                    <input type="text" name="whatsapp"  class="form-control" value="<%= sampleData[0].whatsapp %>"  >
+                   </div>
+                   <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Website Title</label>
+                     <input type="text" name="website"  class="form-control"  value="<%= sampleData[0].website %>" >
+                   </div>
+                   <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Facebook Details</label>
+                     <input type="text" name="social"  class="form-control"  value="<%= sampleData[0].social %>" >
+                   </div>
+                   <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Instagram Details</label>
+                     <input type="text" name="insta"  class="form-control"  value="<%= sampleData[0].insta %>" >
+                   </div>
+                   
+                   <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Website Image</label>
+                    <input type="file" name="wimage" value="<%= sampleData[0].wimage %>"   class="form-control" >
+                </div>
+                <div class="name">
+                    <label for="exampleFormControlInput" class="form-label">Logo</label>
+                    <input type="file" name="logo" value="<%= sampleData[0].logo %>"  class="form-control" >
+                </div>
+                <button class="btn-new" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+    
+<%- include('./partials/footer'); %>

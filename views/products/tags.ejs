@@ -1,0 +1,109 @@
+<%- include('../partials/header'); %>
+<div class="dashboard">
+    <div class="icon">
+        <i class='bx bxl-xing'></i>
+        <div class="icon1">
+            <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+            <a href=" ">Log out </a>
+        </div>
+
+    </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2 style="margin-left: 10px;" >Dashboard</h2>
+                <p>Home / Tags</p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+               
+            </div>   
+        <div class="cat">
+            <div class="left-cat">
+                <div class="all">
+                    <h2 >Product Tags</h2>
+                <div class="select-box-wrap">
+                    <select class="form-select" aria-label="Default select example">
+                            <option selected>Bulk option</option>
+                            <option value="1">Delete</option>
+                    </select>
+                    <button type="button" class="btn btn-primary">Apply</button>
+            </div>
+            <div class="datatable">
+                    <label>
+                            show
+                            <select name="all_user_table_length" class="custom-select custom-select-sm form-control form-control-sm" aria-label="all_user_table">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                            </select>
+                            enteries  
+                    </label>    
+            </div>
+            <div class="row">
+                <dov class="col-12">
+                    <table id="example" class="display" style="width:100%">
+                        <thead style="background-color: #0A2558; color:white;">
+                                <tr>
+                                        <td><input type="checkbox" style="margin-left: 15px; "></t>
+                                        <td style="padding: 10px;">id</td>
+                                        <td>Name</td>
+                                        <td>Action</td>
+                                </tr>
+                        </thead >
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" style="margin-left: 15px;"></td>
+                                <td style="padding: 10px;">2</td>
+                                <td>Essential pants</td>
+
+                                <td>
+                                    <button type="button" class="btn btn-danger" style="margin: 10px 10px;"><i class='bx bx-message-square-x'></i></button>
+                                    <button type="button" class="btn btn-primary"style="margin: 10px 10px;" ><i class='bx bxs-edit-alt'></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" style="margin-left: 15px;"></td>
+                                <td style="padding: 10px;">21</td>
+                                <td>Work Out Pants</td>
+                                
+                                <td>
+                                    <button type="button" class="btn btn-danger" style="margin: 10px 10px;" ><i class='bx bx-message-square-x'></i></button>
+                                    <button type="button" class="btn btn-primary" style="margin: 10px 10px;" ><i class='bx bxs-edit-alt'></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        
+                    <div class="pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                              <a class="page-link">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item">
+                              <a class="page-link" href="#">Next</a>
+                            </li>
+                          </ul>
+                    </div>
+            </div>
+        </div>
+                
+            <div class="right-cat">
+                <div class="new-cat">
+                    <h3>All product tags</h3>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Namehjgdcjnhgvcm</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">
+                    
+                </div>
+                <button type="button" class="btn btn-info">Add New</button>
+               
+            </div>  
+        </div>        
+<%- include('../partials/footer'); %>

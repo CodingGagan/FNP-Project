@@ -1,0 +1,87 @@
+<%- include('../partials/header'); %>
+    <div class="dashboard">
+        <div class="icon">
+            <i class='bx bxl-xing'></i>
+            <div class="icon1">
+                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                <a href=" ">Log out </a>
+            </div>
+
+        </div>
+        <div class="dash">
+            <div class="home">
+                <div class="hp">
+                    <h2 style="margin-left: 10px;">privacy</h2>
+                    <p>Home / Footer Description </p>
+                </div>
+                <div class="hp-1">
+                    <a id="Admin" href=""><i class="fa-solid fa-user"></i> Admin</a>
+                </div>
+
+            </div>
+            <div class="cat">
+                <div class="left-cat">
+                    <div class="all">
+                        <h2>Footer Description</h2>
+
+
+                        <div class="row">
+                            <dov class="col-12">
+
+
+                                <% if(sampleData.length>0){
+                                    sampleData.forEach(function(data){
+                                    %>
+                                    <div>
+                                        <p>
+                                            <%=data.description %>
+                                        </p>
+                                        <a href="/setting/footer/edit/<%= data.id %>" class="btn btn-primary"><i
+                                                class='bx bxs-edit-alt'></i></a>
+                                    </div>
+
+                                    <% }) } else{ %>
+
+                                        %>
+                                        <% } %>
+                                            </tbody>
+                                            </table>
+
+                                            <div class="pagination">
+                                                <ul class="pagination justify-content-center">
+
+                                                </ul>
+                                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-cat">
+                        <div class="new-cat">
+                            <h3>Footer Description</h3>
+                        </div>
+
+                        <form action="/setting/footer" method="Post">
+                            <div class="mb-3">
+                                
+                                <textarea class="form-control" name="description" id="editor" rows="10"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-info">Add New</button>
+                    </div>
+                    </form>
+                </div>
+
+                <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea#editor',
+            skin: 'bootstrap', //The TinyMCE Bootstrap skin
+            plugins: 'lists, link, image, media',
+         
+        });
+    </script>  
+
+               
+               
+                <%- include('../partials/footer'); %>

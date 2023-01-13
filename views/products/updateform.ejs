@@ -1,0 +1,41 @@
+
+<%- include('../partials/header'); %>
+<form action="" method="POST" >  
+ 
+    
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Name</label>
+        <input type="text" required value="<%= category[0].name %>" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Name" style="width: 450px;">                
+    </div>
+    <div class="name">
+        <label for="exampleFormControlTextarea1" class="form-label" style="width: 100%;">Category Type</label>
+    <select class="form-select" name="categorytype"    aria-label="Default select example" style="width: 32%;" >
+        <% category.forEach((cat) => {
+            %>
+                <option value="<%= cat.categorytype %>"><%= cat.categorytype %></option> 
+            <%
+        }) %>
+</select>
+
+    </div>
+
+    <label for="exampleFormControlTextarea1" class="form-label" style="margin-top: 20px;">Image</label>
+    <!-- <button type="file" class="btn btn-info">Upload Image</button> -->
+    <input type="file" name="image" value="<%= category[0].image %>" <br>
+    <!--value="<%= category[0].image %>-->
+    <h7 style="margin-top: 10px;">Recommended image size is  200x200</h7>
+    <div>
+    <label for="exampleFormControlTextarea1" class="form-label">Status</label>
+    <select class="form-select" aria-label="Default select example"  name="status">
+        <option selected>Publish</option>
+        <option >Draft</option>
+</select>
+
+
+<button class="btn-new" type="submit">Add New</button>
+</div>
+<div>
+  
+</div>
+</form>
+<%- include('../partials/footer'); %>
