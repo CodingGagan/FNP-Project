@@ -1187,7 +1187,7 @@ router.get('/bestselling_lists/', (req, res) => {
     if (err)
       throw err
     else {
-      if (result == '' || typeof result == undefined || !result) {
+      if (result == ''|| typeof result == undefined || !result) {
         res.json({ "result": "No data found", "status": false })
       } else {
         res.json({ "bestSellingLists": result, "status": true })
