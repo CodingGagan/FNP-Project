@@ -1182,7 +1182,7 @@ router.get('/cake_Gifts_lists/',(req,res) => {
 })
 router.get('/bestselling_lists/', (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
-  let qry = `SELECT * FROM addnewproduct LIMIT 6`;
+  let qry = `SELECT * FROM addnewproduct `;
   mysql.query(qry, (err, result) => {
     if (err)
       throw err
