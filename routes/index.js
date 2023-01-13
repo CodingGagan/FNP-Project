@@ -1087,6 +1087,22 @@ router.get('/category_lists/',(req,res) => {
   })
 })
 
+router.get('/product_lists/',(req,res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  let qry = `SELECT * FROM addnewproduct `;
+  mysql.query(qry, (err, result) => {
+    if (err)
+      throw err
+    else {
+      if (result == '' || typeof result == undefined || !result) {
+        res.json({ "result": "No data found", "status": false })
+      } else {
+        res.json({ "category": result, "status": true })
+      }
+    }
+  })
+})
+
 router.get('/addpartner/', (req,res) => {
   res.render ("addpartner", {title:  "addpartner page "} )
 })
