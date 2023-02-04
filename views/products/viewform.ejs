@@ -1,466 +1,518 @@
 <%- include('../partials/header'); %>
-<form action="/updateproducts" method="POST" > 
-    <div class="dashboard">
-        <div class="icon">
-            <i class='bx bxl-xing'></i>
-            <div class="icon1">
-                <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
-                <a href=" ">Log out </a>
+    <form action="/updateproducts" method="POST">
+        <div class="dashboard">
+            <div class="icon">
+                <i class='bx bxl-xing'></i>
+                <div class="icon1">
+                    <a href=" ">View Site<i class='bx bx-chevron-down'></i> </a>
+                    <a href=" ">Log out </a>
+                </div>
+
             </div>
-
-        </div>
-        <div class="dash">
-            <div class="home">
-                <div class="hp">
-                    <h2>Product</h2>
-                    <p>Home / Add New product</p>
-                </div>
-                <div class="hp-1">
-                    <a id="Admin" href="/products" style="margin: 20px;"><i class="fa-solid fa-user"></i> Products</a>
-                    <a id="Admin" href="" style="margin: 20px;"><i class="fa-solid fa-user"></i> Admin</a>
-                </div>
-                
+            <div class="dash">
+                <div class="home">
+                    <div class="hp">
+                        <h2>Product</h2>
+                        <p>Home / Add New product</p>
+                    </div>
+                    <div class="hp-1">
+                        <a id="Admin" href="/products" style="margin: 20px;"><i class="fa-solid fa-user"></i>
+                            Products</a>
+                        <a id="Admin" href="" style="margin: 20px;"><i class="fa-solid fa-user"></i> Admin</a>
+                    </div>
 
 
 
-                <div class="update">
-                    <div class="a_update">
-                        <div class="all">
-                            <h2>Product information</h2>
-                        </div>
-                        <form action="" method="POST">
 
-                            <div class="pro">
-                                <label for="exampleFormControlInput" class="form-label">Name</label>
-                            <input type="text" name="name"   value="<%= editcategorydata[0].name %>" >
-                           </div>
-                           <div class="pro">
-                            <label for="exampleFormControlInput" class="form-label">Slug</label>
-                        <input type="text" name="slug" value="<%= editcategorydata[0].slug %>" >
-                       </div>
-                       <div class="name">
-                        <label for="exampleFormControlInput" class="form-label">Summary</label>
-                                <textarea class="form-control" style="margin-left: 15px;" value="<%= editcategorydata[0].summary %>" name="summary" 
-                                    rows="6"><%= editcategorydata[0].summary %></textarea>
-                       </div>
-                       <div class="name">
-                        <label for="exampleFormControlInput" class="form-label">Seo Url</label>
-                        <input type="text" name="tags"  value="<%= editcategorydata[0].tags %>"class="form-control" >
-                       </div>
-                       <!-- <div class="name">
+                    <div class="update">
+                        <div class="a_update">
+                            <div class="all">
+                                <h2>Product information</h2>
+                            </div>
+                            <form action="" method="POST">
+
+                                <div class="pro">
+                                    <label for="exampleFormControlInput" class="form-label">Name</label>
+                                    <input type="text" name="name" value="<%= editcategorydata[0].name %>">
+                                </div>
+                                <div class="pro">
+                                    <label for="exampleFormControlInput" class="form-label">Slug</label>
+                                    <input type="text" name="slug" value="<%= editcategorydata[0].slug %>">
+                                </div>
+                                <div class="name">
+                                    <label for="exampleFormControlInput" class="form-label">Summary</label>
+                                    <textarea class="form-control" style="margin-left: 15px;"
+                                        value="<%= editcategorydata[0].summary %>" name="summary"
+                                        rows="6"><%= editcategorydata[0].summary %></textarea>
+                                </div>
+                                <div class="name">
+                                    <label for="exampleFormControlInput" class="form-label">Seo Url</label>
+                                    <input type="text" name="tags" value="<%= editcategorydata[0].tags %>"
+                                        class="form-control">
+                                </div>
+                                <!-- <div class="name">
                         <label for="exampleFormControlInput" class="form-label">Tags Description</label>
                         <textarea class="form-control"  required value="<%= editcategorydata[0].tagdescription %>" name="tagdescription" id="exampleFormControlTextarea1"
                             rows="5"><%= editcategorydata[0].tagdescription %></textarea>
                        </div> -->
-                       <div class="pro">
-                        <label for="exampleFormControlInput" class="form-label">Tags
-                            Keywords</label>
-                        <input type="text" style="width: 20%;" > ,
-                        <input type="text" style="width: 20%;"> ,
-                        <input type="text" style="width: 20%;"> ,
-                        <input type="text" style="width: 20%;">
-                       </div>
-                       <div class="name">
-                        <label for="exampleFormControlInput" class="form-label">Delivery Information</label>
-                        <textarea class="form-control"  required value="<%= editcategorydata[0].deliveryinfo %>" name="deliveryinfo" id="exampleFormControlTextarea1"
-                            rows="6"><%= editcategorydata[0].deliveryinfo %></textarea>
-                    </div>
-                    <div class="name">
-                        <label for="exampleFormControlInput" class="form-label">Care Instruction</label>
-                        <textarea class="form-control" required value="<%= editcategorydata[0].carins %>" name="carins" id="exampleFormControlTextarea1"
-                            rows="6"><%= editcategorydata[0].carins %></textarea>
-                    </div>
-                    <div class="boxe1 " id="attributes">
+                                <div class="pro">
+                                    <label for="exampleFormControlInput" class="form-label">Tags
+                                        Keywords</label>
+                                    <input type="text" style="width: 20%;"> ,
+                                    <input type="text" style="width: 20%;"> ,
+                                    <input type="text" style="width: 20%;"> ,
+                                    <input type="text" style="width: 20%;">
+                                </div>
+                                <div class="name">
+                                    <label for="exampleFormControlInput" class="form-label">Delivery Information</label>
+                                    <textarea class="form-control" required
+                                        value="<%= editcategorydata[0].deliveryinfo %>" name="deliveryinfo" id="editor"
+                                        rows="6"><%= editcategorydata[0].deliveryinfo %></textarea>
+                                </div>
+                                <div class="name">
+                                    <label for="exampleFormControlInput" class="form-label">Care Instruction</label>
+                                    <textarea class="form-control" required value="<%= editcategorydata[0].carins %>"
+                                        name="carins" id="exampleFormControlTextarea1"
+                                        rows="6"><%= editcategorydata[0].carins %></textarea>
+                                </div>
+                                <div class="boxe1 " id="attributes">
 
 
-                    </div>
-                    <div class="all">
-                        <h2 style="left: 10px;">Stock information</h2>
-                    </div>
+                                </div>
+                                <div class="all">
+                                    <h2 style="left: 10px;">Stock information</h2>
+                                </div>
 
-                    <%
-                    if(editcategorydata.length >0){
-                        editcategorydata.forEach(function(data){                                  
-                            %>
-                            <%
-                        })
-                    } 
-                    else{
-                    %>
-                    %> 
-                    <%   
-                    }
-                    %> 
-                    <div class="pro">
-                        <label for="exampleFormControlInput" class="form-label">Product SKU</label>
-                        <input type="text" class="form-control" value="<%= editcategorydata[0].psku %>" name="psku" >
-                    </div>
-                    <div class="pro">
-                        <label for="exampleFormControlInput" class="form-label">Items In Stock</label>
-                        <input type="text"  name="stock"  required value="<%= editcategorydata[0].stock %>"class="form-control" >
-                    </div>
-                    <div class="pro">
-                        <span>Main price</span>
-                        <input type="text"  name="regularprice" required value="<%= editcategorydata[0].regularprice %>" class="form-control" >
-                    </div>
-                    
-                    <div class="pro">
-                        <span>Discount price</span>
-                        <input type="text"  name="salesprice"  required value="<%= editcategorydata[0].salesprice %>"class="form-control">
-                    </div>
-                    <div class="pro">
-                        <label for="exampleFormControlInput" class="form-label">Quantity</label>
-                        <input type="text" name="quantity"  required value="<%= editcategorydata[0].quantity %>" class="form-control" >
-                    </div>
-                    <div class="pro">
-                        <label for="exampleFormControlInput" class="form-label">Minimum Quantity</label>
-                        <input type="text" name="minquantity" required value="<%= editcategorydata[0].minquantity %>" class="form-control" >
-                    </div>
-                    <div class="name">
-                        <span>Stock Status</span>
-                            <select name="all_user_table_length" name="stockstatus"  required value="<%= editcategorydata[0].stockstatus %>"
-                                class="custom-select custom-select-sm form-control form-control-sm"
-                                aria-label="all_user_table"><%= editcategorydata[0].stockstatus %>
-                                <option>Select status<%= editcategorydata[0].stockstatus %></option>
-                                <option>In Stock</option>
-                                <option >Out of stock</option>
-                            </select>
-                    </div>
-                    <div class="name">
-                        <label for="exampleFormControlInput" class="form-label">Attributes</label>
-                        <div class="name3">
-                            <select class="form_control " value="<%= editcategorydata[0].attributes %>"  name="attributes" id="attribute_option">
-                                <option value=>Select attribute</option><%= editcategorydata[0].attributes %>
-                                <option value="color">color <%= editcategorydata[0].color %></option>
-                                <option value="size">Size</option>
-
-                            </select>
-                            <div class="attribute" style="margin-top:15px;">
-                                <select name="color" id="color" class="hide"><%= editcategorydata[0].color %>
-                                    <% attribute.forEach((cat) => {
+                                <% if(editcategorydata.length>0){
+                                    editcategorydata.forEach(function(data){
+                                    %>
+                                    <% }) } else{ %>
                                         %>
-                                            <option value="<%= cat.title %>"><%= cat.terms %></option> 
-                                        <%
-                                    }) %>
-                                </select>
+                                        <% } %>
+                                            <div class="pro">
+                                                <label for="exampleFormControlInput" class="form-label">Product
+                                                    SKU</label>
+                                                <input type="text" class="form-control"
+                                                    value="<%= editcategorydata[0].psku %>" name="psku">
+                                            </div>
+                                            <div class="pro">
+                                                <label for="exampleFormControlInput" class="form-label">Items In
+                                                    Stock</label>
+                                                <input type="text" name="stock" required
+                                                    value="<%= editcategorydata[0].stock %>" class="form-control">
+                                            </div>
+                                            <div class="pro">
+                                                <span>Main price</span>
+                                                <input type="text" name="regularprice" required
+                                                    value="<%= editcategorydata[0].regularprice %>"
+                                                    class="form-control">
+                                            </div>
 
-                                <select name="size" id="size" class="hide">
-                                    <% atr.forEach((cat) => {
-                                        %>
-                                            <option value="<%= cat.title %>"><%= cat.terms %></option> 
-                                        <%
-                                    }) %>
-                                </select>
-                            </div>
+                                            <div class="pro">
+                                                <span>Discount price</span>
+                                                <input type="text" name="salesprice" required
+                                                    value="<%= editcategorydata[0].salesprice %>" class="form-control">
+                                            </div>
+                                            <div class="pro">
+                                                <label for="exampleFormControlInput" class="form-label">Quantity</label>
+                                                <input type="text" name="quantity" required
+                                                    value="<%= editcategorydata[0].quantity %>" class="form-control">
+                                            </div>
+                                            <div class="pro">
+                                                <label for="exampleFormControlInput" class="form-label">Minimum
+                                                    Quantity</label>
+                                                <input type="text" name="minquantity" required
+                                                    value="<%= editcategorydata[0].minquantity %>" class="form-control">
+                                            </div>
+                                            <div class="name">
+                                                <span>Stock Status</span>
+                                                <select name="all_user_table_length" name="stockstatus" required
+                                                    value="<%= editcategorydata[0].stockstatus %>"
+                                                    class="custom-select custom-select-sm form-control form-control-sm"
+                                                    aria-label="all_user_table">
+                                                    <%= editcategorydata[0].stockstatus %>
+                                                        <option>Select status<%= editcategorydata[0].stockstatus %>
+                                                        </option>
+                                                        <option>In Stock</option>
+                                                        <option>Out of stock</option>
+                                                </select>
+                                            </div>
+                                            <div class="name">
+                                                <label for="exampleFormControlInput"
+                                                    class="form-label">Attributes</label>
+                                                <div class="name3">
+                                                    <select class="form_control "
+                                                        value="<%= editcategorydata[0].attributes %>" name="attributes"
+                                                        id="attribute_option">
+                                                        <option value=>Select attribute</option>
+                                                        <%= editcategorydata[0].attributes %>
+                                                            <option value="color">color <%= editcategorydata[0].color %>
+                                                            </option>
+                                                            <option value="size">Size</option>
 
+                                                    </select>
+                                                    <div class="attribute" style="margin-top:15px;">
+                                                        <select name="color" id="color" class="hide">
+                                                            <%= editcategorydata[0].color %>
+                                                                <% attribute.forEach((cat)=> {
+                                                                    %>
+                                                                    <option value="<%= cat.title %>">
+                                                                        <%= cat.terms %>
+                                                                    </option>
+                                                                    <% }) %>
+                                                        </select>
+
+                                                        <select name="size" id="size" class="hide">
+                                                            <% atr.forEach((cat)=> {
+                                                                %>
+                                                                <option value="<%= cat.title %>">
+                                                                    <%= cat.terms %>
+                                                                </option>
+                                                                <% }) %>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="name">
+                                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                                    class="form-label">Category</label>
+                                                <input type="text" name="category"
+                                                    style="width: 100%; padding: 10px 10px;"
+                                                    value="<%= editcategorydata[0].category %>">
+                                            </div>
+                                            <div class="name">
+                                                <label style="width: 100%; margin-top: 15px;"
+                                                    for="exampleFormControlTextarea1" class="form-label">Sub
+                                                    Category</label>
+                                                <input type="text" name="subcategory"
+                                                    style="width: 100%; padding: 10px 10px;"
+                                                    value="<%= editcategorydata[0].subcategory %>">
+                                            </div>
+                                            <div class="name">
+                                                <label style="width: 100%; margin-top: 15px;"
+                                                    for="exampleFormControlTextarea1" class="form-label">Filter
+                                                    Type</label>
+                                                <input type="text" name="filtertype"
+                                                    style="width: 100%; padding: 10px 10px;"
+                                                    value="<%= editcategorydata[0].filtertype %>">
+                                            </div>
+                                            <div class="name">
+
+                                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                                    class="form-label">Dimention</label>
+                                                <input type="text" style="width: 15%; padding: 1px 0;">
+                                                <select style="width: 15%;padding: 3px 0;" class="form-select"
+                                                    aria-label="Default select example">
+                                                    <option value="1">mtr</option>
+                                                    <option value="2">cm</option>
+                                                </select>
+                                                <input type="text" style="width: 15%; padding: 1px 0;">
+                                                <select style="width: 15%;padding: 3px 0;" class="form-select"
+                                                    aria-label="Default select example">
+                                                    <option value="1">mtr</option>
+                                                    <option value="2">cm</option>
+                                                </select>
+                                                <input type="text" style="width: 15%; padding: 1px 0;">
+                                                <select style="width: 15%;padding: 3px 0;" class="form-select"
+                                                    aria-label="Default select example">
+                                                    <option value="1">mtr</option>
+                                                    <option value="2">cm</option>
+                                                </select>
+                                            </div>
+                                            <div class="name">
+                                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                                    class="form-label">Weight</label>
+                                                <input type="text" style="width: 15%; padding: 1px 0;">
+                                                <select style="width: 15%;padding: 3px 0;" class="form-select"
+                                                    aria-label="Default select example">
+                                                    <option value="1">kg</option>
+                                                    <option value="2">ponds</option>
+                                                </select>
+                                            </div>
+                                            <div class="pro">
+                                                <label for="exampleFormControlInput" class="form-label">Sort
+                                                    Order</label>
+                                                <input type="text" name="sortorder" required
+                                                    value="<%= editcategorydata[0].sortorder %>" class="form-control">
+                                            </div>
+                                            <div class="name">
+                                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                                    class="form-label">Image</label>
+                                                    <img src="<%=editcategorydata[0].image %> "   style="height: 100px ;width: 100px; " alt="image"> </td>
+                                            </div>
+
+                                            <div class="name">
+                                                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                                                    class="form-label">Status</label>
+                                                <select style="width: 100%; padding: 10px 10px;"
+                                                    value="<%= editcategorydata[0].status %>" name="status"
+                                                    class="form-select" aria-label="Default select example">
+                                                    <option selected>Draft</option>
+                                                    <option>Publish</option>
+                                                </select>
+                                            </div>
+
+
+                            </form>
                         </div>
                     </div>
-                    <div class="name">
-                        <label style="width: 100%;" for="exampleFormControlTextarea1"
-                            class="form-label">Category</label>
-                            <input type="text" name="category" style="width: 100%; padding: 10px 10px;"  value="<%= editcategorydata[0].category %>">
-                    </div>
-                    <div class="name">
-                        <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
-                            class="form-label">Sub Category</label>
-                            <input type="text" name="subcategory" style="width: 100%; padding: 10px 10px;"  value="<%= editcategorydata[0].subcategory %>">
-                    </div>
-                    <div class="name">
-                        <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
-                            class="form-label">Filter Type</label>
-                            <input type="text" name="filtertype" style="width: 100%; padding: 10px 10px;"  value="<%= editcategorydata[0].filtertype %>">
-                    </div>
-                    <div class="name">
-
-                        <label style="width: 100%;" for="exampleFormControlTextarea1"
-                            class="form-label">Dimention</label>
-                        <input type="text" style="width: 15%; padding: 1px 0;">
-                        <select style="width: 15%;padding: 3px 0;" class="form-select"
-                            aria-label="Default select example">
-                            <option value="1">mtr</option>
-                            <option value="2">cm</option>
-                        </select>
-                        <input type="text" style="width: 15%; padding: 1px 0;">
-                        <select style="width: 15%;padding: 3px 0;" class="form-select"
-                            aria-label="Default select example">
-                            <option value="1">mtr</option>
-                            <option value="2">cm</option>
-                        </select>
-                        <input type="text" style="width: 15%; padding: 1px 0;">
-                        <select style="width: 15%;padding: 3px 0;" class="form-select"
-                            aria-label="Default select example">
-                            <option value="1">mtr</option>
-                            <option value="2">cm</option>
-                        </select>
-                    </div>
-                    <div class="name">
-                        <label style="width: 100%;" for="exampleFormControlTextarea1"
-                        class="form-label">Weight</label>
-                    <input type="text" style="width: 15%; padding: 1px 0;">
-                    <select style="width: 15%;padding: 3px 0;" class="form-select"
-                        aria-label="Default select example">
-                        <option value="1">kg</option>
-                        <option value="2">ponds</option>
-                    </select>
-                    </div>
-                    <div class="pro">
-                                <label for="exampleFormControlInput" class="form-label">Sort Order</label>
-                                <input type="text" name="sortorder"  required value="<%= editcategorydata[0].sortorder %>"class="form-control" >
-                            </div>
-
-                            <div class="name">
-                                <label style="width: 100%;" for="exampleFormControlTextarea1"
-                                    class="form-label" >Status</label>
-                                <select style="width: 100%; padding: 10px 10px;"   value="<%= editcategorydata[0].status %>" name="status" class="form-select"
-                                    aria-label="Default select example">
-                                    <option selected>Draft</option>
-                                    <option >Publish</option>
-                                </select>
-                            </div>
 
 
-                        </form>
-                    </div>
-                </div>
+                    <script>
+                        $(document).ready(function () {
+                            $('#color').on('change', function () {
+                                let value = $(this).val();
+                                let box = (
+                                    "           <div class='box1'>" +
+                                    "<div class=' atrValue b_color' >" +
+                                    "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>" +
+                                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                                    "</div>" +
+                                    "<div class='b_price'>" +
+                                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>" +
+                                    "<input type='text'  required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                                    "</div>" +
+                                    "<div class='b_button'>" +
+                                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>" +
+                                    "<input type='file' class='btn btn-info' style='display: grid; margin-left: 10px;width: 127px;'>" +
+                                    // "<button type='button' class='btn btn-info' style='display: flex; margin-left: 10px;'>Upload Image</button>"+
+                                    "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>" +
+                                    "</div>" +
+                                    "</div>"
+                                )
+                                // console.log(box);
+                                $("#attributes").append(box);
+                                let lastInput = $(".atrValue").find("input:last");
+                                $(lastInput).val(value)
 
-                  
-    <script>
-       $(document).ready(function(){
-            $('#color').on('change', function () {
-                let value = $(this).val();
-                let box = (
-                    "           <div class='box1'>"+
-                                    "<div class=' atrValue b_color' >"+
-                                        "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>"+
-                                        "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>"+
-                                    "</div>"+
-                                    "<div class='b_price'>"+
-                                        "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>"+
-                                        "<input type='text'  required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>"+
-                                    "</div>"+
-                                    "<div class='b_button'>"+
-                                        "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>"+
-                                        "<input type='file' class='btn btn-info' style='display: grid; margin-left: 10px;width: 127px;'>"+
-                                        // "<button type='button' class='btn btn-info' style='display: flex; margin-left: 10px;'>Upload Image</button>"+
-                                        "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>"+
-                                    "</div>"+
-                            "</div>"
-                )
-                // console.log(box);
-                $("#attributes").append(box);
-                let lastInput = $(".atrValue").find("input:last");
-                $(lastInput).val(value)
-
-                // $(input).val(value);
-            })
-        })
-    </script>
-
-<script>
-
-    $(document).ready(function(){
-        $('#size').on('change', function () {
-            let value = $(this).val();
-            let box = (
-                "           <div class='box1'>"+
-                                "<div class='atrValue b_color' >"+
-                                    "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>"+
-                                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1' placeholder='color Red' style='width:200px; margin-left: 10px; color: solid black'>"+
-                                "</div>"+
-                                "<div class='b_price'>"+
-                                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>"+
-                                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1' placeholder='0' style='width:200px; margin-left: 10px; color: solid black'>"+
-                                "</div>"+
-                                "<div class='b_button'>"+
-                                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>"+
-                                    "<button type='button' class='btn btn-info' style='display: flex; margin-left: 10px;'>Upload Image</button>"+
-                                    "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>"+
-                                "</div>"+
-                        "</div>"
-            )
-            // console.log(box);
-            $("#attributes").append(box);
-            let lastInput = $(".atrValue").find("input:last");
-                $(lastInput).val(value)
-            //$(input).val(value);
-        })
-    })
-</script>
-
-    <script>
-        $(document).ready(function () {
-            $('#attributes').hide();
-            $('#attribute_option').on('change', function () {
-                var showId = $(this).val();
-                // alert(showId);
-                // alert($(".hide").attr("id"))
-                // // alert( this.value );
-                $('.hide').each(function () {
-                    // alert( this.id );
-                    if (showId == "color") {
-                        $("#color").show();
-                        $("#size").hide();
-                        $('#attributes').show();
-
-                    }
-                    if (showId == "size") {
-                        $("#size").show();
-                        $("#color").hide();
-                        $('#attributes').show();
-
-                    }
-                });
-            });
-        
-
-            $("#color").hide();
-            $("#size").hide();
-            $('#attribute_option').on('change', function () {
-                var showId = $(this).val();
-                // alert(showId);
-                // alert($(".hide").attr("id"))
-                // // alert( this.value );
-                $('.hide').each(function () {
-                    // alert( this.id );
-                    if (showId == "color") {
-                        $("#color").show();
-                        $("#size").hide();
-
-                    }
-                    if (showId == "size") {
-                        $("#size").show();
-                        $("#color").hide();
-
-                    }
-                });
-            });
-        });
-        $('.hide').on('click',function(e){
-            e.preventDefault()
-            console.log($(this).value)
-            $.ajax({
-                method:'GET',
-                url: '/fetch-attributes',
-                dataType : 'json',
-                data :{
-                    titleId : $(this).val()
-                },
-                success: (res) => {
-                console.log({"Success Response": res})
-                if(res.status == true) {
-                    let attributeList = [];
-                    res.result.map((element) => {
-                        attributeList = `<input> ${element.title} </input>`
-                    })
-                    $('.attributeSelect').html(filterList)
-                } else {
-                    $('.attributeSelect').html(`<input> ${res.result} </input>`)
-                }
-            },
-            error: (err) => {
-                console.log({"Error Response": err})
-            }
-
-            })
-        })
-        
-        $('.subCategoriesSelect').on('click', function(e) {
-            $('#filter option').remove()
-            e.preventDefault();
-            console.log($(this).val())
-            $.ajax({
-                method: 'GET',
-            url: '/fetch-producttypes',
-            dataType: 'json',
-            data: {
-                filtersubcategoryId: $(this).val()
-            },
-            success: (res) => {
-                console.log({"Success Response": res})
-                $.each(res, function (key, value) {
-                                            console.log(value.categorytype)
-                                            $('#filter')
-                                                .append($("<option></option>")
-                                                    .attr("value", value.name)
-                                                    .text(value.name));
-                    })
-                 
-            },
-            error: (err) => {
-                console.log({"Error Response": err})
-            }
-            })
-            })
-        
-
-
-    //     $('.categoriesSelect').on('change', function(e) {
-    //     e.preventDefault();
-    //     console.log($(this).val())
-    //     $.ajax({
-    //         method: 'GET',
-    //         url: '/products/fetch-subcategories',
-    //         dataType: 'json',
-    //         data: {
-    //             categoryId: $(this).val()
-    //         },
-    //         success: (res) => {
-    //             console.log({"Success Response": res})
-
-    //             if(res.status == true) {
-    //                 let subCategoriesList = [];
-    //                 res.result.map((element) => {
-    //                     subCategoriesList = `<option> ${element.name} </option>`
-    //                 })
-    //                 $('.subCategoriesSelect').html(subCategoriesList)
-    //             } else {
-    //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
-    //             }
-    //         },
-    //         error: (err) => {
-    //             console.log({"Error Response": err})
-    //         }
-    //     })
-    // });
-
-
-    $('.categoriesSelect').on('change', function (e) {
-                                $('#subCategory option').remove()
-                                e.preventDefault();
-                                console.log($(this).val())
-                                $.ajax({
-                                    method: 'GET',
-                                    url: '/products/fetch-subcategories',
-                                    dataType: 'json',
-                                    data: {
-                                        categoryId: $(this).val()
-                                    },
-                                    success: (res) => {
-                                        console.log("hello")
-                                        console.log(res);
-                                        //data = JSON.parse(res);
-                                        $.each(res, function (key, value) {
-                                            console.log(value.categorytype)
-                                            $('#subCategory')
-                                                .append($("<option></option>")
-                                                    .attr("value", value.name)
-                                                    .text(value.name));
-                                        });
-
-                                    },
-                                    error: (err) => {
-                                        console.log({ "Error Response": err })
-                                    }
-                                })
+                                // $(input).val(value);
                             })
-                        
+                        })
+                    </script>
 
-       
+                    <script>
 
-       
+                        $(document).ready(function () {
+                            $('#size').on('change', function () {
+                                let value = $(this).val();
+                                let box = (
+                                    "           <div class='box1'>" +
+                                    "<div class='atrValue b_color' >" +
+                                    "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>" +
+                                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1' placeholder='color Red' style='width:200px; margin-left: 10px; color: solid black'>" +
+                                    "</div>" +
+                                    "<div class='b_price'>" +
+                                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>" +
+                                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1' placeholder='0' style='width:200px; margin-left: 10px; color: solid black'>" +
+                                    "</div>" +
+                                    "<div class='b_button'>" +
+                                    "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>" +
+                                    "<button type='button' class='btn btn-info' style='display: flex; margin-left: 10px;'>Upload Image</button>" +
+                                    "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>" +
+                                    "</div>" +
+                                    "</div>"
+                                )
+                                // console.log(box);
+                                $("#attributes").append(box);
+                                let lastInput = $(".atrValue").find("input:last");
+                                $(lastInput).val(value)
+                                //$(input).val(value);
+                            })
+                        })
+                    </script>
 
-    </script>
+                    <script>
+                        $(document).ready(function () {
+                            $('#attributes').hide();
+                            $('#attribute_option').on('change', function () {
+                                var showId = $(this).val();
+                                // alert(showId);
+                                // alert($(".hide").attr("id"))
+                                // // alert( this.value );
+                                $('.hide').each(function () {
+                                    // alert( this.id );
+                                    if (showId == "color") {
+                                        $("#color").show();
+                                        $("#size").hide();
+                                        $('#attributes').show();
+
+                                    }
+                                    if (showId == "size") {
+                                        $("#size").show();
+                                        $("#color").hide();
+                                        $('#attributes').show();
+
+                                    }
+                                });
+                            });
+
+
+                            $("#color").hide();
+                            $("#size").hide();
+                            $('#attribute_option').on('change', function () {
+                                var showId = $(this).val();
+                                // alert(showId);
+                                // alert($(".hide").attr("id"))
+                                // // alert( this.value );
+                                $('.hide').each(function () {
+                                    // alert( this.id );
+                                    if (showId == "color") {
+                                        $("#color").show();
+                                        $("#size").hide();
+
+                                    }
+                                    if (showId == "size") {
+                                        $("#size").show();
+                                        $("#color").hide();
+
+                                    }
+                                });
+                            });
+                        });
+                        $('.hide').on('click', function (e) {
+                            e.preventDefault()
+                            console.log($(this).value)
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-attributes',
+                                dataType: 'json',
+                                data: {
+                                    titleId: $(this).val()
+                                },
+                                success: (res) => {
+                                    console.log({ "Success Response": res })
+                                    if (res.status == true) {
+                                        let attributeList = [];
+                                        res.result.map((element) => {
+                                            attributeList = `<input> ${element.title} </input>`
+                                        })
+                                        $('.attributeSelect').html(filterList)
+                                    } else {
+                                        $('.attributeSelect').html(`<input> ${res.result} </input>`)
+                                    }
+                                },
+                                error: (err) => {
+                                    console.log({ "Error Response": err })
+                                }
+
+                            })
+                        })
+
+                        $('.subCategoriesSelect').on('click', function (e) {
+                            $('#filter option').remove()
+                            e.preventDefault();
+                            console.log($(this).val())
+                            $.ajax({
+                                method: 'GET',
+                                url: '/fetch-producttypes',
+                                dataType: 'json',
+                                data: {
+                                    filtersubcategoryId: $(this).val()
+                                },
+                                success: (res) => {
+                                    console.log({ "Success Response": res })
+                                    $.each(res, function (key, value) {
+                                        console.log(value.categorytype)
+                                        $('#filter')
+                                            .append($("<option></option>")
+                                                .attr("value", value.name)
+                                                .text(value.name));
+                                    })
+
+                                },
+                                error: (err) => {
+                                    console.log({ "Error Response": err })
+                                }
+                            })
+                        })
 
 
 
-    <%- include('../partials/footer'); %>
+                        //     $('.categoriesSelect').on('change', function(e) {
+                        //     e.preventDefault();
+                        //     console.log($(this).val())
+                        //     $.ajax({
+                        //         method: 'GET',
+                        //         url: '/products/fetch-subcategories',
+                        //         dataType: 'json',
+                        //         data: {
+                        //             categoryId: $(this).val()
+                        //         },
+                        //         success: (res) => {
+                        //             console.log({"Success Response": res})
+
+                        //             if(res.status == true) {
+                        //                 let subCategoriesList = [];
+                        //                 res.result.map((element) => {
+                        //                     subCategoriesList = `<option> ${element.name} </option>`
+                        //                 })
+                        //                 $('.subCategoriesSelect').html(subCategoriesList)
+                        //             } else {
+                        //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
+                        //             }
+                        //         },
+                        //         error: (err) => {
+                        //             console.log({"Error Response": err})
+                        //         }
+                        //     })
+                        // });
+
+
+                        $('.categoriesSelect').on('change', function (e) {
+                            $('#subCategory option').remove()
+                            e.preventDefault();
+                            console.log($(this).val())
+                            $.ajax({
+                                method: 'GET',
+                                url: '/products/fetch-subcategories',
+                                dataType: 'json',
+                                data: {
+                                    categoryId: $(this).val()
+                                },
+                                success: (res) => {
+                                    console.log("hello")
+                                    console.log(res);
+                                    //data = JSON.parse(res);
+                                    $.each(res, function (key, value) {
+                                        console.log(value.categorytype)
+                                        $('#subCategory')
+                                            .append($("<option></option>")
+                                                .attr("value", value.name)
+                                                .text(value.name));
+                                    });
+
+                                },
+                                error: (err) => {
+                                    console.log({ "Error Response": err })
+                                }
+                            })
+                        })
+
+
+
+
+
+
+                    </script>
+
+                    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                        crossorigin="anonymous"></script>
+
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                        crossorigin="anonymous"></script>
+
+                    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+                    <script>
+                        $('#editor').summernote({
+
+                            tabsize: 2,
+                            height: 400
+                        });
+                    </script>
+
+                    <%- include('../partials/footer'); %>

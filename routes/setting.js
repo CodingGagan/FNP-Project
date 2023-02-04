@@ -284,7 +284,10 @@ router.get('/footer/', (req,res) => {
 
 router.post('/footer/', (req,res) => {
   var description = req.body.description;
-  let  qry =  "INSERT INTO footer SET description= '"+description+"'"
+  var metatag = req.body.metatag;
+  var metatitle =  req.body.metatitle;
+  var url =  req.body.title; 
+  let  qry =  "INSERT INTO footer SET description= '"+description+"', metatag= '"+metatag+"', metatitle= '"+metatitle+"', url = '"+url+"'"
   mysql.query(qry,(err,result) =>{
     if(err)
     throw err

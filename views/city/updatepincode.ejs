@@ -1,0 +1,88 @@
+<%- include('../partials/header'); %>
+
+
+<div class="right-cat">
+    <div class="new-cat">
+        <h3>All City</h3>
+    </div>
+
+    <form action="" method="Post">
+        <div class="mb-3">
+            <label style="width: 100%;" for="exampleFormControlTextarea1"
+                class="form-label">Select Region</label>
+            <select style="width: 100%; padding: 10px 10px;" name="region" id="region"
+                class="form-select categoriesSelect" required value="<%= sampleData[0].region %> aria-label="Default select example">
+
+                <% region.forEach((cat)=> {
+                    %>
+                    <option value="<%= cat.id %>">
+                        <%= cat.region %>
+                    </option>
+                    <% }) %>
+
+            </select>
+        </div>
+        <div class="mb-2">
+            <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
+                class="form-label">Select City</label>
+            <select style="width: 100%; padding: 10px 10px;" required value="<%= sampleData[0].city %> "id="city"
+                name="city" class="form-select subCategoriesSelect"
+                aria-label="Default select example">
+
+
+            </select>
+        </div>
+        <div class="name" >
+            <label for="exampleFormControlTextarea1" class="form-label">Select Pincode</label>
+            <input type="text" class="form-control" required value="<%= sampleData[0].pincode %>"  name="pincode" id="exampleFormControlInput1"
+                placeholder="Name" style="width: 450px;">
+        </div>                                          
+        <div class="mb-3">
+           
+            <button class="btn-new" type="submit">Submit</button>
+        </div>
+</div>
+</form>
+</div>
+
+
+<script>
+    $(document).ready(function(){            
+    $('#region').on('change', function (e) {
+        // alert("hello")
+                $('#city option').remove()
+                e.preventDefault();
+                console.log($(this).val(),"rrrrrr")
+                $.ajax({
+                    method: 'GET',
+                    url: '/fetch-citydata',
+                    dataType: 'json',
+                    data: {
+                        regionId: $(this).val()
+                    },
+                    success: (res) => {
+                        // console.log("hello")
+                        // console.log(res,"kkkk");
+                        //data = JSON.parse(res);
+                        console.log(typeof(res),"lllll")
+                        let ras = res.result
+                        $.each(ras, function (key, value) {
+                            console.log(value.city)
+                            $('#city')
+                                .append($("<option value='${value.id}'></option>")
+                                    .attr("value", value.id)
+                                    .text(value.city));
+                        });
+
+                    },
+                    error: (err) => {
+                        console.log({ "Error Response": err })
+                    }
+                })
+            })
+        })
+</script>
+
+
+
+<%- include('../partials/footer'); %>

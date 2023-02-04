@@ -59,10 +59,10 @@
                                                     <%=data.name %>
                                                 </td>
                                                 <td style="padding: 10px;">
-                                                    <%=data.filtercategory %>
+                                                    <%=data.category_name %>
                                                 </td>
                                                 <td style="padding: 10px;">
-                                                    <%=data.filtersubcategory %>
+                                                    <%=data.subcategory_name %>
                                                 </td>
                                                 <td style="padding: 10px;"><img src="<%=data.image %> "
                                                         style="height: 100px ;width: 100px; " alt="image"></td>
@@ -112,18 +112,17 @@
                             </div>
                             <div class="mb-3">
                                 <label style="width: 100%;" for="exampleFormControlTextarea1"
-                                    class="form-label">Category</label>
-                                <select style="width: 100%; padding: 10px 10px;" name="filtercategory"
-                                    class="form-select categoriesSelect" aria-label="Default select example">
+                                class="form-label">Category</label>
+                            <select style="width: 100%; padding: 10px 10px;" name="filtercategory" id = "rajatSoni"
+                                class="form-select categoriesSelect" aria-label="Default select example">
+                                <% categories.forEach((cat)=> {
+                                    %>
+                                    <option value="<%= cat.id %>">
+                                        <%= cat.name %>
+                                    </option>
+                                    <% }) %>
 
-                                    <% categories.forEach((cat)=> {
-                                        %>
-                                        <option value="<%= cat.name %>">
-                                            <%= cat.name %>
-                                        </option>
-                                        <% }) %>
-
-                                </select>
+                            </select>
 
                                 <div class="mb-2">
                                     <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
@@ -162,20 +161,19 @@
 
 
 
-
+                <script type="text/javascript" charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+            <script type="text/javascript" charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+            <!-- <script>
+                $(function () {
+                    $("#example").dataTable();
+                })
+            </script> -->
                
-
-
                     <script>
                         $(document).ready(function () {
-                            $(".btnDelete").on('click', function () {
-                                $(this).closest("tr").remove();
-                            })
-
-
-
-                            $('.subCategoriesSelect').on('click', function (e) {
-                                
+                            $('.subCategoriesSelect').on('click', function (e) {                       
                                 e.preventDefault();
                                 console.log($(this).val())
                                 $.ajax({
@@ -190,7 +188,7 @@
                                         if (res.status == true) {
                                             let filterList = [];
                                             res.result.map((element) => {
-                                                filterList = `<option> ${element.name} </option>`
+                                                filterList = `<option value= " ${element.id}"> ${element.name} </option>`
                                             })
                                             $('.filterSelect').html(filterList)
                                         } else {
@@ -199,7 +197,7 @@
                                     },
                                     error: (err) => {
                                         console.log({ "Error Response": err })
-                                    }
+                                    }   
                                 })
                             })
 
@@ -234,7 +232,7 @@
                             //     })
                             // });
 
-                            $('.categoriesSelect').on('change', function (e) {
+                            $('#rajatSoni').on('change', function (e) {
                                 $('#subCategory option').remove()
                                 e.preventDefault();
                                 console.log($(this).val())
@@ -246,14 +244,13 @@
                                         categoryId: $(this).val()
                                     },
                                     success: (res) => {
-                                        console.log("hello")
-                                        console.log(res);
-                                        //data = JSON.parse(res);
-                                        $.each(res, function (key, value) {
+                                        console.log(res.result,"lllll")
+                                        let ras = res.result
+                                        $.each(ras, function (key, value) {
                                             console.log(value.categorytype)
                                             $('#subCategory')
-                                                .append($("<option></option>")
-                                                    .attr("value", value.name)
+                                                .append($("<option value='${value.id}'></option>")
+                                                    .attr("value", value.id)
                                                     .text(value.name));
                                         });
 
@@ -265,6 +262,13 @@
                             })
                         })
                     </script>
+                    <!-- <script>
+                          $(document).ready(function () {
+                            $(".categoriesSelect").on('click', function () {
+                              alert("hello")
+                            })
+                        })
+                    </script> -->
 
 
 

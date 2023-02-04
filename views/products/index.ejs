@@ -11,7 +11,7 @@
         <div class="dash">
             <div class="home">
                 <div class="hp">
-                    <h2>All Productdfg</h2>
+                    <h2>All Product</h2>
                     <p>Home / Product</p>
                 </div>
                 <div class="hp-1">
@@ -30,143 +30,180 @@
                 <a href="/addnewproduct" class="btn btn-primary" style="margin-left: 1000px;">Add New Product</a>
 
             </div>
-           
-    <div class="row" >
-        <div class="col-12" style="margin-top:25px">
-            <table id="example"  style="width:100%">
-                <thead style="background-color: #0A2558;color:white;">
-                    <tr>
-                        <td><input type="checkbox" style="margin-left: 15px; "></t>
-                        <td style="padding:15px;">id</td>
-                        <td>Name</td>
-                        <td>SKU</td>
-                        <td>Quantity</td>
-                        <td>category</td>
-                        <td>Main Price</td>
-                        <td>Discount Price</td>
-                        <td>Status</td>
-                        <td>image</td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% if(sampleData.length>0){
-                        sampleData.forEach(function(data){
-                        %>
 
-                        <tr>
-                            <td><input type="checkbox" style="margin-left: 15px; "></td>
-                            <td style="padding:15px;">
-                                <%=data.id %>
-                            </td>
-                            <td>
-                                <h6 style="margin-top: 10px;">
-                                    <%=data.name %>
-                                </h6>
-                                <small>
-                                    <strong>stock: <%=data.stock %> </strong>
+            <div class="row">
+                <div class="col-12" style="margin-top:25px">
+                    <table id="example" style="width:100%">
+                        <thead style="background-color: #0A2558;color:white;">
+                            <tr>
+                                <td><input type="checkbox" style="margin-left: 15px; "> </td>
+                                <td>Id</td>
 
-                                </small>
+                                <td>Name</td>
+                                <td>SKU</td>
+                                <td>Quantity</td>
+                                <td>category</td>
+                                <td>Main Price</td>
+                                <td>Discount Price</td>
+                                <td>Feature</td>
+                                <td>Status</td>
+                                <td>image</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(sampleData.length>0){
+                                sampleData.forEach(function(data){
+                                %>
 
-                            </td>
-                           
-                            <td>
-                                <%=data.psku %>
-                            </td>
-                            <td>
-                                <%=data.quantity %>
-                            </td>
-                            <td>
-                                <%=data.category %>
-                            </td>
-                            <td>
-                                <%=data.regularprice %>
-                            </td>
-                            <td>
-                                <%=data.salesprice%>
-                            </td>
-                            <td>
-                                <span class="alert alert-warning">
-                                    <%=data.status %>
-                                </span>
-                            </td>
-                            <td>
-                                <div class="pic">
-                                    <img src="<%=data.image %> " style="height: 100px ;width: 100px; " alt="image">
-                                </div>
-                            </td>
-                            <td>
-                                <a href="/products/delete/<%= data.id %>" class="btn btn-danger"><i
-                                        class='bx bx-message-square-x'></i></a>
-                                <a href="/products/edit/<%= data.id %>" class="btn btn-primary"><i
-                                        class='bx bxs-edit-alt'></i></a>
-                                <a href="/products/copy/<%= data.id %>" class="btn btn-secondary"><i
-                                        class='bx bx-chat'></i></a>
-                                <a href="/products/view/<%= data.id %>" class="btn btn-info"><i
-                                        class='bx bx-low-vision'></i></a>
-                                <!-- <button type="button" class="btn btnDelete btn-danger"><i
+                                <tr>
+                                    <td><input type="checkbox" style="margin-left: 15px;" value="<%=data.id %>">
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+
+                                    <td>
+                                        <h6 style="margin-top: 10px;">
+                                            <%=data.name %>
+                                        </h6>
+                                        <small>
+                                            <strong>stock: <%=data.stock %> </strong>
+
+                                        </small>
+
+                                    </td>
+
+                                    <td>
+                                        <%=data.psku %>
+                                    </td>
+                                    <td>
+                                        <%=data.quantity %>
+                                    </td>
+                                    <td>
+                                        <%=data.category_name %>
+                                    </td>
+                                    <td>
+                                        <%=data.regularprice %>
+                                    </td>
+                                    <td>
+                                        <%=data.salesprice%>
+                                    </td>
+                                    <td>
+                                        <select name="feature" data-id="<%= data.id %>" class="feature_item">
+                                            <option value="0" active>Select Feature</option>
+                                            <% if(allFeature) { allFeature.forEach(element=> {
+                                                %>
+                                                <option <%= data.feature_id === element.id ? "selected" : "" %> value="<%= element.id %>">
+                                                    <%= element.name %>
+                                                </option>
+                                                <% }); } %>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span class="alert alert-warning">
+                                            <%=data.status %>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="pic">
+                                            <img src="<%=data.image %> " style="height: 100px ;width: 100px; "
+                                                alt="image">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="/products/delete/<%= data.id %>" class="btn btn-danger"><i
+                                                class='bx bx-message-square-x'></i></a>
+                                        <a href="/products/edit/<%= data.id %>" class="btn btn-primary"><i
+                                                class='bx bxs-edit-alt'></i></a>
+                                        <a href="/products/copy/<%= data.id %>" class="btn btn-secondary"><i
+                                                class='bx bx-chat'></i></a>
+                                        <a href="/products/view/<%= data.id %>" class="btn btn-info"><i
+                                                class='bx bx-low-vision'></i></a>
+                                        <!-- <button type="button" class="btn btnDelete btn-danger"><i
                                             class='bx bx-message-square-x'></i></button>
                                     <button type="button" class="btn btn-primary"><i
                                             class='bx bxs-edit-alt'></i></button>
                                     <button type="button" class="btn btn-secondary"><i class='bx bx-chat'></i></button>
                                     <button type="button" class="btn btn-info"><i class='bx bx-low-vision'></i></button> -->
-                            </td>
-                          
-                               
-                           
-                        </tr>
-                        <!-- <tr>
-                            <td>
-                                <a href="/products/bestselling/<%= data.id %>" class="btn btn-primary"><i
-                                    class='bx bxs-edit-alt'></i>Best Selling</a>
-                            </td>
-                            
-                        </tr> -->
-                       
-                       
-                  
-                        <% }) } else{ %>
-                           
-                            %>
-                            <% } %>
+                                    </td>
+                                </tr>
+                                <% }) } else{ %>
 
-                           
+                                    %>
+                                    <% } %>
 
-                </tbody>
+                        </tbody>
 
-            </table>
-           
-        </div>
-    </div>
-    <form action="/bestselling" method="POST"></form>
-    <div class="btn btn-outline">
-                          
-        <input class="btn btn-primary" type="submit" value="Best Selling">
-        <input class="btn btn-primary" type="submit" value="Remove Best Selling">
-        <input class="btn btn-primary" type="submit" value="Trending Now">
-        <input class="btn btn-primary" type="submit" value="Remove Trending Now"> 
-</div>
+                        <!-- <form action="/products/bestselling" method="POST">
+                         <input type="submit" value="<%= sampleData.id %>" >Bestsellng </input>
+                              
+                             <div class="name ">
+                                <a href="/products/bestselling/<%= sampleData.id %>" class="btn btn-primary">Bestsellng</a>
+                            <a href="" class="btn btn-primary"><i
+                                    class='bx bxs-edit-alt'></i></a>
+                            <a href="" class="btn btn-secondary"><i
+                                    class='bx bx-chat'></i></a>
+                            <a href=" " class= "btn btn-info"><i
+                                    class='bx bx-low-vision'></i></a>
+                
+                            </div>
+                           -->
 
-    </div>
-    
+                        <!-- </form> -->
+
+                    </table>
 
 
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
-    <script>
-    $(function(){
-      $("#example").dataTable();
-    })
-    </script>
 
-        <!-- <script>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <script type="text/javascript" charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+            <script type="text/javascript" charset="utf8"
+                src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+            <script>
+                $(function () {
+                    $("#example").dataTable();
+
+                    $('.feature_item').on('change', function () {
+                        let f_id = $(this).val();
+                        let p_id = $(this).attr('data-id');
+                        if (f_id > 0) {
+                            $.ajax({
+                                type: "POST",
+                                url: "/products/save/feature/",
+                                data: {
+                                    feature_id: f_id,
+                                    product_id: p_id
+                                },
+                                dataType: "json",
+                                success: function (response) {
+
+                                }
+                            });
+                        }
+                    })
+                })
+            </script>
+
+            <!-- <script>
             $(document).ready(function () {
                 $(".btnDelete").on('click', function () {
                     $(this).closest("tr").remove();
                 })
             })
         </script> -->
-<!--         
+            <!--         
             <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
             <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
@@ -181,7 +218,26 @@
 } );
 </script> -->
 
+            <!-- <script>
+     $(document).on('click', function (e) {
+        e.preventDefault();
+        $.ajax({
+            method:'GET',
+            url: '/product_lists',
+            daraType: 'json',
+            data:{
+                // console.log(categoryId)
+                categoryId:$(this).val()
+            },
+            success: (res) => {
+                console.log(categoryId)
+            }
+        })
+    
+} );
+</script> -->
 
 
 
-<%- include('../partials/footer'); %>
+
+            <%- include('../partials/footer'); %>

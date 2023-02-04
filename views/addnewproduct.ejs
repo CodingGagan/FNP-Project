@@ -198,7 +198,7 @@
                                                 aria-label="Default select example">
                                                 <% categories.forEach((cat)=> {
                                                     %>
-                                                    <option value="<%= cat.name %>">
+                                                    <option value="<%= cat.id %>">
                                                         <%= cat.name %>
                                                     </option>
                                                     <% }) %>
@@ -229,7 +229,22 @@
                                                 style="margin-top: 10px;">Image</label>
                                         </div>
                                         <div class="name1 " style="margin-left: 10px;">
-                                            <input type="file" name="image">
+                                            <input type="file" name="image" >
+                                        </div>
+                                        <div class="name1 " style="margin-left: 10px;">
+                                            <input type="file" name="image1" >
+                                        </div>
+                                        <div class="name1 " style="margin-left: 10px;">
+                                            <input type="file" name="image2" >
+                                        </div>
+                                        <div class="name1 " style="margin-left: 10px;">
+                                            <input type="file" name="image3" >
+                                        </div>
+                                        <div class="name1 " style="margin-left: 10px;">
+                                            <input type="file" name="image4" >
+                                        </div>
+                                        <div class="name1 " style="margin-left: 10px;">
+                                            <input type="file" name="image5" >
                                         </div>
                                         <div class="name1" style="margin-left: 10px;">
                                             <h7 style="margin-top:5px;">Recommended image size is 200x200</h7>
@@ -287,19 +302,6 @@
                                                 <option value="1">mtr</option>
                                                 <option value="2">cm</option>
                                             </select>
-
-                                            <!-- <div class="name">
-                            <label style="width: 100%;" for="exampleFormControlTextarea1"
-                                class="form-label">Status</label>
-                            <select style="width: 100%; padding: 10px 10px;" class="form-select"
-                                aria-label="Default select example">
-                                <option selected>Draft</option>
-                                <option value="1">Publish</option>
-                            </select>
-                            <button class="btn-new" style="width: 100%; border-radius: 5px; ">Create product</button>
-                        </div> -->
-
-
                                         </div>
 
                                         <div class="name">
@@ -351,19 +353,18 @@
                     "           <div class='box1'>" +
                     "<div class=' atrValue b_color' >" +
                     "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>" +
-                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "<input type='text' required class='form-control attributeSelect' name= 'acolor' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
                     "</div>" +
                     "<div class='b_price'>" +
                     "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>" +
-                    "<input type='text'  required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "<input type='text'  required class='form-control attributeSelect' name= 'sprice' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
                     "</div>" +
                     "<div class='b_button'>" +
                     "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>" +
-                    "<input type='file' class='btn btn-info' style='display: grid; margin-left: 10px;width: 127px;'>" +
-                    // "<button type='button' class='btn btn-info' style='display: flex; margin-left: 10px;'>Upload Image</button>"+
+                    "<input type='file'  style='display: grid; name= 'simage' margin-left: 10px;'>" +
                     "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>" +
                     "</div>" +
-                    "<button class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; '> <i class='bx bx-message-square-x'></i></button>" +
+                    " <button type= 'submit' id= 'btnDelete' class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; '> <i class='bx bx-message-square-x'></i></button>" +
                     "</div>"
                 )
                 // console.log(box);
@@ -385,28 +386,28 @@
                     "           <div class='box1' id = 'hideDiv'>" +
                     "<div class='atrValue b_color' >" +
                     "<label for='exampleFormControlInput' class='form-label'style='margin-left:10px'>Attributes</label>" +
-                    "<input type='text' required class='form-control attributeSelect' name = 'color' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "<input type='text' required class='form-control attributeSelect' name = 'asize' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
                     "</div>" +
                     "<div class='b_price'>" +
                     "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Additional Price Amount</label>" +
-                    "<input type='text' required class='form-control attributeSelect' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
+                    "<input type='text' required class=' form-control attributeSelect' name = 'aprice' id='exampleFormControlInput1'  style='width:200px; margin-left: 10px; color: solid black'>" +
                     "</div>" +
                     "<div class='b_button'>" +
                     "<label for='exampleFormControlInput' class='form-label' style='margin-left:10px'>Attribute image</label>" +
-                    "<input type='file' class='btn btn-info' style='display: grid; margin-left: 10px;width: 127px;'>" +
-                    "<h9 style='margin-top:5px;'>Recommended image size is 200x200</h>" +
+                    "<input type='file' class='btn btn-info'name= 'aimage'  style='display: grid; margin-left: 10px;width: 127px;'>" +
+                    "<h9 style='margin:5px 10px;'>Recommended image size is 200x200</h>" +
                     "</div>" +
-                    // "<a href=''  class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; ' ><i class='bx bx-message-square-x'></i></a>"+ 
                     " <button type= 'submit' id= 'btnDelete' class='btn btn-danger btnDelete' style='width: 48px; height: 52px ;margin: 26px; '> <i class='bx bx-message-square-x'></i></button>" +
                     "</div>"
                 )
-                // console.log(box);
+              
                 $("#attributes").append(box);
                 let lastInput = $(".atrValue").find("input:last");
                 $(lastInput).val(value)
                 //$(input).val(value);
                 $("btnDelete").on('click',function(e) {
-                          console.log($(box).remove()) ;
+                    e.preventDefault()
+                        //  console.log($(box).remove()) ;
                           $("#hideDiv").remove()
                         
                            
@@ -414,22 +415,6 @@
             })
         })
     </script>
-    <script>
-        $(document).ready(function () {
-
-            $(".btnDelete").on('click', function (e) {
-                const myNode = document.getElementById("hideDiv");
-                myNode.b_color = ''
-                // $(".hideDiv").remove().append("box1")
-
-                // //     e.preventDefault();
-                // //         // console.log(this)         
-                //      $(hideDiv).closest("box1").remove();
-            })
-        })
-
-    </script>
-
     <script>
         $(document).ready(function () {
             $('#attributes').hide();
@@ -480,7 +465,7 @@
         });
         $('.hide').on('click', function (e) {
             e.preventDefault()
-            console.log($(this).value)
+            // console.log($(this).value)
             $.ajax({
                 method: 'GET',
                 url: '/fetch-attributes',
@@ -489,7 +474,7 @@
                     titleId: $(this).val()
                 },
                 success: (res) => {
-                    console.log({ "Success Response": res })
+                    // console.log({ "Success Response": res })
                     if (res.status == true) {
                         let attributeList = [];
                         res.result.map((element) => {
@@ -508,9 +493,11 @@
         })
 
         $('.subCategoriesSelect').on('click', function (e) {
+            
             $('#filter option').remove()
             e.preventDefault();
-            console.log($(this).val())
+            // console.log($(this).val())
+            
             $.ajax({
                 method: 'GET',
                 url: '/fetch-producttypes',
@@ -520,11 +507,15 @@
                 },
                 success: (res) => {
                     console.log({ "Success Response": res })
-                    $.each(res, function (key, value) {
-                        console.log(value.categorytype)
+                    
+                    let ras = res.result
+                    
+                    $.each(ras, function (key, value) {
+                        
                         $('#filter')
-                            .append($("<option></option>")
-                                .attr("value", value.name)
+                        
+                            .append($("<option value='${value.name}'>  </option>")
+                                .attr("value", value.id)
                                 .text(value.name));
                     })
 
@@ -535,73 +526,39 @@
             })
         })
 
-
-
-        //     $('.categoriesSelect').on('change', function(e) {
-        //     e.preventDefault();
-        //     console.log($(this).val())
-        //     $.ajax({
-        //         method: 'GET',
-        //         url: '/products/fetch-subcategories',
-        //         dataType: 'json',
-        //         data: {
-        //             categoryId: $(this).val()
-        //         },
-        //         success: (res) => {
-        //             console.log({"Success Response": res})
-
-        //             if(res.status == true) {
-        //                 let subCategoriesList = [];
-        //                 res.result.map((element) => {
-        //                     subCategoriesList = `<option> ${element.name} </option>`
-        //                 })
-        //                 $('.subCategoriesSelect').html(subCategoriesList)
-        //             } else {
-        //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
-        //             }
-        //         },
-        //         error: (err) => {
-        //             console.log({"Error Response": err})
-        //         }
-        //     })
-        // });
-
-
         $('.categoriesSelect').on('change', function (e) {
-            $('#subCategory option').remove()
-            e.preventDefault();
-            console.log($(this).val())
-            $.ajax({
-                method: 'GET',
-                url: '/products/fetch-subcategories',
-                dataType: 'json',
-                data: {
-                    categoryId: $(this).val()
-                },
-                success: (res) => {
-                    console.log("hello")
-                    console.log(res);
-                    //data = JSON.parse(res);
-                    $.each(res, function (key, value) {
-                        console.log(value.categorytype)
-                        $('#subCategory')
-                            .append($("<option></option>")
-                                .attr("value", value.name)
-                                .text(value.name));
-                    });
+                    $('#subCategory option').remove()
+                    e.preventDefault();
 
-                },
-                error: (err) => {
-                    console.log({ "Error Response": err })
-                }
-            })
-        })
+                    $.ajax({
+                        method: 'GET',
+                        url: '/products/fetch-subcategories',
+                        dataType: 'json',
+                        data: {
+                            categoryId: $(this).val()
+                    
+                        },
+                        success: (res) => {
+                            let ras = res.result
+                            $.each(ras, function (key, value) {
+                               
+                                console.log(value,"hjk")
+                                $('#subCategory')
+                               
+                                    .append($("<option value= '${value.name}' ></option>")
+                                   
+                                        .attr("value", value.id)
+                                        .text(value.name));
+                            });
 
-
-
-
+                        },
+                        error: (err) => {
+                            console.log({ "Error Response": err })
+                        }
+                    })
+                })
     </script>
-
+    
 
 
     <%- include('./partials/footer'); %>

@@ -22,70 +22,67 @@
                               
 <form action="" method="POST">
 
-                            
+    <% if(filterType.length>0){
+        filterType.forEach(function(data){
+        %>
+        <% }) } else{ %>
+          
+            %>
+            %>
+            <% } %>
                  
 
-                   <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Name</label>
-        <input type="text" required value="<%= filterType[0].name %>" class="form-control" name="name" id="exampleFormControlInput1" style="width: 450px;">                
-        </div>
-        <% if(filterType.length>0){
-                              filterType.forEach(function(data){
-                                            %>
-                                             <% }) } else{ %>
-                                               
-                                                %>
-                                                %>
-                                                <% } %>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+                    placeholder="Name" value="<%= filterType[0].name %>" style="width: 450px;">
 
-                    <div class="name">
-                        <label style="width: 100%;" for="exampleFormControlTextarea1"
-                                    class="form-label">Category</label>
-                        <select style="width: 100%; padding: 10px 10px;" name="filtercategory"
-                                    class="form-select categoriesSelect" aria-label="Default select example">
+            </div>
+            <div class="mb-3">
+                <label style="width: 100%;" for="exampleFormControlTextarea1"
+                class="form-label">Category</label>
+            <select style="width: 100%; padding: 10px 10px;" name="filtercategory" id = "rajatSoni"
+                class="form-select categoriesSelect" aria-label="Default select example">
+                <% categories.forEach((cat)=> {
+                    %>
+                    <option value="<%= cat.id %>">
+                        <%= cat.name %>
+                    </option>
+                    <% }) %>
 
-                                    <% categories.forEach((cat)=> {
-                                        %>
-                                        <option value="<%= cat.name %>">
-                                            <%= cat.name %>
-                                        </option>
-                                        <% }) %>
+            </select>
 
-                                </select>
-
-                    </div>
-                    <div class="name">
-                        <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
-                                        class="form-label">Sub Category</label>
-                                    <select style="width: 100%; padding: 10px 10px;" id="subCategory"
-                                        name="filtersubcategory" class="form-select subCategoriesSelect"
-                                        aria-label="Default select example">
+                <div class="mb-2">
+                    <label style="width: 100%; margin-top: 15px;" for="exampleFormControlTextarea1"
+                        class="form-label">Sub Category</label>
+                    <select style="width: 100%; padding: 10px 10px;" id="subCategory" value="<%= filterType[0].filtersubcategory %>"
+                        name="filtersubcategory" class="form-select subCategoriesSelect"
+                        aria-label="Default select example">
 
 
-                                    </select>
-                    </div>
+                    </select>
+                </div>
+                <div>
                     <div class="name">
                         <label for="exampleFormControlTextarea1" class="form-label"
                             style="margin-top: 10px;">Image</label>
                     </div>
                     <div class="name1 " style="margin-left: 10px;">
-                        <input type="file" name="image" >
+                        <img src="<%=filterType[0].image %> "   style="height: 100px ;width: 100px; " alt="image"> </td>
                     </div>
                     <div class="name1" style="margin-left: 10px;">
                         <h7 style="margin-top:5px;">Recommended image size is 200x200</h7>
                     </div>
-                  
-
-                    <div class="name">
-                        <label style="width: 100%;" for="exampleFormControlTextarea1" class="form-label">Status</label>
-                        <select style="width: 100%; padding: 10px 10px;" name="status" class="form-select"
-                            aria-label="Default select example">
-                            <option selected>Draft</option>
-                            <option>Publish</option>
+                    <div class="name" <label for="exampleFormControlTextarea1" class="form-label"
+                        style="width: 100%;">Status</label>
+                        <select class="form-select" name="status" aria-label="Default select example">
+                            <option selected>Publish</option>
+                            <option>Draft</option>
                         </select>
+                        <div class="name">
+                            <button class="btn-new">Add New</button>
+                        </div>
 
-                        <button class="btn-new" type="submit" style="width: 100%; border-radius: 5px; ">Create
-                            product</button>
                         </form>
                     </div>
 
@@ -99,16 +96,20 @@
     </div>
     </div>
 
-      <script>
+    <script type="text/javascript" charset="utf8"
+    src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8"
+    src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<!-- <script>
+    $(function () {
+        $("#example").dataTable();
+    })
+</script> -->
+
+     
+                        <script>
                         $(document).ready(function () {
-                            $(".btnDelete").on('click', function () {
-                                $(this).closest("tr").remove();
-                            })
-
-
-
-                            $('.subCategoriesSelect').on('click', function (e) {
-                                
+                            $('.subCategoriesSelect').on('click', function (e) {                             
                                 e.preventDefault();
                                 console.log($(this).val())
                                 $.ajax({
@@ -123,7 +124,7 @@
                                         if (res.status == true) {
                                             let filterList = [];
                                             res.result.map((element) => {
-                                                filterList = `<option> ${element.name} </option>`
+                                                filterList = `<option value= " ${element.id}"> ${element.name} </option>`
                                             })
                                             $('.filterSelect').html(filterList)
                                         } else {
@@ -138,9 +139,36 @@
 
 
 
-                         
+                            // $('.categoriesSelect').on('change', function (e) {
+                            //     e.preventDefault();
+                            //     console.log($(this).val())
+                            //     $.ajax({
+                            //         method: 'GET',
+                            //         url: '/products/fetch-subcategories',
+                            //         dataType: 'json',
+                            //         data: {
+                            //             categoryId: $(this).val()
+                            //         },
+                            //         success: (res) => {
+                            //             console.log({ "Success Response": res })
 
-                            $('.categoriesSelect').on('change', function (e) {
+                            //             if (res.status == true) {
+                            //                 let subCategoriesList = [];
+                            //                 res.result.map((element) => {
+                            //                     subCategoriesList = `<option> ${element.name} </option>`
+                            //                 })
+                            //                 $('.subCategoriesSelect').html(subCategoriesList)
+                            //             } else {
+                            //                 $('.subCategoriesSelect').html(`<option> ${res.result} </option>`)
+                            //             }
+                            //         },
+                            //         error: (err) => {
+                            //             console.log({ "Error Response": err })
+                            //         }
+                            //     })
+                            // });
+
+                            $('#rajatSoni').on('change', function (e) {
                                 $('#subCategory option').remove()
                                 e.preventDefault();
                                 console.log($(this).val())
@@ -152,14 +180,16 @@
                                         categoryId: $(this).val()
                                     },
                                     success: (res) => {
-                                        console.log("hello")
-                                        console.log(res);
+                                        // console.log("hello")
+                                        // console.log(res,"kkkk");
                                         //data = JSON.parse(res);
-                                        $.each(res, function (key, value) {
+                                        console.log(res.result,"lllll")
+                                        let ras = res.result
+                                        $.each(ras, function (key, value) {
                                             console.log(value.categorytype)
                                             $('#subCategory')
-                                                .append($("<option></option>")
-                                                    .attr("value", value.name)
+                                                .append($("<option value='${value.id}'></option>")
+                                                    .attr("value", value.id)
                                                     .text(value.name));
                                         });
 
@@ -170,7 +200,7 @@
                                 })
                             })
                         })
-                    </script> 
+                    </script>
 
 
 <!-- <script

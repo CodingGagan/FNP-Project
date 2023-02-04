@@ -15,6 +15,7 @@ var supportRouter = require('./routes/support');
 var settingRouter = require('./routes/setting');
 var vendorRouter = require('./routes/vendor');
 var roleRouter = require("./routes/role.js")
+var cityRouter =  require("./routes/city");
 
 
  var app = express();
@@ -34,7 +35,7 @@ var roleRouter = require("./routes/role.js")
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ limit: '50mb',extended: false, parameterLimit:50000,limit:1024*1024*20, }));
 
 
 
@@ -54,6 +55,7 @@ app.use('/support',supportRouter);
 app.use('/setting', settingRouter);
 app.use('/vendor',vendorRouter);
 app.use("/rolemanagement", roleRouter);
+app.use('/citymanagement',cityRouter)
 
 
 

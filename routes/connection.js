@@ -3,7 +3,7 @@ const conn = mysql.createConnection({
     host:"localhost",
     user: "root",
     password: "",
-    database: "express"
+    database: "softwarecomtdi_softcomptwo"
 })
 conn.connect((err) => {
     if(err) throw err

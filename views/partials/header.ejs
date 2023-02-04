@@ -10,29 +10,28 @@
     <script src="/javascripts/script.js"></script>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
-
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-   
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> -->
-  
-    <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" -->
+    <!-- integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     
-    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script> -->
 
-    <!-- <script>
-        tinymce.init({
-            selector: 'textarea#editor',
-        });
-    </script> -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
     <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    
 </head>
 
-</head>
+
 
 <body>
     <div class="full-container">
@@ -64,6 +63,12 @@
                     <a class="item" href="/banner/">
                         <i class='bx bxs-edit'></i>
                         <span class="link_name">Banner</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="/feature/">
+                        <i class='bx bxs-edit'></i>
+                        <span class="link_name">Feature</span>
                     </a>
                 </li>
                 <li class="has-dropdown">
@@ -177,7 +182,33 @@
                     </ul>
                 </li>
 
-
+                <li class="has-dropdown">
+                    <a class="item dropdown" href="/citymanagement/">
+                        <i class='bx bxs-hand'></i>
+                        <span class="link_name">City Management</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a class="item" href="/citymanagement/">
+                                <i class='bx bx-grid-vertical'></i>
+                                <span class="link_name">Region</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/citymanagement/city/">
+                                <i class='bx bxs-joystick-button'></i>
+                                <span class="link_name">City</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item" href="/citymanagement/pincode/">
+                                <i class='bx bxs-joystick-button'></i>
+                                <span class="link_name">Pincode</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a class="item" href="/attributes/">
@@ -298,6 +329,9 @@
 
                     </ul>
                 </li>
+
+           
+
                 <li>
                     <a class="item" href="/complaint/">
                         <i class='bx bxs-edit'></i>
